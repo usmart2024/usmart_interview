@@ -405,6 +405,10 @@ $(document).ready(function () {
         }
     }
 
+    $('#startCrackingCodeButton').on('click', function() {
+      window.location.href = 'http://localhost:5000/crackingcode';
+    });
+
     $('#finish').on('click', function() {
         $("#play").attr("hidden", false);
         $("#finish_interview").attr("hidden", true);
