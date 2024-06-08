@@ -34,9 +34,14 @@
 
    function finishInterview() {
        $("#play").attr("hidden", false);
-       $("#finish").attr("hidden", true);
+       $("#finish_interview").attr("hidden", true);
        resetCountdown();
    }
+
+    function resetCountdown() {
+        clearInterval(intervalId);  // Limpa o intervalo atual
+        document.getElementById('cronometro').textContent = "00:15:00";  // Reinicia o display para 15 minutos
+    }
 
    function stopRecording() {
       $("#muteButton").attr("hidden", false);
@@ -61,8 +66,7 @@
 
             $("#muteButton").attr("hidden", true);
             $("#openMicButton").attr("hidden", false);
-            $("#volume-bars_2").attr("hidden", true);
-            $("#volume-bars").attr("hidden", false);
+            $("#volume-bars").attr("hidden", true);
             // Evento disparado quando há novos dados de áudio disponíveis
             mediaRecorder.ondataavailable = function(event) {
                 audioChunks.push(event.data);
@@ -99,7 +103,7 @@
                           chatBox.innerHTML += `<p><strong>AI:</strong> ${data.response}</p>`;
                           chatBox.scrollTop = chatBox.scrollHeight;
 
-                        $("#volume-bars_2").attr("hidden", false);
+                       $("#volume-bars").attr("hidden", false);
                         playAudio();
 
                     console.log('Arquivo de áudio salvo com sucesso.');
@@ -123,7 +127,8 @@
 
     function startInterview() {
         $("#play").attr("hidden", true);
-        $("#finish").attr("hidden", false);
+        $("#muteButton").attr("hidden", false);
+        $("#finish_interview").attr("hidden", false);
         startCountdown();
         leetCode =  getContent();
         fetch('/chat', {
@@ -143,9 +148,7 @@
               chatBox.innerHTML += `<p><strong>You:</strong> Hello</p>`;
               chatBox.innerHTML += `<p><strong>AI:</strong> ${data.response}</p>`;
               chatBox.scrollTop = chatBox.scrollHeight;
-
-              $("#volume-bars_2").attr("hidden", false);
-
+              $("#volume-bars").attr("hidden", false);
               playAudio();
           })
           .catch(function(error) {
@@ -153,23 +156,6 @@
           });
    }
 
-// document.getElementById('send-button').addEventListener('click', async () => {
-//            const userInput = document.getElementById('user-input').value;
-//            if (userInput.trim() === "") {
-//                return;
-//            }
-//            const response = await fetch('/chat', {
-//                method: 'POST',
-//                headers: { 'Content-Type': 'application/json' },
-//                body: JSON.stringify({ message: userInput })
-//            });
-//            const data = await response.json();
-//            const chatBox = document.getElementById('chat-box');
-//            chatBox.innerHTML += `<p><strong>You:</strong> ${userInput}</p>`;
-//            chatBox.innerHTML += `<p><strong>AI:</strong> ${data.response}</p>`;
-//            document.getElementById('user-input').value = '';
-//            chatBox.scrollTop = chatBox.scrollHeight; // Auto-scroll to the bottom
-//        });
 
 
     function findDifferences(text1, text2) {
@@ -198,13 +184,12 @@
 
   function playAudio() {
       const timestamp = new Date().getTime();
-      const audioUrl = 'https://intercode.usmartdigital.com.br:5000/audio/response_open_ai.mp3?timestamp=${timestamp}';
+      const audioUrl = 'http://127.0.0.1:5000/audio/response_open_ai.mp3?timestamp=${timestamp}';
 
       const audio = new Audio(audioUrl);
       audio.play();
       audio.addEventListener('ended', function() {
-       $("#volume-bars_2").attr("hidden", true);
-
+       $("#volume-bars").attr("hidden", true);
       });
   }
 
@@ -230,6 +215,25 @@
            console.log(content);
            return content ;
   }
+
+  $(document).ready(function () {
+
+  $('#finish').on('click', function() {
+        $("#play").attr("hidden", false);
+        $("#finish_interview").attr("hidden", true);
+        $("#muteButton").attr("hidden", true);
+        resetCountdown();
+       $('#newModal').modal('hide');
+    });
+
+    $('.close, #cancelButton').on('click', function() {
+        $('#newModal').modal('hide');
+    });
+
+
+  });
+
+
 
 // Chame esta função para ver os resultados no console
 
