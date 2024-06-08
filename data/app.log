@@ -40254,3 +40254,974 @@ To solve this problem, you can follow these steps:
 2024-06-08 12:14:32,511 - INFO - 127.0.0.1 - - [08/Jun/2024 12:14:32] "GET /generate_question/How%20you%20would%20aggregate%20logs%20in%20distributed%20micro%20service%20architecture%3F HTTP/1.1" 200 -
 2024-06-08 12:14:32,577 - INFO - <Response streamed [404 NOT FOUND]>
 2024-06-08 12:14:32,582 - INFO - 127.0.0.1 - - [08/Jun/2024 12:14:32] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-06-08 12:20:41,427 - INFO - <Response 14829 bytes [200 OK]>
+2024-06-08 12:20:41,428 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:41] "GET /crackingcode HTTP/1.1" 200 -
+2024-06-08 12:20:41,444 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:41,445 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:41] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 12:20:41,447 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:41,448 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:41] "GET /static/js/algorithm.js HTTP/1.1" 200 -
+2024-06-08 12:20:41,471 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:41,472 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:41] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 12:20:41,475 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:41,476 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:41] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 12:20:42,141 - INFO - <Response 14829 bytes [200 OK]>
+2024-06-08 12:20:42,143 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:42] "GET /crackingcode HTTP/1.1" 200 -
+2024-06-08 12:20:42,161 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:42,162 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:42] "GET /static/js/algorithm.js HTTP/1.1" 200 -
+2024-06-08 12:20:42,163 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:42,164 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:42] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 12:20:42,177 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:42,177 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:42,178 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:42] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 12:20:42,179 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:42] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 12:20:42,717 - INFO - <Response 14829 bytes [200 OK]>
+2024-06-08 12:20:42,720 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:42] "GET /crackingcode HTTP/1.1" 200 -
+2024-06-08 12:20:42,755 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:42,758 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:42] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 12:20:42,763 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:42,765 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:42] "GET /static/js/algorithm.js HTTP/1.1" 200 -
+2024-06-08 12:20:42,770 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:42,771 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:42] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 12:20:42,774 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:42,775 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:42] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 12:20:42,934 - INFO - <Response 14829 bytes [200 OK]>
+2024-06-08 12:20:42,936 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:42] "GET /crackingcode HTTP/1.1" 200 -
+2024-06-08 12:20:42,952 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:42,952 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:42] "GET /static/js/algorithm.js HTTP/1.1" 200 -
+2024-06-08 12:20:42,953 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:42,956 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:42] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 12:20:42,962 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:42,963 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:42,964 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:42] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 12:20:42,965 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:42] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 12:20:43,152 - INFO - <Response 14829 bytes [200 OK]>
+2024-06-08 12:20:43,154 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:43] "GET /crackingcode HTTP/1.1" 200 -
+2024-06-08 12:20:43,172 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:43,174 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:43] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 12:20:43,177 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:43,178 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:43] "GET /static/js/algorithm.js HTTP/1.1" 200 -
+2024-06-08 12:20:43,184 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:43,185 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:43] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 12:20:43,189 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:43,190 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:43] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 12:20:43,329 - INFO - <Response 14829 bytes [200 OK]>
+2024-06-08 12:20:43,333 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:43] "GET /crackingcode HTTP/1.1" 200 -
+2024-06-08 12:20:43,365 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:43,366 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:43] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 12:20:43,369 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:43,371 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:43] "GET /static/js/algorithm.js HTTP/1.1" 200 -
+2024-06-08 12:20:43,377 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:43,379 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:43,381 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:43] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 12:20:43,382 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:43] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 12:20:43,486 - INFO - <Response 14829 bytes [200 OK]>
+2024-06-08 12:20:43,487 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:43] "GET /crackingcode HTTP/1.1" 200 -
+2024-06-08 12:20:43,507 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:43,509 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:43,510 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:43] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 12:20:43,511 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:43] "GET /static/js/algorithm.js HTTP/1.1" 200 -
+2024-06-08 12:20:43,516 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:43,518 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:43] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 12:20:43,522 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:43,523 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:43] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 12:20:43,674 - INFO - <Response 14829 bytes [200 OK]>
+2024-06-08 12:20:43,678 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:43] "GET /crackingcode HTTP/1.1" 200 -
+2024-06-08 12:20:43,707 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:43,708 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:43] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 12:20:43,716 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:43,717 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:43] "GET /static/js/algorithm.js HTTP/1.1" 200 -
+2024-06-08 12:20:43,720 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:43,721 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:43,722 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:43] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 12:20:43,723 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:43] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 12:20:43,804 - INFO - <Response 14829 bytes [200 OK]>
+2024-06-08 12:20:43,805 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:43] "GET /crackingcode HTTP/1.1" 200 -
+2024-06-08 12:20:43,817 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:43,819 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:43] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 12:20:43,822 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:43,823 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:43] "GET /static/js/algorithm.js HTTP/1.1" 200 -
+2024-06-08 12:20:43,829 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:43,830 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:43] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 12:20:43,831 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:43,832 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:43] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 12:20:43,964 - INFO - <Response 14829 bytes [200 OK]>
+2024-06-08 12:20:43,965 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:43] "GET /crackingcode HTTP/1.1" 200 -
+2024-06-08 12:20:43,987 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:43,989 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:43] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 12:20:43,994 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:43,995 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:43] "GET /static/js/algorithm.js HTTP/1.1" 200 -
+2024-06-08 12:20:44,011 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:44,012 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:44,014 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:44] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 12:20:44,015 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:44] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 12:20:44,094 - INFO - <Response 14829 bytes [200 OK]>
+2024-06-08 12:20:44,095 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:44] "GET /crackingcode HTTP/1.1" 200 -
+2024-06-08 12:20:44,108 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:44,110 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:44] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 12:20:44,113 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:44,114 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:44] "GET /static/js/algorithm.js HTTP/1.1" 200 -
+2024-06-08 12:20:44,120 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:44,122 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:44] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 12:20:44,123 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:44,124 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:44] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 12:20:44,253 - INFO - <Response 14829 bytes [200 OK]>
+2024-06-08 12:20:44,255 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:44] "GET /crackingcode HTTP/1.1" 200 -
+2024-06-08 12:20:44,274 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:44,275 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:44] "GET /static/js/algorithm.js HTTP/1.1" 200 -
+2024-06-08 12:20:44,275 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:44,276 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:44] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 12:20:44,285 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:44,285 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:44,286 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:44] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 12:20:44,288 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:44] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 12:20:44,417 - INFO - <Response 14829 bytes [200 OK]>
+2024-06-08 12:20:44,422 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:44] "GET /crackingcode HTTP/1.1" 200 -
+2024-06-08 12:20:44,452 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:44,454 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:44] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 12:20:44,459 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:44,463 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:44,464 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:44] "GET /static/js/algorithm.js HTTP/1.1" 200 -
+2024-06-08 12:20:44,468 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:44] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 12:20:44,469 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:44,472 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:44] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 12:20:44,546 - INFO - <Response 14829 bytes [200 OK]>
+2024-06-08 12:20:44,547 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:44] "GET /crackingcode HTTP/1.1" 200 -
+2024-06-08 12:20:44,563 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:44,564 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:44,565 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:44] "GET /static/js/algorithm.js HTTP/1.1" 200 -
+2024-06-08 12:20:44,567 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:44] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 12:20:44,574 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:44,575 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:44,576 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:44] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 12:20:44,577 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:44] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 12:20:44,878 - INFO - <Response 14829 bytes [200 OK]>
+2024-06-08 12:20:44,881 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:44] "GET /crackingcode HTTP/1.1" 200 -
+2024-06-08 12:20:44,930 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:44,942 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:44] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 12:20:44,949 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:44,963 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:44,967 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:44] "GET /static/js/algorithm.js HTTP/1.1" 200 -
+2024-06-08 12:20:44,971 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:44] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 12:20:44,976 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:20:44,979 - INFO - 127.0.0.1 - - [08/Jun/2024 12:20:44] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 12:34:42,111 - INFO - <Response 14315 bytes [200 OK]>
+2024-06-08 12:34:42,112 - INFO - 127.0.0.1 - - [08/Jun/2024 12:34:42] "GET / HTTP/1.1" 200 -
+2024-06-08 12:34:42,130 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:34:42,132 - INFO - 127.0.0.1 - - [08/Jun/2024 12:34:42] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 12:34:42,138 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:34:42,139 - INFO - 127.0.0.1 - - [08/Jun/2024 12:34:42] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 12:34:42,175 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:34:42,178 - INFO - 127.0.0.1 - - [08/Jun/2024 12:34:42] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 12:34:42,179 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:34:42,180 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:34:42,181 - INFO - 127.0.0.1 - - [08/Jun/2024 12:34:42] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 12:34:42,185 - INFO - 127.0.0.1 - - [08/Jun/2024 12:34:42] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 12:34:42,185 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:34:42,189 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:34:42,191 - INFO - 127.0.0.1 - - [08/Jun/2024 12:34:42] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 12:34:42,192 - INFO - 127.0.0.1 - - [08/Jun/2024 12:34:42] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 12:34:42,278 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:34:42,282 - INFO - 127.0.0.1 - - [08/Jun/2024 12:34:42] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 12:34:42,283 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:34:42,284 - INFO - 127.0.0.1 - - [08/Jun/2024 12:34:42] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 12:34:42,292 - INFO - Cache used for key: view//questoes
+2024-06-08 12:34:42,292 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 12:34:42,293 - INFO - 127.0.0.1 - - [08/Jun/2024 12:34:42] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 12:34:43,744 - INFO - <Response 126 bytes [200 OK]>
+2024-06-08 12:34:43,748 - INFO - 127.0.0.1 - - [08/Jun/2024 12:34:43] "GET /generate_question/How%20you%20would%20aggregate%20logs%20in%20distributed%20micro%20service%20architecture%3F HTTP/1.1" 200 -
+2024-06-08 12:34:43,810 - INFO - <Response streamed [404 NOT FOUND]>
+2024-06-08 12:34:43,812 - INFO - 127.0.0.1 - - [08/Jun/2024 12:34:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-06-08 12:35:59,441 - INFO - <Response 14317 bytes [200 OK]>
+2024-06-08 12:35:59,442 - INFO - 127.0.0.1 - - [08/Jun/2024 12:35:59] "GET / HTTP/1.1" 200 -
+2024-06-08 12:35:59,464 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:35:59,467 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:35:59,468 - INFO - 127.0.0.1 - - [08/Jun/2024 12:35:59] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 12:35:59,469 - INFO - 127.0.0.1 - - [08/Jun/2024 12:35:59] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 12:35:59,510 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:35:59,511 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:35:59,512 - INFO - 127.0.0.1 - - [08/Jun/2024 12:35:59] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 12:35:59,513 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:35:59,514 - INFO - 127.0.0.1 - - [08/Jun/2024 12:35:59] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 12:35:59,517 - INFO - 127.0.0.1 - - [08/Jun/2024 12:35:59] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 12:35:59,518 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:35:59,524 - INFO - 127.0.0.1 - - [08/Jun/2024 12:35:59] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 12:35:59,526 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:35:59,528 - INFO - 127.0.0.1 - - [08/Jun/2024 12:35:59] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 12:35:59,632 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:35:59,633 - INFO - 127.0.0.1 - - [08/Jun/2024 12:35:59] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 12:35:59,635 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:35:59,636 - INFO - 127.0.0.1 - - [08/Jun/2024 12:35:59] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 12:35:59,647 - INFO - Cache used for key: view//questoes
+2024-06-08 12:35:59,647 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 12:35:59,648 - INFO - 127.0.0.1 - - [08/Jun/2024 12:35:59] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 12:36:03,067 - INFO - <Response 126 bytes [200 OK]>
+2024-06-08 12:36:03,070 - INFO - 127.0.0.1 - - [08/Jun/2024 12:36:03] "GET /generate_question/How%20you%20would%20aggregate%20logs%20in%20distributed%20micro%20service%20architecture%3F HTTP/1.1" 200 -
+2024-06-08 12:36:03,140 - INFO - <Response streamed [404 NOT FOUND]>
+2024-06-08 12:36:03,143 - INFO - 127.0.0.1 - - [08/Jun/2024 12:36:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-06-08 12:36:31,240 - INFO - <Response 14315 bytes [200 OK]>
+2024-06-08 12:36:31,242 - INFO - 127.0.0.1 - - [08/Jun/2024 12:36:31] "GET / HTTP/1.1" 200 -
+2024-06-08 12:36:31,262 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:36:31,263 - INFO - 127.0.0.1 - - [08/Jun/2024 12:36:31] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 12:36:31,264 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:36:31,265 - INFO - 127.0.0.1 - - [08/Jun/2024 12:36:31] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 12:36:31,288 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:36:31,291 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:36:31,292 - INFO - 127.0.0.1 - - [08/Jun/2024 12:36:31] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 12:36:31,293 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:36:31,295 - INFO - 127.0.0.1 - - [08/Jun/2024 12:36:31] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 12:36:31,297 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:36:31,298 - INFO - 127.0.0.1 - - [08/Jun/2024 12:36:31] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 12:36:31,302 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:36:31,304 - INFO - 127.0.0.1 - - [08/Jun/2024 12:36:31] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 12:36:31,306 - INFO - 127.0.0.1 - - [08/Jun/2024 12:36:31] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 12:36:31,367 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:36:31,370 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:36:31,371 - INFO - 127.0.0.1 - - [08/Jun/2024 12:36:31] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 12:36:31,373 - INFO - 127.0.0.1 - - [08/Jun/2024 12:36:31] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 12:36:31,384 - INFO - Cache used for key: view//questoes
+2024-06-08 12:36:31,385 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 12:36:31,387 - INFO - 127.0.0.1 - - [08/Jun/2024 12:36:31] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 12:36:33,168 - INFO - <Response 126 bytes [200 OK]>
+2024-06-08 12:36:33,172 - INFO - 127.0.0.1 - - [08/Jun/2024 12:36:33] "GET /generate_question/How%20you%20would%20aggregate%20logs%20in%20distributed%20micro%20service%20architecture%3F HTTP/1.1" 200 -
+2024-06-08 12:36:33,213 - INFO - <Response streamed [404 NOT FOUND]>
+2024-06-08 12:36:33,214 - INFO - 127.0.0.1 - - [08/Jun/2024 12:36:33] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-06-08 12:37:14,164 - INFO - <Response 14315 bytes [200 OK]>
+2024-06-08 12:37:14,168 - INFO - 127.0.0.1 - - [08/Jun/2024 12:37:14] "GET / HTTP/1.1" 200 -
+2024-06-08 12:37:14,236 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:37:14,246 - INFO - 127.0.0.1 - - [08/Jun/2024 12:37:14] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 12:37:14,247 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:37:14,250 - INFO - 127.0.0.1 - - [08/Jun/2024 12:37:14] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 12:37:14,278 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:37:14,279 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:37:14,284 - INFO - 127.0.0.1 - - [08/Jun/2024 12:37:14] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 12:37:14,288 - INFO - 127.0.0.1 - - [08/Jun/2024 12:37:14] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 12:37:14,289 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:37:14,289 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:37:14,294 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:37:14,297 - INFO - 127.0.0.1 - - [08/Jun/2024 12:37:14] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 12:37:14,299 - INFO - 127.0.0.1 - - [08/Jun/2024 12:37:14] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 12:37:14,301 - INFO - 127.0.0.1 - - [08/Jun/2024 12:37:14] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 12:37:14,348 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:37:14,352 - INFO - 127.0.0.1 - - [08/Jun/2024 12:37:14] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 12:37:14,355 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:37:14,356 - INFO - 127.0.0.1 - - [08/Jun/2024 12:37:14] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 12:37:14,369 - INFO - Cache used for key: view//questoes
+2024-06-08 12:37:14,370 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 12:37:14,371 - INFO - 127.0.0.1 - - [08/Jun/2024 12:37:14] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 12:37:15,805 - INFO - <Response 126 bytes [200 OK]>
+2024-06-08 12:37:15,812 - INFO - 127.0.0.1 - - [08/Jun/2024 12:37:15] "GET /generate_question/How%20you%20would%20aggregate%20logs%20in%20distributed%20micro%20service%20architecture%3F HTTP/1.1" 200 -
+2024-06-08 12:37:15,865 - INFO - <Response streamed [404 NOT FOUND]>
+2024-06-08 12:37:15,867 - INFO - 127.0.0.1 - - [08/Jun/2024 12:37:15] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-06-08 12:37:52,511 - INFO - <Response 17400 bytes [200 OK]>
+2024-06-08 12:37:52,515 - INFO - 127.0.0.1 - - [08/Jun/2024 12:37:52] "GET /cadastro_entrevista HTTP/1.1" 200 -
+2024-06-08 12:37:52,551 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:37:52,557 - INFO - 127.0.0.1 - - [08/Jun/2024 12:37:52] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 12:37:52,559 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:37:52,561 - INFO - 127.0.0.1 - - [08/Jun/2024 12:37:52] "GET /static/js/cadastro_entrevista.js HTTP/1.1" 200 -
+2024-06-08 12:37:52,567 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:37:52,569 - INFO - 127.0.0.1 - - [08/Jun/2024 12:37:52] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 12:39:43,121 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 12:39:43,122 - INFO - 127.0.0.1 - - [08/Jun/2024 12:39:43] "GET / HTTP/1.1" 200 -
+2024-06-08 12:39:43,133 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:39:43,134 - INFO - 127.0.0.1 - - [08/Jun/2024 12:39:43] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 12:39:43,137 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:39:43,138 - INFO - 127.0.0.1 - - [08/Jun/2024 12:39:43] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 12:39:43,170 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:39:43,170 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:39:43,171 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:39:43,171 - INFO - 127.0.0.1 - - [08/Jun/2024 12:39:43] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 12:39:43,172 - INFO - 127.0.0.1 - - [08/Jun/2024 12:39:43] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 12:39:43,176 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:39:43,177 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:39:43,178 - INFO - 127.0.0.1 - - [08/Jun/2024 12:39:43] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 12:39:43,180 - INFO - 127.0.0.1 - - [08/Jun/2024 12:39:43] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 12:39:43,181 - INFO - 127.0.0.1 - - [08/Jun/2024 12:39:43] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 12:39:43,243 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:39:43,244 - INFO - 127.0.0.1 - - [08/Jun/2024 12:39:43] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 12:39:43,245 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:39:43,246 - INFO - 127.0.0.1 - - [08/Jun/2024 12:39:43] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 12:39:43,252 - INFO - Cache used for key: view//questoes
+2024-06-08 12:39:43,252 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 12:39:43,253 - INFO - 127.0.0.1 - - [08/Jun/2024 12:39:43] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 12:39:45,497 - INFO - <Response 126 bytes [200 OK]>
+2024-06-08 12:39:45,498 - INFO - 127.0.0.1 - - [08/Jun/2024 12:39:45] "GET /generate_question/How%20you%20would%20aggregate%20logs%20in%20distributed%20micro%20service%20architecture%3F HTTP/1.1" 200 -
+2024-06-08 12:39:45,516 - INFO - <Response streamed [404 NOT FOUND]>
+2024-06-08 12:39:45,517 - INFO - 127.0.0.1 - - [08/Jun/2024 12:39:45] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-06-08 12:40:23,683 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 12:40:23,687 - INFO - 127.0.0.1 - - [08/Jun/2024 12:40:23] "GET / HTTP/1.1" 200 -
+2024-06-08 12:40:23,715 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:40:23,716 - INFO - 127.0.0.1 - - [08/Jun/2024 12:40:23] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 12:40:23,717 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:40:23,718 - INFO - 127.0.0.1 - - [08/Jun/2024 12:40:23] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 12:40:23,738 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:40:23,739 - INFO - 127.0.0.1 - - [08/Jun/2024 12:40:23] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 12:40:23,740 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:40:23,749 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:40:23,750 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:40:23,751 - INFO - 127.0.0.1 - - [08/Jun/2024 12:40:23] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 12:40:23,753 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:40:23,754 - INFO - 127.0.0.1 - - [08/Jun/2024 12:40:23] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 12:40:23,756 - INFO - 127.0.0.1 - - [08/Jun/2024 12:40:23] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 12:40:23,758 - INFO - 127.0.0.1 - - [08/Jun/2024 12:40:23] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 12:40:23,817 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:40:23,818 - INFO - 127.0.0.1 - - [08/Jun/2024 12:40:23] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 12:40:23,818 - INFO - <Response streamed [200 OK]>
+2024-06-08 12:40:23,819 - INFO - 127.0.0.1 - - [08/Jun/2024 12:40:23] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 12:40:23,825 - INFO - Cache used for key: view//questoes
+2024-06-08 12:40:23,825 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 12:40:23,826 - INFO - 127.0.0.1 - - [08/Jun/2024 12:40:23] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 12:40:30,796 - INFO - <Response 126 bytes [200 OK]>
+2024-06-08 12:40:30,800 - INFO - 127.0.0.1 - - [08/Jun/2024 12:40:30] "GET /generate_question/How%20you%20would%20aggregate%20logs%20in%20distributed%20micro%20service%20architecture%3F HTTP/1.1" 200 -
+2024-06-08 12:40:30,831 - INFO - <Response streamed [404 NOT FOUND]>
+2024-06-08 12:40:30,833 - INFO - 127.0.0.1 - - [08/Jun/2024 12:40:30] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-06-08 13:09:09,265 - INFO - <Response 17400 bytes [200 OK]>
+2024-06-08 13:09:09,267 - INFO - 127.0.0.1 - - [08/Jun/2024 13:09:09] "GET /cadastro_entrevista HTTP/1.1" 200 -
+2024-06-08 13:09:09,287 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:09:09,288 - INFO - 127.0.0.1 - - [08/Jun/2024 13:09:09] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 13:09:09,292 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:09:09,295 - INFO - 127.0.0.1 - - [08/Jun/2024 13:09:09] "GET /static/js/cadastro_entrevista.js HTTP/1.1" 200 -
+2024-06-08 13:09:09,296 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:09:09,298 - INFO - 127.0.0.1 - - [08/Jun/2024 13:09:09] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 13:09:21,384 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 13:09:21,387 - INFO - 127.0.0.1 - - [08/Jun/2024 13:09:21] "GET / HTTP/1.1" 200 -
+2024-06-08 13:09:21,407 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:09:21,408 - INFO - 127.0.0.1 - - [08/Jun/2024 13:09:21] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 13:09:21,410 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:09:21,411 - INFO - 127.0.0.1 - - [08/Jun/2024 13:09:21] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 13:09:21,426 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:09:21,429 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:09:21,429 - INFO - 127.0.0.1 - - [08/Jun/2024 13:09:21] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 13:09:21,430 - INFO - 127.0.0.1 - - [08/Jun/2024 13:09:21] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 13:09:21,444 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:09:21,447 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:09:21,448 - INFO - 127.0.0.1 - - [08/Jun/2024 13:09:21] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 13:09:21,448 - INFO - 127.0.0.1 - - [08/Jun/2024 13:09:21] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 13:09:21,451 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:09:21,453 - INFO - 127.0.0.1 - - [08/Jun/2024 13:09:21] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 13:09:21,515 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:09:21,516 - INFO - 127.0.0.1 - - [08/Jun/2024 13:09:21] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 13:09:21,519 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:09:21,520 - INFO - 127.0.0.1 - - [08/Jun/2024 13:09:21] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 13:09:21,527 - INFO - Fetching data from the API...
+2024-06-08 13:09:21,539 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 13:09:21,540 - INFO - 127.0.0.1 - - [08/Jun/2024 13:09:21] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 13:09:22,974 - INFO - <Response 126 bytes [200 OK]>
+2024-06-08 13:09:22,981 - INFO - 127.0.0.1 - - [08/Jun/2024 13:09:22] "GET /generate_question/How%20you%20would%20aggregate%20logs%20in%20distributed%20micro%20service%20architecture%3F HTTP/1.1" 200 -
+2024-06-08 13:09:23,048 - INFO - <Response streamed [404 NOT FOUND]>
+2024-06-08 13:09:23,051 - INFO - 127.0.0.1 - - [08/Jun/2024 13:09:23] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-06-08 13:18:10,158 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 13:18:10,159 - INFO - 127.0.0.1 - - [08/Jun/2024 13:18:10] "GET / HTTP/1.1" 200 -
+2024-06-08 13:18:10,177 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:18:10,178 - INFO - 127.0.0.1 - - [08/Jun/2024 13:18:10] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 13:18:10,179 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:18:10,180 - INFO - 127.0.0.1 - - [08/Jun/2024 13:18:10] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 13:18:10,203 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:18:10,204 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:18:10,207 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:18:10,208 - INFO - 127.0.0.1 - - [08/Jun/2024 13:18:10] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 13:18:10,209 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:18:10,211 - INFO - 127.0.0.1 - - [08/Jun/2024 13:18:10] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 13:18:10,212 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:18:10,213 - INFO - 127.0.0.1 - - [08/Jun/2024 13:18:10] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 13:18:10,215 - INFO - 127.0.0.1 - - [08/Jun/2024 13:18:10] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 13:18:10,217 - INFO - 127.0.0.1 - - [08/Jun/2024 13:18:10] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 13:18:10,283 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:18:10,284 - INFO - 127.0.0.1 - - [08/Jun/2024 13:18:10] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 13:18:10,287 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:18:10,288 - INFO - 127.0.0.1 - - [08/Jun/2024 13:18:10] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 13:18:10,293 - INFO - Cache used for key: view//questoes
+2024-06-08 13:18:10,294 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 13:18:10,294 - INFO - 127.0.0.1 - - [08/Jun/2024 13:18:10] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 13:18:11,818 - INFO - <Response 126 bytes [200 OK]>
+2024-06-08 13:18:11,822 - INFO - 127.0.0.1 - - [08/Jun/2024 13:18:11] "GET /generate_question/How%20you%20would%20aggregate%20logs%20in%20distributed%20micro%20service%20architecture%3F HTTP/1.1" 200 -
+2024-06-08 13:18:11,880 - INFO - <Response streamed [404 NOT FOUND]>
+2024-06-08 13:18:11,883 - INFO - 127.0.0.1 - - [08/Jun/2024 13:18:11] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-06-08 13:19:12,553 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 13:19:12,554 - INFO - 127.0.0.1 - - [08/Jun/2024 13:19:12] "GET / HTTP/1.1" 200 -
+2024-06-08 13:19:12,576 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:19:12,577 - INFO - 127.0.0.1 - - [08/Jun/2024 13:19:12] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 13:19:12,577 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:19:12,579 - INFO - 127.0.0.1 - - [08/Jun/2024 13:19:12] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 13:19:12,587 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:19:12,589 - INFO - 127.0.0.1 - - [08/Jun/2024 13:19:12] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 13:19:12,590 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:19:12,591 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:19:12,592 - INFO - 127.0.0.1 - - [08/Jun/2024 13:19:12] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 13:19:12,595 - INFO - 127.0.0.1 - - [08/Jun/2024 13:19:12] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 13:19:12,599 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:19:12,602 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:19:12,604 - INFO - 127.0.0.1 - - [08/Jun/2024 13:19:12] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 13:19:12,607 - INFO - 127.0.0.1 - - [08/Jun/2024 13:19:12] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 13:19:12,625 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:19:12,628 - INFO - 127.0.0.1 - - [08/Jun/2024 13:19:12] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 13:19:12,631 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:19:12,632 - INFO - 127.0.0.1 - - [08/Jun/2024 13:19:12] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 13:19:12,638 - INFO - Cache used for key: view//questoes
+2024-06-08 13:19:12,639 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 13:19:12,640 - INFO - 127.0.0.1 - - [08/Jun/2024 13:19:12] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 13:19:13,873 - INFO - <Response 126 bytes [200 OK]>
+2024-06-08 13:19:13,874 - INFO - 127.0.0.1 - - [08/Jun/2024 13:19:13] "GET /generate_question/How%20you%20would%20aggregate%20logs%20in%20distributed%20micro%20service%20architecture%3F HTTP/1.1" 200 -
+2024-06-08 13:19:13,888 - INFO - <Response streamed [404 NOT FOUND]>
+2024-06-08 13:19:13,889 - INFO - 127.0.0.1 - - [08/Jun/2024 13:19:13] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-06-08 13:32:21,786 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 13:32:21,788 - INFO - 127.0.0.1 - - [08/Jun/2024 13:32:21] "GET / HTTP/1.1" 200 -
+2024-06-08 13:32:21,805 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:32:21,806 - INFO - 127.0.0.1 - - [08/Jun/2024 13:32:21] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 13:32:21,810 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:32:21,811 - INFO - 127.0.0.1 - - [08/Jun/2024 13:32:21] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 13:32:21,817 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:32:21,819 - INFO - 127.0.0.1 - - [08/Jun/2024 13:32:21] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 13:32:21,823 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:32:21,824 - INFO - 127.0.0.1 - - [08/Jun/2024 13:32:21] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 13:32:21,827 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:32:21,829 - INFO - 127.0.0.1 - - [08/Jun/2024 13:32:21] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 13:32:21,832 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:32:21,833 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:32:21,834 - INFO - 127.0.0.1 - - [08/Jun/2024 13:32:21] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 13:32:21,835 - INFO - 127.0.0.1 - - [08/Jun/2024 13:32:21] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 13:32:21,844 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:32:21,844 - INFO - 127.0.0.1 - - [08/Jun/2024 13:32:21] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 13:32:21,852 - INFO - Cache used for key: view//questoes
+2024-06-08 13:32:21,852 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 13:32:21,853 - INFO - 127.0.0.1 - - [08/Jun/2024 13:32:21] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 13:32:23,912 - INFO - <Response 126 bytes [200 OK]>
+2024-06-08 13:32:23,917 - INFO - 127.0.0.1 - - [08/Jun/2024 13:32:23] "GET /generate_question/How%20you%20would%20aggregate%20logs%20in%20distributed%20micro%20service%20architecture%3F HTTP/1.1" 200 -
+2024-06-08 13:32:23,949 - INFO - <Response streamed [404 NOT FOUND]>
+2024-06-08 13:32:23,950 - INFO - 127.0.0.1 - - [08/Jun/2024 13:32:23] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-06-08 13:33:25,085 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 13:33:25,088 - INFO - 127.0.0.1 - - [08/Jun/2024 13:33:25] "GET / HTTP/1.1" 200 -
+2024-06-08 13:33:25,105 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:33:25,106 - INFO - 127.0.0.1 - - [08/Jun/2024 13:33:25] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 13:33:25,110 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:33:25,111 - INFO - 127.0.0.1 - - [08/Jun/2024 13:33:25] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 13:33:25,122 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:33:25,123 - INFO - 127.0.0.1 - - [08/Jun/2024 13:33:25] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 13:33:25,127 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:33:25,128 - INFO - 127.0.0.1 - - [08/Jun/2024 13:33:25] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 13:33:25,130 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:33:25,131 - INFO - 127.0.0.1 - - [08/Jun/2024 13:33:25] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 13:33:25,136 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:33:25,138 - INFO - 127.0.0.1 - - [08/Jun/2024 13:33:25] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 13:33:25,144 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:33:25,145 - INFO - 127.0.0.1 - - [08/Jun/2024 13:33:25] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 13:33:25,160 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:33:25,161 - INFO - 127.0.0.1 - - [08/Jun/2024 13:33:25] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 13:33:25,169 - INFO - Cache used for key: view//questoes
+2024-06-08 13:33:25,169 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 13:33:25,170 - INFO - 127.0.0.1 - - [08/Jun/2024 13:33:25] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 13:33:26,962 - INFO - <Response 126 bytes [200 OK]>
+2024-06-08 13:33:26,966 - INFO - 127.0.0.1 - - [08/Jun/2024 13:33:26] "GET /generate_question/How%20you%20would%20aggregate%20logs%20in%20distributed%20micro%20service%20architecture%3F HTTP/1.1" 200 -
+2024-06-08 13:33:27,018 - INFO - <Response streamed [404 NOT FOUND]>
+2024-06-08 13:33:27,021 - INFO - 127.0.0.1 - - [08/Jun/2024 13:33:27] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-06-08 13:33:55,312 - INFO - <Response 126 bytes [200 OK]>
+2024-06-08 13:33:55,316 - INFO - 127.0.0.1 - - [08/Jun/2024 13:33:55] "GET /generate_question/How%20you%20would%20aggregate%20logs%20in%20distributed%20micro%20service%20architecture%3F HTTP/1.1" 200 -
+2024-06-08 13:34:01,002 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 13:34:01,006 - INFO - 127.0.0.1 - - [08/Jun/2024 13:34:01] "GET / HTTP/1.1" 200 -
+2024-06-08 13:34:01,062 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:34:01,066 - INFO - 127.0.0.1 - - [08/Jun/2024 13:34:01] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 13:34:01,084 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:34:01,090 - INFO - 127.0.0.1 - - [08/Jun/2024 13:34:01] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 13:34:01,101 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:34:01,104 - INFO - 127.0.0.1 - - [08/Jun/2024 13:34:01] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 13:34:01,113 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:34:01,115 - INFO - 127.0.0.1 - - [08/Jun/2024 13:34:01] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 13:34:01,123 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:34:01,125 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:34:01,128 - INFO - 127.0.0.1 - - [08/Jun/2024 13:34:01] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 13:34:01,129 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:34:01,131 - INFO - 127.0.0.1 - - [08/Jun/2024 13:34:01] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 13:34:01,133 - INFO - 127.0.0.1 - - [08/Jun/2024 13:34:01] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 13:34:01,143 - INFO - Cache used for key: view//questoes
+2024-06-08 13:34:01,144 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 13:34:01,145 - INFO - 127.0.0.1 - - [08/Jun/2024 13:34:01] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 13:34:14,196 - INFO - <Response 126 bytes [200 OK]>
+2024-06-08 13:34:14,201 - INFO - 127.0.0.1 - - [08/Jun/2024 13:34:14] "GET /generate_question/How%20you%20would%20aggregate%20logs%20in%20distributed%20micro%20service%20architecture%3F HTTP/1.1" 200 -
+2024-06-08 13:34:14,243 - INFO - <Response streamed [404 NOT FOUND]>
+2024-06-08 13:34:14,248 - INFO - 127.0.0.1 - - [08/Jun/2024 13:34:14] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-06-08 13:34:37,788 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 13:34:37,790 - INFO - 127.0.0.1 - - [08/Jun/2024 13:34:37] "GET / HTTP/1.1" 200 -
+2024-06-08 13:34:37,806 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:34:37,807 - INFO - 127.0.0.1 - - [08/Jun/2024 13:34:37] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 13:34:37,810 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:34:37,812 - INFO - 127.0.0.1 - - [08/Jun/2024 13:34:37] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 13:34:37,823 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:34:37,824 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:34:37,825 - INFO - 127.0.0.1 - - [08/Jun/2024 13:34:37] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 13:34:37,826 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:34:37,826 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:34:37,827 - INFO - 127.0.0.1 - - [08/Jun/2024 13:34:37] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 13:34:37,830 - INFO - 127.0.0.1 - - [08/Jun/2024 13:34:37] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 13:34:37,831 - INFO - 127.0.0.1 - - [08/Jun/2024 13:34:37] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 13:34:37,836 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:34:37,837 - INFO - 127.0.0.1 - - [08/Jun/2024 13:34:37] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 13:34:37,848 - INFO - Cache used for key: view//questoes
+2024-06-08 13:34:37,849 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 13:34:37,850 - INFO - 127.0.0.1 - - [08/Jun/2024 13:34:37] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 13:42:23,497 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 13:42:23,498 - INFO - 127.0.0.1 - - [08/Jun/2024 13:42:23] "GET / HTTP/1.1" 200 -
+2024-06-08 13:42:23,514 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:42:23,516 - INFO - 127.0.0.1 - - [08/Jun/2024 13:42:23] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 13:42:23,516 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:42:23,518 - INFO - 127.0.0.1 - - [08/Jun/2024 13:42:23] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 13:42:23,530 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:42:23,531 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:42:23,532 - INFO - 127.0.0.1 - - [08/Jun/2024 13:42:23] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 13:42:23,533 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:42:23,534 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:42:23,535 - INFO - 127.0.0.1 - - [08/Jun/2024 13:42:23] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 13:42:23,537 - INFO - 127.0.0.1 - - [08/Jun/2024 13:42:23] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 13:42:23,539 - INFO - 127.0.0.1 - - [08/Jun/2024 13:42:23] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 13:42:23,555 - INFO - <Response streamed [200 OK]>
+2024-06-08 13:42:23,556 - INFO - 127.0.0.1 - - [08/Jun/2024 13:42:23] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 13:42:23,569 - INFO - Cache used for key: view//questoes
+2024-06-08 13:42:23,570 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 13:42:23,571 - INFO - 127.0.0.1 - - [08/Jun/2024 13:42:23] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 13:42:24,867 - INFO - <Response 126 bytes [200 OK]>
+2024-06-08 13:42:24,871 - INFO - 127.0.0.1 - - [08/Jun/2024 13:42:24] "GET /generate_question/How%20you%20would%20aggregate%20logs%20in%20distributed%20micro%20service%20architecture%3F HTTP/1.1" 200 -
+2024-06-08 13:42:24,938 - INFO - <Response streamed [404 NOT FOUND]>
+2024-06-08 13:42:24,943 - INFO - 127.0.0.1 - - [08/Jun/2024 13:42:24] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2024-06-08 13:42:58,240 - INFO - <Response 126 bytes [200 OK]>
+2024-06-08 13:42:58,243 - INFO - 127.0.0.1 - - [08/Jun/2024 13:42:58] "GET /generate_question/How%20you%20would%20aggregate%20logs%20in%20distributed%20micro%20service%20architecture%3F HTTP/1.1" 200 -
+2024-06-08 13:43:14,952 - INFO - <Response 126 bytes [200 OK]>
+2024-06-08 13:43:14,959 - INFO - 127.0.0.1 - - [08/Jun/2024 13:43:14] "GET /generate_question/How%20you%20would%20aggregate%20logs%20in%20distributed%20micro%20service%20architecture%3F HTTP/1.1" 200 -
+2024-06-08 14:42:05,224 - INFO - <Response 126 bytes [200 OK]>
+2024-06-08 14:42:05,228 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:05] "GET /generate_question/How%20you%20would%20aggregate%20logs%20in%20distributed%20micro%20service%20architecture%3F HTTP/1.1" 200 -
+2024-06-08 14:42:23,978 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 14:42:23,981 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:23] "GET / HTTP/1.1" 200 -
+2024-06-08 14:42:24,012 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:24,013 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:24] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 14:42:24,016 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:24,017 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:24] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 14:42:24,030 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:24,031 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:24,031 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:24] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 14:42:24,032 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:24,033 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:24] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 14:42:24,034 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:24,035 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:24] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 14:42:24,041 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:24] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 14:42:24,043 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:24,046 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:24] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 14:42:24,065 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:24,066 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:24] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 14:42:24,072 - INFO - Fetching data from the API...
+2024-06-08 14:42:24,082 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 14:42:24,083 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:24] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 14:42:24,599 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 14:42:24,602 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:24] "GET / HTTP/1.1" 200 -
+2024-06-08 14:42:24,620 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:24,621 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:24] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 14:42:24,625 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:24,626 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:24] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 14:42:24,635 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:24,636 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:24,637 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:24] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 14:42:24,639 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:24,639 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:24] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 14:42:24,641 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:24] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 14:42:24,649 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:24,650 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:24,651 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:24] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 14:42:24,653 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:24] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 14:42:24,662 - INFO - Cache used for key: view//questoes
+2024-06-08 14:42:24,662 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 14:42:24,663 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:24] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 14:42:25,138 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 14:42:25,144 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:25] "GET / HTTP/1.1" 200 -
+2024-06-08 14:42:25,189 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:25,191 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:25] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 14:42:25,199 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:25,200 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:25] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 14:42:25,215 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:25,216 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:25] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 14:42:25,217 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:25,219 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:25,222 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:25,224 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:25] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 14:42:25,225 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:25] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 14:42:25,232 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:25] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 14:42:25,233 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:25,236 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:25] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 14:42:25,247 - INFO - Cache used for key: view//questoes
+2024-06-08 14:42:25,247 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 14:42:25,249 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:25] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 14:42:25,510 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 14:42:25,517 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:25] "GET / HTTP/1.1" 200 -
+2024-06-08 14:42:25,564 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:25,574 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:25] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 14:42:25,579 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:25,583 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:25] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 14:42:25,615 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:25,618 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:25] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 14:42:25,620 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:25,628 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:25,629 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:25,631 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:25] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 14:42:25,635 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:25] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 14:42:25,638 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:25] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 14:42:25,644 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:25,652 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:25] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 14:42:25,661 - INFO - Cache used for key: view//questoes
+2024-06-08 14:42:25,661 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 14:42:25,662 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:25] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 14:42:25,814 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 14:42:25,819 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:25] "GET / HTTP/1.1" 200 -
+2024-06-08 14:42:25,860 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:25,865 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:25] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 14:42:25,876 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:25,882 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:25] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 14:42:25,910 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:25,912 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:25,913 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:25,915 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:25] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 14:42:25,922 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:25,923 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:25] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 14:42:25,926 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:25] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 14:42:25,929 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:25] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 14:42:25,936 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:25,939 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:25] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 14:42:25,944 - INFO - Cache used for key: view//questoes
+2024-06-08 14:42:25,945 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 14:42:25,946 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:25] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 14:42:26,074 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 14:42:26,075 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:26] "GET / HTTP/1.1" 200 -
+2024-06-08 14:42:26,088 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:26,089 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:26] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 14:42:26,093 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:26,098 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:26] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 14:42:26,099 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:26,103 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:26] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 14:42:26,106 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:26,107 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:26,108 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:26] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 14:42:26,112 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:26] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 14:42:26,113 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:26,117 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:26] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 14:42:26,119 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:26,120 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:26] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 14:42:26,128 - INFO - Cache used for key: view//questoes
+2024-06-08 14:42:26,129 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 14:42:26,130 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:26] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 14:42:26,429 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 14:42:26,430 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:26] "GET / HTTP/1.1" 200 -
+2024-06-08 14:42:26,443 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:26,444 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:26] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 14:42:26,449 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:26,450 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:26] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 14:42:26,454 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:26,455 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:26] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 14:42:26,458 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:26,459 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:26] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 14:42:26,465 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:26,466 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:26] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 14:42:26,470 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:26,476 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:26,478 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:26] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 14:42:26,479 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:26] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 14:42:26,487 - INFO - Cache used for key: view//questoes
+2024-06-08 14:42:26,487 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 14:42:26,488 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:26] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 14:42:26,772 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 14:42:26,775 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:26] "GET / HTTP/1.1" 200 -
+2024-06-08 14:42:26,797 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:26,799 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:26] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 14:42:26,802 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:26,804 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:26] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 14:42:26,808 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:26,809 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:26] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 14:42:26,813 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:26,816 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:26] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 14:42:26,819 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:26,820 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:26,821 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:26] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 14:42:26,827 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:26] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 14:42:26,829 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:26,832 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:26] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 14:42:26,839 - INFO - Cache used for key: view//questoes
+2024-06-08 14:42:26,839 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 14:42:26,840 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:26] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 14:42:27,066 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 14:42:27,069 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET / HTTP/1.1" 200 -
+2024-06-08 14:42:27,103 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:27,107 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 14:42:27,109 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:27,113 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:27,117 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:27,119 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 14:42:27,123 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 14:42:27,125 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 14:42:27,126 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:27,133 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 14:42:27,134 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:27,137 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 14:42:27,141 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:27,142 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 14:42:27,153 - INFO - Cache used for key: view//questoes
+2024-06-08 14:42:27,153 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 14:42:27,154 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 14:42:27,271 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 14:42:27,272 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET / HTTP/1.1" 200 -
+2024-06-08 14:42:27,283 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:27,285 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 14:42:27,287 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:27,288 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 14:42:27,295 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:27,298 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:27,298 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 14:42:27,301 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:27,304 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 14:42:27,304 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:27,307 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 14:42:27,313 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:27,315 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 14:42:27,317 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 14:42:27,328 - INFO - Cache used for key: view//questoes
+2024-06-08 14:42:27,329 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 14:42:27,330 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 14:42:27,526 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 14:42:27,533 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET / HTTP/1.1" 200 -
+2024-06-08 14:42:27,555 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:27,557 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 14:42:27,561 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:27,562 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 14:42:27,570 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:27,571 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 14:42:27,575 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:27,576 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 14:42:27,580 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:27,581 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 14:42:27,584 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:27,588 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:27,589 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 14:42:27,590 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 14:42:27,599 - INFO - Cache used for key: view//questoes
+2024-06-08 14:42:27,599 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 14:42:27,600 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 14:42:27,756 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 14:42:27,760 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET / HTTP/1.1" 200 -
+2024-06-08 14:42:27,807 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:27,812 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 14:42:27,815 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:27,818 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 14:42:27,831 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:27,832 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:27,833 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:27,835 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 14:42:27,839 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:27,841 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 14:42:27,842 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 14:42:27,845 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 14:42:27,860 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:27,862 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 14:42:27,872 - INFO - Cache used for key: view//questoes
+2024-06-08 14:42:27,872 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 14:42:27,873 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 14:42:27,991 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 14:42:27,994 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:27] "GET / HTTP/1.1" 200 -
+2024-06-08 14:42:28,019 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,022 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 14:42:28,030 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,032 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 14:42:28,039 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,042 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 14:42:28,047 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,051 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 14:42:28,057 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,061 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 14:42:28,072 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,075 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,077 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 14:42:28,079 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 14:42:28,097 - INFO - Cache used for key: view//questoes
+2024-06-08 14:42:28,098 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 14:42:28,101 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 14:42:28,159 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 14:42:28,161 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET / HTTP/1.1" 200 -
+2024-06-08 14:42:28,202 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,203 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,204 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 14:42:28,205 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 14:42:28,211 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,212 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,213 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 14:42:28,214 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 14:42:28,220 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,221 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 14:42:28,228 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,229 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,230 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 14:42:28,231 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 14:42:28,240 - INFO - Cache used for key: view//questoes
+2024-06-08 14:42:28,242 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 14:42:28,243 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 14:42:28,366 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 14:42:28,371 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET / HTTP/1.1" 200 -
+2024-06-08 14:42:28,419 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,429 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 14:42:28,436 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,442 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 14:42:28,454 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,465 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 14:42:28,471 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,483 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,485 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,488 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 14:42:28,490 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 14:42:28,499 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 14:42:28,502 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,508 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 14:42:28,526 - INFO - Cache used for key: view//questoes
+2024-06-08 14:42:28,526 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 14:42:28,528 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 14:42:28,694 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 14:42:28,697 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET / HTTP/1.1" 200 -
+2024-06-08 14:42:28,716 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,717 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,718 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 14:42:28,719 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 14:42:28,727 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,728 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 14:42:28,729 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,730 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,733 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 14:42:28,734 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 14:42:28,737 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,746 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,748 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 14:42:28,749 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 14:42:28,757 - INFO - Cache used for key: view//questoes
+2024-06-08 14:42:28,758 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 14:42:28,759 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 14:42:28,874 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 14:42:28,875 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET / HTTP/1.1" 200 -
+2024-06-08 14:42:28,891 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,892 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,893 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 14:42:28,895 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 14:42:28,902 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,903 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 14:42:28,906 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,907 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,909 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 14:42:28,909 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 14:42:28,918 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,920 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 14:42:28,921 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:28,923 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 14:42:28,930 - INFO - Cache used for key: view//questoes
+2024-06-08 14:42:28,931 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 14:42:28,932 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:28] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 14:42:29,072 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 14:42:29,078 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:29] "GET / HTTP/1.1" 200 -
+2024-06-08 14:42:29,106 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:29,107 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:29] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 14:42:29,111 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:29,112 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:29] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 14:42:29,117 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:29,118 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:29] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 14:42:29,123 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:29,124 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:29] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 14:42:29,132 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:29,134 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:29] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 14:42:29,139 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:29,140 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:29,141 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:29] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 14:42:29,143 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:29] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 14:42:29,158 - INFO - Cache used for key: view//questoes
+2024-06-08 14:42:29,159 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 14:42:29,161 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:29] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 14:42:30,086 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 14:42:30,090 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:30] "GET / HTTP/1.1" 200 -
+2024-06-08 14:42:30,149 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:30,156 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:30] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 14:42:30,164 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:30,168 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:30] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 14:42:30,179 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:30,180 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:30] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 14:42:30,182 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:30,184 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:30] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 14:42:30,189 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:30,191 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:30] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 14:42:30,200 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:30,201 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:30] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 14:42:30,203 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:30,204 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:30] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 14:42:30,219 - INFO - Cache used for key: view//questoes
+2024-06-08 14:42:30,219 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 14:42:30,220 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:30] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 14:42:30,999 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 14:42:31,002 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:31] "GET / HTTP/1.1" 200 -
+2024-06-08 14:42:31,023 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:31,025 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:31] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 14:42:31,029 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:31,031 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:31] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 14:42:31,035 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:31,038 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:31,039 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:31] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 14:42:31,044 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:31,046 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:31,046 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:31] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 14:42:31,049 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:31] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 14:42:31,055 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:31] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 14:42:31,058 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:31,063 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:31] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 14:42:31,069 - INFO - Cache used for key: view//questoes
+2024-06-08 14:42:31,070 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 14:42:31,070 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:31] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 14:42:31,784 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 14:42:31,789 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:31] "GET / HTTP/1.1" 200 -
+2024-06-08 14:42:31,827 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:31,831 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:31,833 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:31] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 14:42:31,834 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:31] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 14:42:31,846 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:31,847 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:31,850 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:31,851 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:31] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 14:42:31,852 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:31,852 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:31] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 14:42:31,854 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:31] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 14:42:31,856 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:31] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 14:42:31,863 - INFO - <Response streamed [200 OK]>
+2024-06-08 14:42:31,865 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:31] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 14:42:31,873 - INFO - Cache used for key: view//questoes
+2024-06-08 14:42:31,873 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 14:42:31,874 - INFO - 127.0.0.1 - - [08/Jun/2024 14:42:31] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 16:32:59,101 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 16:32:59,102 - INFO - 127.0.0.1 - - [08/Jun/2024 16:32:59] "GET / HTTP/1.1" 200 -
+2024-06-08 16:32:59,115 - INFO - <Response streamed [200 OK]>
+2024-06-08 16:32:59,116 - INFO - 127.0.0.1 - - [08/Jun/2024 16:32:59] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 16:32:59,119 - INFO - <Response streamed [200 OK]>
+2024-06-08 16:32:59,120 - INFO - 127.0.0.1 - - [08/Jun/2024 16:32:59] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 16:32:59,123 - INFO - <Response streamed [200 OK]>
+2024-06-08 16:32:59,124 - INFO - 127.0.0.1 - - [08/Jun/2024 16:32:59] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 16:32:59,130 - INFO - <Response streamed [200 OK]>
+2024-06-08 16:32:59,131 - INFO - 127.0.0.1 - - [08/Jun/2024 16:32:59] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 16:32:59,136 - INFO - <Response streamed [200 OK]>
+2024-06-08 16:32:59,137 - INFO - <Response streamed [200 OK]>
+2024-06-08 16:32:59,138 - INFO - 127.0.0.1 - - [08/Jun/2024 16:32:59] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 16:32:59,142 - INFO - 127.0.0.1 - - [08/Jun/2024 16:32:59] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 16:32:59,143 - INFO - <Response streamed [200 OK]>
+2024-06-08 16:32:59,147 - INFO - 127.0.0.1 - - [08/Jun/2024 16:32:59] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 16:32:59,157 - INFO - Fetching data from the API...
+2024-06-08 16:32:59,169 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 16:32:59,170 - INFO - 127.0.0.1 - - [08/Jun/2024 16:32:59] "GET /questoes HTTP/1.1" 200 -
+2024-06-08 16:33:20,164 - INFO - <Response 15785 bytes [200 OK]>
+2024-06-08 16:33:20,165 - INFO - 127.0.0.1 - - [08/Jun/2024 16:33:20] "GET / HTTP/1.1" 200 -
+2024-06-08 16:33:20,180 - INFO - <Response streamed [200 OK]>
+2024-06-08 16:33:20,181 - INFO - 127.0.0.1 - - [08/Jun/2024 16:33:20] "GET /static/img/img_2.png HTTP/1.1" 200 -
+2024-06-08 16:33:20,182 - INFO - <Response streamed [200 OK]>
+2024-06-08 16:33:20,183 - INFO - 127.0.0.1 - - [08/Jun/2024 16:33:20] "GET /static/img/img_1.png HTTP/1.1" 200 -
+2024-06-08 16:33:20,190 - INFO - <Response streamed [200 OK]>
+2024-06-08 16:33:20,191 - INFO - 127.0.0.1 - - [08/Jun/2024 16:33:20] "GET /static/js/script.js HTTP/1.1" 200 -
+2024-06-08 16:33:20,193 - INFO - <Response streamed [200 OK]>
+2024-06-08 16:33:20,193 - INFO - <Response streamed [200 OK]>
+2024-06-08 16:33:20,198 - INFO - 127.0.0.1 - - [08/Jun/2024 16:33:20] "GET /static/js/controller.js HTTP/1.1" 200 -
+2024-06-08 16:33:20,198 - INFO - <Response streamed [200 OK]>
+2024-06-08 16:33:20,200 - INFO - 127.0.0.1 - - [08/Jun/2024 16:33:20] "GET /static/js/main.js HTTP/1.1" 200 -
+2024-06-08 16:33:20,204 - INFO - 127.0.0.1 - - [08/Jun/2024 16:33:20] "GET /static/js/jquery.fittext.js HTTP/1.1" 200 -
+2024-06-08 16:33:20,206 - INFO - <Response streamed [200 OK]>
+2024-06-08 16:33:20,211 - INFO - 127.0.0.1 - - [08/Jun/2024 16:33:20] "GET /static/js/jquery.lettering.js HTTP/1.1" 200 -
+2024-06-08 16:33:20,217 - INFO - Cache used for key: view//questoes
+2024-06-08 16:33:20,218 - INFO - <Response 388 bytes [200 OK]>
+2024-06-08 16:33:20,219 - INFO - 127.0.0.1 - - [08/Jun/2024 16:33:20] "GET /questoes HTTP/1.1" 200 -
