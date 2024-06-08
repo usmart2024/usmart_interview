@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>U$mart</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FitText.js/1.2.0/jquery.fittext.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+</head>
+<body >
+  <div class="container-mother">
+    <div class="container-fluid h-100">
+      <div class="row h-100">
+          <div class="coluna1 col-lg-1">
+            <div class="container">
+                <div class="row">
+                    <div class="sidebar-menu">
+                        <div class="menu-item">
+                            <i class="fas fa-pause"></i>
+                        </div>
+                        <div class="menu-item">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="menu-item">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="menu-item">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="menu-item">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                            <div class="menu-item">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                            <div class="menu-item">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                            <div class="menu-item">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        <div class="coluna2 col-lg-8">
+          <div class="linha-separadora">
+                  Given an interval newInterval and an array of intervals, create a function that inserts that newInterval in the array,  and to merge if necessary. Note that the
+    intervals in the array are non-overlapping, and are sorted according to their starting point.
+
+    Example 1:
+
+    Input: intervals = [[1, 3], [4, 7], [8, 10], [12, 15], [16, 17], [18, 20], [21, 25], [28, 29]], newInterval = [9, 18]
+
+    Output: [[1, 3], [4, 7], [8, 20], [21, 25], [28, 29]]
+
+          </div>
+            <div class="filho-coluna2">
+             <div id="editor" style="height: 740px; width: 1220px;">
+ import java.util.*;
+
+  public class Exercise {
+    public int[][] insertInterval(int[][] intervals, int[] newInterval){
+
+    }
+}
+         </div>
+     </div>
+
+        </div>
+        <div class="coluna3 col-lg-3">
+          <div class="linked-lists-box">
+                <div class="row" style="height:50px" >
+                    <div id="volume-bars"   >
+                         <div class="bar"></div>
+                         <div class="bar"></div>
+                         <div class="bar"></div>
+                         <div class="bar"></div>
+                         <div class="bar"></div>
+                    </div>
+                </div>
+                   <div class="profiles">
+                       <div class="profile interviewer">
+                            <img  src="{{ url_for('static', filename='img/img_1.png')}}" alt="Entrevistador Michael" >
+                            <div class="name">Entrevistador Michael </div>
+                       </div>
+                   </div>
+                   <div class="control-icons">
+                         <div  id="openMicButton" class="icon-circle"  hidden ><i class="fas fa-microphone"></i></div>
+                         <div  id="muteButton"  class="icon-circle">  <i class="fas fa-microphone-slash"></i> </div>
+                         <span id="finish" class="icon-circle" hidden ><i class="fas fa-phone-slash"></i></span>
+                         <span id="play" class="icon-circle"><i class="fas fa-play"></i></span>
+                         <span class="icon-circle"   id="cronometro">00:15:00</span>
+                   </div>
+          </div>
+         <div class="chat-container">
+           <div id="chat-box"></div>
+         </div>
+       </div>
+       <div>
+    </div>
+      </div>
+    </div></div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/algorithm.js') }}" defer></script>
+<!--  <script type="text/javascript" src="{{ url_for('static', filename='js/controller.js') }}" defer></script>-->
+<!--  <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}" defer></script>-->
+  <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.fittext.js') }}" defer></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.lettering.js') }}" defer></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.fittext.js') }}" defer></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.lettering.js') }}" defer></script>
+  <script>
+      var editor = ace.edit("editor");
+      editor.setTheme("ace/theme/monokai");
+      editor.session.setMode("ace/mode/javascript");
+      editor.setFontSize(14);
+      editor.renderer.setScrollMargin(10, 10); // Add top and bottom padding
+      editor.renderer.setPadding(3); // Add left padding inside the editor
+      editor.renderer.setGutterWidth(10); // Adjust the width of the gutter as needed
+  </script>
+
+</body>
+</html>
+<style>
+    body {
+        overflow: hidden;
+   background: linear-gradient(to bottom, #000000, #00004B);
+
+    color: #ffffff;
+    }
+
+   .linha-separadora {
+     height: 120px;
+  background: linear-top(to bottom, #000000, #00004B);
+  padding-top : 30px;
+    color: #ffffff;
+    }
+
+    .coluna2 {
+        overflow:hidden;
+        height:900px;
+    }
+
+    .filho-coluna2 {
+        overflow:scroll;
+        height:100%;
+    }
+
+    /* Estilos gerais para a barra de rolagem */
+    .filho-coluna2::-webkit-scrollbar {
+        width: 2px;  /* Largura da barra de rolagem */
+        height: 5px; /* Altura para barras de rolagem horizontais, se necessário */
+    }
+
+    .filho-coluna2::-webkit-scrollbar-track {
+        background: #0000FF; /* Cor de fundo da trilha da barra de rolagem */
+    }
+
+    .filho-coluna2::-webkit-scrollbar-thumb {
+        background: #888; /* Cor do indicador de rolagem */
+        border-radius: 5px; /* Bordas arredondadas para o indicador de rolagem */
+    }
+
+    .filho-coluna2::-webkit-scrollbar-thumb:hover {
+        background: #555; /* Cor do indicador de rolagem ao passar o mouse */
+    }
+
+    .container-mother {
+    color: #ffffff;
+    }
+
+    .linked-lists-box {
+        border-radius: 5px; /* Bordas arredondadas mais sutis */
+        box-shadow: 0 0 5px rgba(0, 255, 0, 0.5); /* Sombra verde menor para efeito neon */
+        padding: 10px;
+        color: white;
+        width: 330px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        font-family: Arial, sans-serif;
+}
+
+    .linked-lists-box .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .linked-lists-box .title {
+        font-weight: bold;
+        color: white;
+    }
+
+    .linked-lists-box .level {
+        background: #444;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 0.8rem;
+    }
+
+    .linked-lists-box .level-number {
+        background: #4caf50;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 0.8rem;
+    }
+
+    .linked-lists-box .content p {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+
+    .content {
+        max-height: 550px; /* Define uma altura máxima */
+        overflow-y: auto; /* Permite rolagem vertical se necessário */
+        padding: 10px; /* Espaçamento interno para estética */
+        border-radius: 10px; /* Bordas arredondadas mais sutis */
+      box-shadow: 0 0 15px rgba(0, 0, 255, 0.5); /* Sombra verde menor para efeito neon */
+    }
+
+    .linked-lists-box ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .linked-lists-box ul li {
+        margin-bottom: 10px;
+    }
+
+    .linked-lists-box ul li i {
+        color: #4caf50;
+        margin-right: 10px;
+    }
+
+    .strike {
+       text-decoration: line-through; /* Aplica o efeito de tachado */
+       color: #696969;
+    }
+    .content::-webkit-scrollbar {
+    width: 2px;  /* Largura da barra de rolagem */
+    height: 5px; /* Altura para barras de rolagem horizontais, se necessário */
+    }
+
+    .content::-webkit-scrollbar-track {
+        box-shadow: 0 0 5px rgba(0, 0, 255, 0.5); /* Cor de fundo da trilha da barra de rolagem */
+    }
+
+    .content::-webkit-scrollbar-thumb {
+        box-shadow: 0 0 15px rgba(0, 0, 255, 0.5); /* Cor do indicador de rolagem */
+        border-radius: 5px; /* Bordas arredondadas para o indicador de rolagem */
+    }
+
+    .content::-webkit-scrollbar-thumb:hover {
+        box-shadow: 0 0 5px rgba(0, 0, 255, 0.5); /* Cor do indicador de rolagem ao passar o mouse */
+    }
+
+
+    /* Estilo para o menu lateral */
+   .sidebar-menu {
+    position: fixed;  /* Fixa o menu na tela */
+    top: 50%;         /* Centraliza verticalmente */
+    left: 0;          /* Alinha à esquerda */
+    transform: translateY(-50%); /* Ajuste fino para centralização vertical */
+    background: linear-gradient(to top, black, #00004B); /* Cor de fundo do menu */
+    border-radius: 0 30px 30px 0; /* Bordas arredondadas à direita */
+    padding: 10px;    /* Espaçamento interno */
+    width: 50px;      /* Largura do menu */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2); /* Sombra para efeito 3D */
+    }
+
+    .menu-item {
+        margin: 60px 0;   /* Espaçamento vertical entre ícones */
+        text-align: center; /* Centraliza os ícones horizontalmente */
+    }
+
+    .menu-item i {
+        font-size: 20px;  /* Tamanho dos ícones */
+        color: gray;      /* Cor dos ícones */
+    }
+
+    /* Efeito de hover para os ícones */
+    .menu-item:hover i {
+        color: blue;      /* Cor dos ícones ao passar o mouse */
+        cursor: pointer;  /* Muda o cursor para indicar clicabilidade */
+    }
+
+    .profiles {
+        display: flex;
+        justify-content: left; /* Centraliza os perfis horizontalmente */
+        width: 100%; /* Usa toda a largura disponível para melhor alinhamento */
+        gap: 260px; /* Espaço entre os perfis */
+        margin-top: 20px; /* Aumenta o espaço no topo */
+        margin-left: 10px; /* Aumenta o espaço no topo */
+    }
+
+    .profile-img {
+        width: 100px; /* Aumentado de 220px para 240px */
+        height: 100px; /* Aumentado de 220px para 240px */
+        border-radius: 50%; /* Mantém a forma circular */
+        background-color: #FFC107; /* Cor amarela do círculo externo */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto; /* Centraliza a `div` */
+    }
+
+    .profile img {
+        width: 230px; /* Aumentado de 200px para 220px */
+        height: 230px; /* Aumentado de 200px para 220px */
+        border-radius: 50%; /* Mantém a imagem redonda */
+        border: none; /* Remove qualquer borda */
+        display: block;
+    }
+
+    .profile .name {
+        text-align: center; /* Centraliza o texto */
+        width: 100%; /* Garante que a largura do texto seja a mesma que a da imagem */
+        display: block; /* Faz o nome se comportar como um bloco, facilitando a centralização */
+        margin-top: 20px; /* Ajusta o espaço entre a imagem e o texto */
+        box-shadow: 0 0 20px rgba(0, 0, 255, 0.5);   /* Define a cor de fundo como preta */
+        color: white; /* Define a cor do texto como branca para contraste */
+        padding: 5px 0; /* Adiciona um pouco de padding para espaçar o texto dentro do fundo preto */
+        border-radius: 10px; /* Adiciona bordas arredondadas */
+    }
+
+    .active .circle {
+    background-color: orange; /* Cor de destaque para o item ativo */
+    }
+
+       .control-icons {
+           display: flex;
+           justify-content: left; /* Centraliza os ícones horizontalmente */
+           gap: 20px; /* Espaço entre os ícones */
+           margin-top: 25px; /* Aumenta a margem superior para empurrar para baixo */
+           margin-left: 75px;
+           color: white; /* Cor dos ícones */
+       }
+
+       .icon-circle {
+           display: flex;
+           justify-content: center; /* Centraliza o ícone horizontalmente dentro do círculo */
+           align-items: center; /* Centraliza o ícone verticalmente dentro do círculo */
+            background: linear-top(to bottom, #000000, #00004B);/* Cor de fundo azul */
+           border-radius: 50%; /* Torna o fundo circular */
+           width: 40px; /* Define o tamanho do círculo */
+           height: 40px; /* Define o tamanho do círculo */
+       }
+
+       .icon-circle i {
+           color: white; /* Garante que a cor do ícone seja branca */
+       }
+
+       .control-icons i {
+           font-size: 22px; /* Aumenta o tamanho dos ícones */
+           color: #FF6347;
+           cursor: pointer; /* Indica que os ícones são clicáveis */
+            /* Define a cor dos ícones (ajuste conforme necessário) */
+           margin: 0 10px; /* Espaçamento entre ícones */
+           transition: color 0.7s; /* Transição suave de cor ao passar o mouse */
+       }
+
+       .control-icons i:hover {
+           color: #FF6347 /* Muda a cor ao passar o mouse, ajuste conforme desejado */
+           font-size: 20px;
+       }
+       .message-container {
+           margin-top: 50px; /* Espaço acima do container */
+           line-height: 1.5; /* Espaçamento entre linhas para facilitar a leitura */
+           word-wrap: break-word; /* Garante a quebra de linhas em palavras longas */
+           width: 850px; /* Largura máxima do contêiner */
+           overflow-wrap: break-word; /* Garante que as palavras sejam quebradas para evitar overflow */
+       }
+
+     .cronometro-container {
+         background-color: black; /* Fundo preto para destacar o LED */
+         color: white; /* Cor verde neon */
+         margin-left:420px;
+         margin-top:30px;
+         font-family: 'Digital-7', monospace; /* Fonte estilo digital */
+         font-size: 20px; /* Tamanho reduzido para um display mais compacto */
+         text-align: center; /* Centraliza o texto */
+         padding: 3px; /* Espaço interno reduzido para estética */
+         border-radius: 5px; /* Bordas arredondadas mais sutis */
+         box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);  /* Sombra verde menor para efeito neon */
+         width: auto; /* Largura automática baseada no conteúdo */
+         display: inline-block; /* Faz a div se ajustar ao tamanho do texto */
+     }
+
+      #volume-bars {
+           display: flex;
+           justify-content: space-around;
+           align-items: flex-end;
+           margin-left:120px;
+           margin-top: 30px;
+           height: 20px;
+           width: 30px;
+     }
+
+      #volume-bars_2 {
+           display: flex;
+           justify-content: space-around;
+           align-items: flex-end;
+           height: 20px;
+           margin-top: 30px;
+           margin-left:610px;
+           width: 30px;
+           background-color: black;
+     }
+
+        .bar {
+            width: 5%;
+            height: 10%;
+            background-color: white;
+            animation: pulse 1s infinite ease-in-out;
+        }
+
+        /* Animação das barras */
+        @keyframes pulse {
+            0%, 100% {
+                height: 10%;
+            }
+            50% {
+                height: 100%;
+            }
+        }
+
+        /* Personalização individual das animações para desincronização */
+        .bar:nth-child(1) { animation-delay: 0s; }
+        .bar:nth-child(2) { animation-delay: 0.1s; }
+        .bar:nth-child(3) { animation-delay: 0.6s; }
+        .bar:nth-child(4) { animation-delay: 0.9s; }
+        .bar:nth-child(5) { animation-delay: 0.12s; }
+
+#linenumbers {
+  text-align: right;
+  padding-right: 10px;
+  background-color: #f5f5f5;
+  user-select: none; /* para que o usuário não selecione os números */
+  color: #888;
+  line-height: 1.5; /* O mesmo do editor de código */
+}
+
+#codeeditor {
+  border: none;
+  line-height: 1.5;
+  font-family: monospace;
+  resize: none; /* Impedir o redimensionamento */
+  width: calc(100vw - 50px); /* Ajuste a largura conforme necessário */
+  height: 90vh; /* Ajuste a altura conforme necessário */
+}
+
+textarea {
+  overflow-y: none; /* Esconder a barra de rolagem */
+}
+
+ #editor {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 1) !important;
+}
+
+.ace_gutter {
+  background: #000000 !important; /* Define a cor de fundo para preto */
+  color: #FFFFFF !important; /* Define a cor do texto para branco */
+}
+
+.ace_comment {
+  color: #00ff00 !important; /* Define a cor do texto do comentário para verde */
+}
+
+    /* Estilos para a barra de rolagem do editor Ace */
+#editor ::-webkit-scrollbar {
+    width: 2px;  /* Largura da barra de rolagem */
+    height: 5px; /* Altura para barras de rolagem horizontais, se necessário */
+}
+
+#editor ::-webkit-scrollbar-track {
+     box-shadow: 0 0 5px rgba(0, 0, 255, 0.5); /* Cor de fundo da trilha da barra de rolagem */
+}
+
+#editor ::-webkit-scrollbar-thumb {
+     box-shadow: 0 0 15px rgba(0, 0, 255, 0.5); /* Cor do indicador de rolagem */
+     border-radius: 5px; /* Bordas arredondadas para o indicador de rolagem */
+}
+
+#editor ::-webkit-scrollbar-thumb:hover {
+        box-shadow: 0 0 5px rgba(0, 0, 255, 0.5); /* Cor do indicador de rolagem ao passar o mouse */
+}
+
+
+
+.chat-container {
+    width: 100%;
+    background-color: black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#chat-box {
+    height: 250px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+}
+
+#chat-box::-webkit-scrollbar {
+    width: 2px;  /* Largura da barra de rolagem */
+}
+
+#chat-box::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba(0, 0, 255, 0.5); /* Cor de fundo da trilha da barra de rolagem */
+}
+
+#chat-box::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 255, 0.5); /* Cor do indicador de rolagem */
+    border-radius: 5px; /* Bordas arredondadas para o indicador de rolagem */
+    box-shadow: inset 0 0 2px rgba(0,0,0,0.5); /* Sombra interna para dar profundidade */
+}
+
+#chat-box::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 255, 0.7); /* Cor do indicador de rolagem ao passar o mouse */
+}
+
+#chat-box p {
+    margin: 5px 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Define a fonte comum em interfaces de chat */
+    font-size: 13px; /* Tamanho da fonte para facilitar a leitura */
+    overflow-wrap: break-word; /* Quebra a palavra para evitar overflow */
+}
+
+
+#user-input {
+    width: calc(100% - 50px);
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+</style>

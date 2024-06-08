@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Simulação de Entrevista</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/new.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}">
+    </head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-icon"><i class="fas fa-bars"></i></div>
+        <ul class="menu-icons">
+          <li><a href="#"><i class="fas fa-home"></i></a></li>
+          <li><a href="#"><i class="fas fa-user"></i></a></li>
+          <li><a href="#"><i class="fas fa-envelope"></i></a></li>
+          <li><a href="#"><i class="fas fa-star"></i></a></li>
+          <li><a href="#" onclick="showModal()"><i class="fas fa-cog"></i></a></li>
+        </ul>
+    </div>
+    <div class="main-content">
+        <header>
+<div class="time-counter">00:38</div>
+        </header>
+          <div class="progress-bar-container">
+        <div class="progress-bar" style="width: 0%;"></div>
+    </div>
+     <div class="interview-wrapper">
+    <div class="interview-section">
+
+
+
+    <div class="profiles">
+        <div class="profile interviewee">
+            <img  src="{{ url_for('static', filename='img/img_2.png')}}"  alt="Juliana Lima">
+            <div class="name">Rodolfo Santos</div>
+        </div>
+        <div class="profile interviewer">
+            <img  src="{{ url_for('static', filename='img/img_1.png')}}"  alt="Entrevistador Michael">
+            <div class="name">Entrevistador Michael</div>
+        </div>
+    </div>
+
+    </div>
+      </div>
+
+<div class="control-icons">
+    <div id="openMicButton" class="icon-circle"><i class="fas fa-microphone"></i></div>
+    <div id="muteButton"  class="mic-button inactive">
+                    <i class="fas fa-microphone-slash"></i>
+                 </div>
+    <span class="icon-circle"><i class="fas fa-volume-up"></i></span>
+    <span class="icon-circle"><i class="fas fa-ellipsis-h"></i></span>
+    <span class="icon-circle"><i class="fas fa-phone-slash"></i></span>
+    <span class="icon-circle"><i class="fas fa-play"></i></span>
+</div>
+
+    <div class="caption-container">
+       <p  id="pMessage" style="font-size: 22px;"> Sure, Rodolfo, now please tell me, what is the function of polymorphism in object-oriented programming ?</p>
+    </div>
+
+</div>
+
+  </div>
+
+    <div class="sidebar-right">
+        <div class="menu-vertical">
+           <div class="timeline-content">
+        <h2 class="red-background">HR Questions</h2>
+    </div>
+    <div class="timeline-content">
+        <h2 class="red-background">Technical</h2>
+    </div>
+    <div class="timeline-content">
+        <h2 class="gray-background" >Leet Code</h2>
+    </div>
+        </div>
+    </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/controller.js') }}" defer></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.fittext.js') }}" defer></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/jquery.lettering.js') }}" defer></script>
+</body>
+</html>

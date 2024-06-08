@@ -1,0 +1,427 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: white;
+   background-color: var(--gray_100);
+}
+
+.sidebar {
+    background-color: #1A1A2E;
+    width: 50px;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.sidebar-icon {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: white;
+}
+
+.main-content {
+    margin-left: -150px; /* Reduzindo a margem esquerda atual em 200 pixels */
+    width: calc(100% - 50px + 200px); /* Ajustando a largura para preencher o espaço adicional */
+    padding: 10px;
+    background-color: #F6F7F9;
+    height: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+}
+
+ .interview-section {
+    display: flex;
+    flex-direction: column; /* Alinhamento vertical dos elementos */
+    align-items: center; /* Centraliza todos os itens horizontalmente */
+    gap: 200px; /* Espaçamento entre os perfis e o botão */
+    background-color: var(--white_A700);
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+
+.interview-wrapper {
+    border: 0px solid #cccccc; /* Sem borda visível */
+    border-radius: 20px; /* Bordas arredondadas */
+    display: flex;
+    justify-content: center; /* Centraliza o `.interview-section` horizontalmente */
+    align-items: center; /* Centraliza o `.interview-section` verticalmente */
+    width: fit-content; /* Ajusta a largura ao conteúdo interno */
+    margin: auto; /* Centraliza na página */
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave */
+}
+
+
+
+.profiles {
+    display: flex;
+    justify-content: center; /* Centraliza os perfis horizontalmente */
+    width: 100%; /* Usa toda a largura disponível para melhor alinhamento */
+    gap: 100px; /* Espaço entre os perfis */
+    margin-top: 50px; /* Aumenta o espaço no topo */
+}
+
+
+
+.profile-img {
+    width: 100px; /* Aumentado de 220px para 240px */
+    height: 100px; /* Aumentado de 220px para 240px */
+    border-radius: 50%; /* Mantém a forma circular */
+    background-color: #FFC107; /* Cor amarela do círculo externo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto; /* Centraliza a `div` */
+}
+
+.profile img {
+    width: 230px; /* Aumentado de 200px para 220px */
+    height: 230px; /* Aumentado de 200px para 220px */
+    border-radius: 50%; /* Mantém a imagem redonda */
+    border: none; /* Remove qualquer borda */
+    display: block;
+}
+
+.profile .name {
+    text-align: center; /* Centraliza o texto */
+    width: 100%; /* Garante que a largura do texto seja a mesma que a da imagem */
+    display: block; /* Faz o nome se comportar como um bloco, facilitando a centralização */
+    margin-top: 10px; /* Ajusta o espaço entre a imagem e o texto */
+    background-color: #FF8C00;  /* Define a cor de fundo como preta */
+    color: white; /* Define a cor do texto como branca para contraste */
+    padding: 5px 0; /* Adiciona um pouco de padding para espaçar o texto dentro do fundo preto */
+    border-radius: 10px; /* Adiciona bordas arredondadas */
+}
+
+
+background-color: #000080;
+
+.yellow-button {
+    background-color: #FFC107;
+    border: none;
+    color: #000;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.yellow-button:hover {
+    background-color: #E0A800;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: calc(100% - 50px); /* Ajuste conforme a largura da barra lateral */
+    padding: 20px;
+    background-color: #0F3460;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.controls i {
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+.stop-button {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.sidebar-right {
+    position: fixed;
+    right: 0;
+    top: 25%;
+    transform: translateY(-50%);
+    background-color: white; /* Cor de fundo corrigida */
+    width: 280px;
+    padding: 10px;
+    border-radius: 20px; /* Bordas arredondadas corrigidas */
+    border: 0px solid #cccccc; /* Adiciona borda fina cinza */
+     box-shadow: 0 4px 8px rgba(0,0,0,0.1); /
+}
+
+.menu-vertical {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* Espaço entre os botões */
+}
+
+
+
+
+.menu-button {
+    background-color: #FFC107;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    width: 80%;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.timeline-content {
+    width: 100%; /* Mantém a largura máxima para cada contêiner */
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    margin: -15px 0; /* Reduz a margem vertical para 2px */
+}
+
+.timeline-content h2.gray-background {
+    background-color: gray; /* Azul */
+    animation: blink 2s linear infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; } /* Totalmente visível */
+    50% { opacity: 0; } /* Totalmente invisível */
+}
+
+.timeline-content h2.green-background {
+    background-color:  	#FF8C00; /* Verde */
+        color: white; /* Cor do texto */
+    padding: 10px 20px;
+    border-radius: 5px; /* Bordas arredondadas */
+    width: 200px; /* Largura fixa para todos os h2 */
+    text-align: center; /* Texto centralizado */
+    font-size: 16px;
+    box-sizing: border-box; /* Inclui padding e border na largura e altura */
+    animation: blink 15s linear infinite;
+}
+
+.red-background {
+    background-color: #CCFF33; /* Vermelho */
+}
+
+.timeline-content h2 {
+    background-color: 	#FF8C00; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    padding: 10px 20px;
+    border-radius: 5px; /* Bordas arredondadas */
+    width: 200px; /* Largura fixa para todos os h2 */
+    text-align: center; /* Texto centralizado */
+    font-size: 16px;
+    box-sizing: border-box; /* Inclui padding e border na largura e altura */
+}
+
+
+
+
+ .menu-item {
+    display: flex;
+    align-items: center;
+    background-color: #FFC107;
+    padding: 5px 10px;
+    border-radius: 30px;
+    margin: 5px;
+}
+
+
+
+.menu-item i {
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+.circle {
+    background-color: orange;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.circle-number {
+    width: 30px;
+    height: 30px;
+    background-color: white;  /* Cor de fundo do círculo */
+    color: black;             /* Cor do número */
+    display: flex;
+    justify-content: center;  /* Centraliza o conteúdo horizontalmente */
+    align-items: center;      /* Centraliza o conteúdo verticalmente */
+    border-radius: 50%;       /* Torna o círculo perfeito */
+    border: 3px solid gray;   /* Borda grossa cinza */
+    margin-left: 10px;        /* Espaço entre o botão e o círculo */
+    font-size: 16px;          /* Tamanho do texto */
+}
+
+
+.active .circle {
+    background-color: orange; /* Cor de destaque para o item ativo */
+}
+
+.control-icons {
+    display: flex;
+    justify-content: center; /* Centraliza os ícones horizontalmente */
+    gap: 20px; /* Espaço entre os ícones */
+    margin-top: 50px; /* Aumenta a margem superior para empurrar para baixo */
+    color: white; /* Cor dos ícones */
+}
+
+.icon-circle {
+    display: flex;
+    justify-content: center; /* Centraliza o ícone horizontalmente dentro do círculo */
+    align-items: center; /* Centraliza o ícone verticalmente dentro do círculo */
+    background-color: #000080; /* Cor de fundo azul */
+    border-radius: 50%; /* Torna o fundo circular */
+    width: 40px; /* Define o tamanho do círculo */
+    height: 40px; /* Define o tamanho do círculo */
+}
+
+.icon-circle i {
+    color: white; /* Garante que a cor do ícone seja branca */
+}
+
+.control-icons i {
+    font-size: 28px; /* Aumenta o tamanho dos ícones */
+    cursor: pointer; /* Indica que os ícones são clicáveis */
+    color: white; /* Define a cor dos ícones (ajuste conforme necessário) */
+    margin: 0 10px; /* Espaçamento entre ícones */
+    transition: color 0.3s; /* Transição suave de cor ao passar o mouse */
+}
+
+.control-icons i:hover {
+    color: #FF6347 /* Muda a cor ao passar o mouse, ajuste conforme desejado */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Centraliza o botão horizontalmente */
+    margin-top: 20px; /* Espaço entre a div dos perfis e o botão */
+}
+
+.caption-container {
+    width: 50%; /* Largura fixa */
+    margin: 100px auto 20px; /* Centraliza horizontalmente */
+    text-align: center; /* Centraliza o texto dentro da div */
+    word-wrap: break-word; /* Garante que o texto quebre corretamente */
+    padding: 10px; /* Padding interno para não colar o texto nas bordas */
+    font-size: 20px; /* Tamanho do texto */
+    border-radius: 10px; /* Bordas arredondadas, se desejar */
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2em; /* Ajuste com base no tamanho da tela */
+    color: white;
+    text-shadow: 1px 1px 2px black; /* Sombra para melhorar a legibilidade */
+    background-color: black; /* Fundo semitransparente */
+    padding: 5px;
+    border-radius: 4px; /* Bordas arredondadas opcional */
+    line-height: 1.3;
+    text-align: center;
+}
+
+
+#caption-text {
+    margin: 0; /* Remove qualquer margem padrão para manter o layout limpo */
+}
+
+.progress-bar-container {
+    width: 50%;
+    height: 10px;
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px auto; /* Reduzindo as margens superior e inferior */
+}
+
+
+.progress-bar {
+    height: 100%; /* A barra de progresso preenche totalmente a altura do container */
+    background-color: #4CAF50; /* Cor da barra de progresso */
+    border-radius: 10px; /* Bordas arredondadas */
+    width: 0%; /* Largura inicial */
+    transition: width 0.5s ease-in-out; /* Transição suave para mudanças de largura */
+}
+
+header .logout-button {
+    padding: 8px 16px;
+    background-color: #f44336; /* Vermelho para destaque */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none; /* Remove o sublinhado do link */
+    font-size: 16px;
+}
+
+header .logout-button:hover {
+    background-color: #c33c25; /* Um vermelho mais escuro no hover */
+}
+
+.menu-icons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-icons li {
+  margin-bottom: 20px; /* espaço vertical entre os ícones */
+}
+
+.menu-icons li:first-child {
+  margin-top: 0; /* nenhum espaço extra no topo do primeiro item */
+}
+
+.menu-icons li a {
+  text-decoration: none; /* remove o sublinhado do link */
+  color: white; /* cor do ícone */
+  font-size: 24px; /* tamanho do ícone */
+}
+
+.menu-icons li a:hover {
+  color: #3498db; /* cor do ícone ao passar o mouse */
+}
+
+
+
+
+.yellow-button {
+    background-color: #FFC107; /* Cor amarela do botão */
+    border: none;
+    color: white; /* Cor da fonte */
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 20px; /* Bordas arredondadas */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Transição suave na cor de fundo ao passar o mouse

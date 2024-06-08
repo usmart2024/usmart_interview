@@ -1,0 +1,485 @@
+.fixed-sidebar {
+    width: 80px; /* Largura fixa do menu ajustada para 120px */
+    height: 100vh;
+    background: linear-gradient(to right, #000000, #00004B);
+  }
+
+  .fixed-ads {
+    width: 400px; /* Largura fixa de 400px para os anúncios */
+    height: 100vh;
+     background: linear-gradient(to left, #000000, #00004B);
+  }
+
+  .scrollable-content {
+    height: 100vh;
+     width: 100%;
+    overflow-y: auto; /* Barra de rolagem apenas no conteúdo central */
+    background: linear-gradient(to left, #000000, #00004B);
+  }
+
+  /* Additional styles for demonstration */
+  .header, .footer {
+    background-color: #ddd;
+    text-align: center;
+    padding: 10px 0;
+    background: linear-gradient(to left, #000000, #00004B);
+  }
+
+  .menu {
+    background-color: #bbb;
+  }
+
+  .pub {
+    background-color: #bbb;
+  }
+
+  .content {
+    background-color:
+  }
+
+  /* Estilos da barra de rolagem */
+/* Estilos da barra de rolagem para cinza grafite */
+::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem */
+}
+
+::-webkit-scrollbar-track {
+    background: #00004B; /* Cor de fundo da trilha da barra de rolagem - cinza grafite */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #00004B; /* Cor do 'polegar' da barra de rolagem - cinza grafite */
+    border-radius: 6px; /* Bordas arredondadas para o 'polegar' */
+    border: 3px solid #2C3E50; /* Borda do 'polegar' da barra de rolagem */
+}
+
+/* Adicione estilos para estados hover e active se desejado */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #34495E; /* Cor do 'polegar' da barra de rolagem ao passar o mouse - um cinza um pouco mais claro */
+}
+
+::-webkit-scrollbar-thumb:active {
+    background-color: #2C3E50; /* Cor do 'polegar' da barra de rolagem ao clicar - mantendo o mesmo cinza grafite */
+}
+
+   .send-button {
+    background-color: #2C3E50; /* Cor de fundo cinza grafite */
+    color: #ffffff; /* Cor do texto */
+    border: 2px solid #34495E; /* Cor da borda */
+    border-radius: 10px; /* Arredondamento das bordas */
+    padding: 10px 20px; /* Preenchimento */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Estilo do cursor para indicar clicabilidade */
+    display: flex; /* Usar flexbox para alinhar o ícone e o texto */
+    justify-content: center; /* Centralizar o conteúdo horizontalmente */
+    align-items: center; /* Centralizar o conteúdo verticalmente */
+    margin-right: 30px;
+  }
+
+ .send-button:hover {
+    background-color: #34495E; /* Cor de fundo ao passar o mouse */
+  }
+
+  .send-button i {
+    margin-right: 2px; /* Espaço entre o ícone e o texto */
+  }
+
+.send-button-red {
+    background-color: #2C3E50; /* Cor de fundo vermelho */
+    color: #ffffff; /* Cor do texto */
+    border: 2px solid #e74c3c; /* Cor da borda vermelho */
+    border-radius: 10px; /* Arredondamento das bordas */
+    padding: 10px 20px; /* Preenchimento */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Estilo do cursor para indicar clicabilidade */
+    display: flex; /* Usar flexbox para alinhar o ícone e o texto */
+    justify-content: center; /* Centralizar o conteúdo horizontalmente */
+    align-items: center; /* Centralizar o conteúdo verticalmente */
+    margin-right: 3px; /* Espaço entre botões */
+}
+
+    .send-button-green {
+    background-color: #28a745; /* Cor de fundo verde */
+    color: #ffffff; /* Cor do texto */
+    border: 2px solid #28a745; /* Cor da borda verde */
+    border-radius: 10px; /* Arredondamento das bordas */
+    padding: 10px 20px; /* Preenchimento */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Estilo do cursor para indicar clicabilidade */
+    display: flex; /* Usar flexbox para alinhar o ícone e o texto */
+    justify-content: center; /* Centralizar o conteúdo horizontalmente */
+    align-items: center; /* Centralizar o conteúdo verticalmente */
+    margin-right: 3px; /* Espaço entre botões */
+}
+
+ .send-button-green:hover {
+    background-color: #34495E; /* Cor de fundo ao passar o mouse */
+  }
+
+  .send-button-green i {
+    margin-right: 10px; /* Espaço entre o ícone e o texto */
+  }
+
+.send-button-red {
+    background-color: #e74c3c; /* Cor de fundo vermelho */
+    color: #ffffff; /* Cor do texto */
+    border: 2px solid #e74c3c; /* Cor da borda vermelho */
+    border-radius: 10px; /* Arredondamento das bordas */
+    padding: 10px 20px; /* Preenchimento */
+    font-size: 16px; /* Tamanho da fonte */
+    cursor: pointer; /* Estilo do cursor para indicar clicabilidade */
+    display: flex; /* Usar flexbox para alinhar o ícone e o texto */
+    justify-content: center; /* Centralizar o conteúdo horizontalmente */
+    align-items: center; /* Centralizar o conteúdo verticalmente */
+    margin-right: 3px; /* Espaço entre botões */
+}
+
+  .send-button + .send-button {
+    margin-left: 5px;
+  }
+
+
+  .send-button:hover {
+    background-color: #34495E; /* Cor de fundo ao passar o mouse */
+  }
+
+  .send-button i {
+    margin-right: 12px; /* Espaço entre o ícone e o texto */
+  }
+
+.centered-rectangle {
+ width: auto; /* Ajuste conforme necessário */
+    min-width: 210px;
+    border: 5px solid red; /* borda fina e azul */
+    border-radius: 3px; /* cantos arredondados */
+    width: 210px; /* largura do retângulo */
+    height: 209px; /* altura do retângulo */
+    margin: auto; /* centraliza na div */
+    display: block; /* faz a div ser tratada como bloco */
+    position: relative; /* posicionamento relativo dentro da div central */
+    top: 20%; /* diminui o valor aqui para subir o retângulo */
+    transform: translateY(-50%); /* ajuste fino para centrar exatamente no meio */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Centralizar horizontalmente */
+    align-items: center; /* Centralizar verticalmente */
+     margin-bottom: 25px;
+}
+
+.send-button-red .fa-stop {
+    margin-right: 2px; /* Adiciona espaço à direita do ícone */
+}
+
+.send-button-red .fa-paper-plane {
+    margin-right: 2px; /* Adiciona espaço à direita do ícone */
+}
+
+.wide-container {
+    width: 100%; /* Faz com que ocupe toda a largura do contêiner pai */
+    max-width: none; /* Remove qualquer limitação de max-width anterior */
+}
+
+.expanded-container {
+    width: 100%; /* Ajuste para a largura que você deseja, talvez maior que a de .centered-rectangle */
+    padding: 0 20px; /* Adiciona padding nas laterais para não colar no borda da div */
+}
+
+.new-section {
+    width: 100%; /* Faz com que a nova seção ocupe toda a largura disponível */
+    padding: 20px; /* Adiciona um pouco de espaço interno para não colar o texto nas bordas */
+    background-color: #f8f9fa; /* Define um fundo claro para a seção, altere conforme sua preferência */
+    margin-top: 20px; /* Adiciona espaço entre os botões e a nova seção */
+}
+
+.article-section {
+    margin-top: 250px; /* Aumente o valor para empurrar o article para baixo */
+    padding: 20px;
+    /* Outros estilos */
+    max-width: 700px; /* Define a largura máxima para o article */
+    width: 100%; /* Faz com que a largura do article se ajuste ao conteúdo até o máximo de 150px */
+    margin-left: auto; /* Centraliza o article na página se for menor que a largura do contêiner */
+    margin-right: auto;
+}
+
+#progressBarContainer {
+  width: 50%;
+  background-color: #e0e0e0;
+  margin-left: 250px;
+  padding: 3px;
+
+  border-radius: 10px; /* Bordas arredondadas para o contêiner da barra de progresso */
+  overflow: hidden; /* Garante que a barra de progresso não ultrapasse as bordas arredondadas */
+}
+
+#progressBar {
+
+  width: 0%;
+  height: 8px; /* Altura reduzida da barra de progresso */
+  background-color: #28a745;
+  border-radius: 5px; /* Bordas arredondadas para a barra de progresso, podem precisar ser ajustadas se a barra for muito fina */
+}
+
+.clock-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ajuste a altura conforme necessário */
+  background-color: #2C3E50; /* A cor de fundo do seu cronômetro */
+}
+
+.clock {
+  background-color: #444;
+  border-radius: 10%;
+  border: 3px solid #00BCD4; /* Ajuste a cor da borda conforme necessário */
+  padding: 1px;
+  margin-top: 5px; /* Ajuste o posicionamento vertical conforme necessário */
+  position: relative;
+  box-shadow: 0px 0px 20px #00BCD4; /* Ajuste a cor do sombreamento conforme necessário */
+}
+
+.time {
+  color: white;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+#container {
+  display: flex;
+}
+
+#linenumbers {
+  text-align: right;
+  padding-right: 10px;
+  background-color: #f5f5f5;
+  user-select: none; /* para que o usuário não selecione os números */
+  color: #888;
+  line-height: 1.5; /* O mesmo do editor de código */
+}
+
+#codeeditor {
+  border: none;
+  line-height: 1.5;
+  font-family: monospace;
+  resize: none; /* Impedir o redimensionamento */
+  width: calc(100vw - 50px); /* Ajuste a largura conforme necessário */
+  height: 90vh; /* Ajuste a altura conforme necessário */
+}
+
+textarea {
+  overflow-y: none; /* Esconder a barra de rolagem */
+}
+
+ #editor {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+
+.ace_gutter {
+  background: #000000 !important; /* Define a cor de fundo para preto */
+  color: #FFFFFF !important; /* Define a cor do texto para branco */
+}
+
+.ace_comment {
+  color: #00ff00 !important; /* Define a cor do texto do comentário para verde */
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.timeline-container {
+  position: relative;
+  padding-left: 40px;
+  margin-top: 20px;
+}
+
+.timeline-block {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.timeline-dot_blink {
+  animation: blink 1s linear infinite;
+  height: 20px;
+  width: 20px;
+  background-color: #3498db;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  z-index: 100;
+}
+
+.timeline-dot {
+  height: 20px;
+  width: 20px;
+  background-color: #3498db;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  z-index: 100;
+}
+
+.timeline-content {
+
+  background-color: #2C3E50;
+  border-radius: 4px;
+  color: #fff;
+  padding: 10px 15px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  margin-left: 20px;
+  width: fit-content;
+}
+
+.timeline-content h2 {
+  font-size: 16px;
+  margin: 0 0 5px 0;
+}
+
+.timeline-content p {
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Style the line */
+.timeline-container:before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 2px;
+  background: #3498db;
+  left: 9px; /* Half the width of the dot */
+  top: 0;
+}
+
+/* Adjustments for last item */
+.timeline-container .timeline-block:last-child {
+  margin-bottom: 0;
+}
+
+/* Assuming that this is added to your existing CSS file */
+
+.fixed-ads {
+  /* Existing styles */
+}
+
+.custom-content {
+ padding-top: 150px;
+  text-align: center;
+}
+
+.image-container {
+  margin-bottom: 20px;
+}
+
+.rounded-img {
+  width: 200px; /* ou 'auto' se você quiser manter a proporção */
+  height: 200px;
+  border-radius: 50%; /* Isto fará com que a imagem seja completamente arredondada */
+  border: 3px solid white; /* Isto adiciona a borda branca */
+  display: inline-block;
+  object-fit: cover; /* Isto irá garantir que a imagem cubra a área sem distorção */
+}
+
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.custom-btn:hover {
+  transform: scale(0.95); /* Isso faz o botão diminuir para 95% do tamanho original */
+}
+.custom-btn {
+  margin: 0 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+}
+
+.green {
+  background-color: #28a745;
+}
+
+.red {
+  background-color: red;
+}
+
+.blue {
+  background-color: #007bff;
+}
+
+.timer-display {
+  background-color: #2C3E50;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.fixed-sidebar {
+  width: 80px; /* ajuste conforme necessário */
+  background: linear-gradient(to left, #000000, #00004B);
+  height: 100vh; /* altura total da janela de visualização */
+  padding-top: 10px; /* espaço no topo */
+}
+
+.menu-icons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-icons li {
+  margin-bottom: 20px; /* espaço vertical entre os ícones */
+}
+
+.menu-icons li:first-child {
+  margin-top: 0; /* nenhum espaço extra no topo do primeiro item */
+}
+
+.menu-icons li a {
+  text-decoration: none; /* remove o sublinhado do link */
+  color: white; /* cor do ícone */
+  font-size: 24px; /* tamanho do ícone */
+}
+
+.menu-icons li a:hover {
+  color: #3498db; /* cor do ícone ao passar o mouse */
+}
+
+.mic-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.mic-button.active {
+    background-color: white;
+}
+
+.mic-button.inactive {
+    background-color: red;
+}
+
+.mic-button i {
+    color: black;
+}

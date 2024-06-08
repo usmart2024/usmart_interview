@@ -1,0 +1,193 @@
+/* styles.css */
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+.popup-container {
+  display: none; /* Oculto por padrão, mostrado quando acionado */
+  position: fixed; /* Permanece no lugar */
+  left: 0;
+  top: 0;
+  width: 100%; /* Largura do modal aumentada para 80% da tela */
+  height: 100%; /* Altura do modal aumentada para 90% da tela */
+  padding: 20px; /* Espaço interno para não ficar muito justo */
+  margin: auto; /* Centralizar o modal na tela */
+  background-color: rgba(0, 0, 0, 0.7); /* Fundo preto com maior opacidade */
+  z-index: 10; /* Fica no topo */
+}
+
+.popup {
+   background: rgba(0, 0, 75, 0.5);
+   margin: 5% auto; /* Reduzido de 15% para 5% do topo para centralizar mais na tela */
+   padding: 40px; /* Aumentado de 20px para 40px para mais espaço interno */
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   border-radius: 5px;
+   width: 40%; /* Aumentado de 30% para 50% para maior visibilidade */
+   position: relative;
+   color: #fff;
+   border: 3px solid limegreen; /* Bordas mantidas */
+}
+
+
+
+.controls-container {
+  display: flex; /* Ativa o flexbox para o contêiner */
+  align-items: center; /* Alinha verticalmente ao centro */
+  gap: 5px; /* Espaço entre o select e o botão */
+}
+
+.controls-container {
+  display: flex; /* Ativa o flexbox para o contêiner */
+  align-items: center; /* Alinha verticalmente ao centro */
+  gap: 5px; /* Espaço entre o select e o botão */
+}
+
+#speakerSelect,
+#micSelect {
+    width: calc(100% - 10px); /* Largura total menos a margem */
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 0 5px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    color: green;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 10px; /* Espaço entre os selects */
+}
+
+#actionButton {
+    height: 30px;
+    padding: 0 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: -2%; /* Desloca o botão 5% para cima */
+}
+
+#actionButton:hover {
+    background-color: #273c75; /* Azul escuro ao passar o mouse */
+}
+
+
+
+#microfoneButton {
+    height: 30px;
+    padding: 0 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: -2%; /* Desloca o botão 5% para cima */
+}
+
+#microfoneButton:hover {
+    background-color: #273c75; /* Azul escuro ao passar o mouse */
+}
+
+#startButtonPop {
+    margin-top: 30px; /* 30px de espaço do conteúdo acima */
+    margin-left: auto; /* Centraliza horizontalmente */
+    margin-right: auto; /* Centraliza horizontalmente */
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px 20px;
+    display: block; /* Torna o elemento um bloco, necessário para aplicar margens automáticas */
+}
+
+#startButtonPop:hover {
+    background-color: #
+
+
+#startButtonPop:hover {
+  background-color: #218838; /* Uma tonalidade de verde mais escura ao passar o mouse */
+}
+
+
+label {
+    color: #fff; /* Ajuste a cor do texto conforme o fundo */
+    margin-right: 5px; /* Espaço entre o rótulo e o select */
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+label {
+  margin-right: 10px;
+}
+
+button {
+  background-color: #3498db;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
+button#closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #e74c3c;
+}
+
+button#startButton {
+  background-color: green;
+  width: 100%;
+}
+
+#speakerSelect {
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 0 5px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    background-image: url('path_to_your_icon/arrow-down-icon.png');
+    background-repeat: no-repeat;
+    background-position: right 5px center;
+    background-size: 16px;
+    color: green;
+    font-weight: bold;
+    cursor: pointer;
+    display: block; /* Se necessário, para assegurar que o botão fique abaixo do select */
+    margin-bottom: 5px; /* Espaço entre o select e o botão */
+}
+
+#actionButton {
+    height: 30px; /* Define a altura do botão */
+    padding: 0 20px; /* Preenchimento horizontal para ajustar o conteúdo dentro do botão */
+    background-color: #3498db; /* Cor inicial do botão */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block; /* Garante que o botão seja tratado como um bloco */
+}
+
+#actionButton:hover {
+    background-color: #273c75; /* Cor do botão ao passar o mouse - azul escuro */
+}
+
+
