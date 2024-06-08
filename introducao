@@ -1,0 +1,89 @@
+python -m venv .venv
+source .venv/bin/activate
+
+pip install fastapi
+pip install "uvicorn[standard]"
+
+pip install pydantic
+pip freeze > requirements.txt
+pip install sqlalchemy sqlalchemy-utils
+pip install sqlalchemy asyncpg
+
+sudo apt install ffmpeg
+
+
+pyaudio problema :
+sudo apt update
+sudo apt install portaudio19-dev
+
+
+
+## Se estiver no outro ambiente basta rodar :
+
+pip install mixins
+pip install -r requirements.txt
+pip install python-dotenv
+
+pip install langchain-text-splitters
+pip install langchain_community
+
+ uvicorn app:app --reload
+ uvicorn app:app --stop
+
+## Reconhecer voz  python 3.10.12
+
+pip install SpeechRecognition
+pip install pyaudio
+
+
+
+docker build -t rsantosinfo/usmart_interview .
+docker run -p 5000:5000 -v /home/ubuntu22/PycharmProjects/Usmart_Interview:/app rsantosinfo/usmart_interview
+
+rodando postgres : postgresql+asyncpg://postgres:gui2809!@localhost:5432/postgres
+
+docker run -d \
+  --name localpostgres \
+  -e POSTGRES_PASSWORD=gui2809! \
+  -e POSTGRES_USER=postgres \
+  -e POSTGRES_DB=postgres \
+  -p 5432:5432 \
+  postgres
+
+
+Gerando certificado :
+
+sudo apt-get update
+sudo apt-get install certbot
+
+mkdir -p /home/ubuntu/PycharmProjects/usmart_interview/certs
+
+sudo cp /etc/letsencrypt/live/intercode.usmartdigital.com.br/fullchain.pem /home/ubuntu/PycharmProjects/usmart_interview/certs/
+sudo cp /etc/letsencrypt/live/intercode.usmartdigital.com.br/privkey.pem /home/ubuntu/PycharmProjects/usmart_interview/certs/
+sudo chown ubuntu:ubuntu /home/ubuntu/PycharmProjects/usmart_interview/certs/*.pem
+
+#!/bin/bash
+
+APP_DIR="/home/ubuntu/PycharmProjects/usmart_interview"
+CERT_DIR="/home/ubuntu/PycharmProjects/usmart_interview/certs"
+
+chmod +x run_gunicorn.sh
+
+if [ -d "$CERT_DIR" ]; then
+    cd "$APP_DIR"
+    gunicorn -w 4 -b 0.0.0.0:8000 --certfile=$CERT_DIR/fullchain.pem --keyfile=$CERT_DIR/privkey.pem run:app
+else
+    echo "Certificado SSL não encontrado em $CERT_DIR"
+fi
+
+./run_gunicorn.sh
+
+
+
+sudo certbot certonly --standalone -d intercode.usmartdigital.com.br
+sudo systemctl status certbot.timer
+
+
+
+
+

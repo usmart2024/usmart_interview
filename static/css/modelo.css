@@ -1,0 +1,14 @@
+   body {
+        overflow: hidden;
+    }
+
+    .coluna2 {
+        overflow:hidden;
+        height:900px;
+    }
+
+    .filho-coluna2 {
+        height:100%;
+    }
+
+
