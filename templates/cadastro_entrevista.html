@@ -89,7 +89,7 @@
 
    <div class="container_2">
   <div style=" padding-bottom:5px ">
-    <button id="search-button" class="btn btn-primary ml-2" data-toggle="modal" data-target="#newModal" >New</button>
+    <button id="search-button" class="btn btn-primary ml-2" data-toggle="modal" data-target="#interviewModal" >New</button>
   </div>
   <table>
     <thead>
@@ -130,27 +130,52 @@
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
   <script src="{{ url_for('static', filename='js/cadastro_entrevista.js') }}"></script>
 
- <div class="modal fade" id="newModal" tabindex="-1" aria-labelledby="newModalLabel" aria-hidden="true">
+<!-- Modal para nova entrevista -->
+<div class="modal fade" id="interviewModal" tabindex="-1" aria-labelledby="newModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="newModalLabel">Start New Simulation</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form>
-            <div class="form-group">
-              <label for="stack">Stack</label>
-              <textarea class="form-control" id="stack" rows="3"></textarea>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="newModalLabel">Start New Simulation</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-            <button type="button" class="btn btn-primary" id="startButton" >Start</button>
-          </form>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="stack">Stack</label>
+                        <textarea class="form-control" id="stack" rows="3"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-primary" id="startButton">Start Simulation</button>
+                </form>
+            </div>
         </div>
-      </div>
     </div>
- </div>
+</div>
+
+
+<div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="detailModalLabel">Detail View</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Conteúdo será preenchido pelo JavaScript -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancelButton">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
 
 </body>
 </html>
@@ -639,6 +664,37 @@ tr:hover {
   margin-top: 1rem;
 }
 
+    .modal-content::-webkit-scrollbar {
+        width: 2px;
+        height: 5px;
+    }
+    .modal-content::-webkit-scrollbar-track {
+        background: #0000FF;
+    }
+    .modal-content::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 5px;
+    }
+    .modal-content::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+    .modal-dialog {
+        max-width: 1400px; /* Largura máxima da modal */
+        margin: 30px auto; /* Centraliza a modal na tela */
+    }
+    .modal-content {
+        max-height: 92vh; /* Altura máxima da modal */
+        overflow-y: auto; /* Adiciona rolagem vertical se necessário */
+    }
+    .modal-body {
+        padding: 20px;
+    }
+    .modal-body div {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
     .modal-content {
   background-color: #1a2b4c; /* Cor de fundo da modal */
   color: #ffffff; /* Cor do texto */
@@ -684,6 +740,17 @@ tr:hover {
 
 .modal-footer .btn-primary:hover {
   background-color: #0056b3; /* Cor de fundo do botão primário ao passar o mouse */
+}
+
+
+.custom-modal-dialog {
+    max-width: 1200px;
+    margin: 30px auto; /* Centraliza horizontalmente */
+}
+
+#detailModal .modal-content {
+    height: 800px;
+    margin: auto; /* Centraliza verticalmente */
 }
 
 </style>
