@@ -6,6 +6,21 @@
      var intervalId;
      let counter = 0;
      let leetCode ;
+    let student = {};  // Variável para armazenar os dados do estudante
+
+    // Função para buscar o estudante pelo e-mail
+    async function fetchStudentByEmail(email) {
+        try {
+            const response = await fetch(`/student/${email}`);
+            if (!response.ok) {
+                throw new Error('Erro ao obter dados do estudante');
+            }
+            student = await response.json();
+            console.log('Dados do estudante carregados:', student);
+        } catch (error) {
+            console.error('Erro:', error);
+        }
+    }
 
      function startCountdown() {
          var display = document.getElementById('cronometro');
@@ -80,11 +95,12 @@
                 $("#volume-bars").attr("hidden", true);
                 // Criar um objeto FormData e anexar o arquivo de áudio
                 var formData = new FormData();
-                formData.append('audio', audioBlob, 'audio.wav');
+                let uuid = student.uuid ;
+                formData.append('audio', audioBlob, `cc_audio_${uuid}.wav`);
                 formData.append('code', getContent());
 
                 // Enviar o arquivo de áudio para o servidor
-                fetch('/process_answer_cracking_code', {
+                fetch(`/process_answer_cracking_code/${uuid}`, {
                     method: 'POST',
                     body: formData
                 })
@@ -97,6 +113,8 @@
                         console.log('Frase recebida:', data.frase);
                         stream.getTracks().forEach(track => track.stop());
 
+                        let uuid =  student.uuid
+
                           console.log('Resposta:', data);
                           const chatBox = document.getElementById('chat-box');
                           chatBox.innerHTML += `<p><strong>You:</strong> ${data.question}</p>`;
@@ -104,7 +122,7 @@
                           chatBox.scrollTop = chatBox.scrollHeight;
 
                        $("#volume-bars").attr("hidden", false);
-                        playAudio();
+                        playAudio(uuid);
 
                     console.log('Arquivo de áudio salvo com sucesso.');
                 })
@@ -131,10 +149,12 @@
         $("#finish_interview").attr("hidden", false);
         startCountdown();
         leetCode =  getContent();
-        fetch('/chat', {
+        let uuid =  student.uuid
+
+        fetch(`/chat/${uuid}`, {
            method: 'POST',
            headers: { 'Content-Type': 'application/json' },
-           body: JSON.stringify({ message: 'Hello I`m Rodolfo, let`s start ?' })
+           body: JSON.stringify({ message: 'Hello I`m Rodolfo, start the test, please' })
       })
           .then(response => {
               if (!response.ok) {
@@ -149,7 +169,7 @@
               chatBox.innerHTML += `<p><strong>AI:</strong> ${data.response}</p>`;
               chatBox.scrollTop = chatBox.scrollHeight;
               $("#volume-bars").attr("hidden", false);
-              playAudio();
+              playAudio(uuid);
           })
           .catch(function(error) {
               console.error('Erro:', error);
@@ -180,9 +200,9 @@
         return differences;
     }
 
-  function playAudio() {
+  function playAudio(uuid) {
       const timestamp = new Date().getTime();
-      const audioUrl = 'http://127.0.0.1:5000/audio/response_open_ai.mp3?timestamp=${timestamp}';
+      const audioUrl = `http://127.0.0.1:5000/audio/cc_response_open_ai_${uuid}.mp3?timestamp=${timestamp}`;
 
       const audio = new Audio(audioUrl);
       audio.play();
@@ -226,5 +246,9 @@
     $('.close, #cancelButton').on('click', function() {
         $('#newModal').modal('hide');
     });
+
+    const studentEmail = 'eurodolfosantos@gmail.com'; // Substitua pelo email do estudante conforme necessário
+    fetchStudentByEmail(studentEmail);
+
   });
 

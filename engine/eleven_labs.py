@@ -40,3 +40,29 @@ def generate_audio_eleven_labs(text, uuid):
     with open(filename, 'wb') as file:
         file.write(audio)
         logging.info("Audio file saved successfully.")
+
+
+def cc_generate_audio_eleven_labs(text, uuid):
+    stability = 0.65
+    similarity_boost = 0.8
+    style = 0.55
+    boost = False
+
+    logging.info("It will generate audio with text: " + text)
+    audio = generate(
+        text=text,
+        voice=Voice(voice_id="ErXwobaYiN019PkySvjV",
+                    settings=VoiceSettings(stability=stability,
+                                           similarity_boost=similarity_boost,
+                                           style=style,
+                                           use_speaker_boost=boost)),
+        model='eleven_multilingual_v2'
+    )
+
+    filename = f"./engine/cc_response_open_ai_{uuid}.mp3"
+    logging.info("File to be generated: " + filename)
+
+    # Salvando o áudio com with open
+    with open(filename, 'wb') as file:
+        file.write(audio)
+        logging.info("Audio file saved successfully.")

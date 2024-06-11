@@ -59,6 +59,15 @@ async def return_phrase_audio(uuid):
     logging.info("Terminou a chamada do transcribe_audio dentro do metodo return_phrase_audio")
     return response_final
 
+async def return_phrase_cc_audio(uuid):
+    logging.info("Chamou start_listening ")
+    logging.info('Metodo start_listening vai chamar transcribe_audio_file.')
+    response_final = await transcribe_cc_audio(uuid)
+    logging.info("Terminou a chamada do transcribe_audio dentro do metodo return_phrase_audio")
+    return response_final
+
+
+
 async def transcribe_audio(uuid):
     # await convert_to_wav('audio.wav', 'output_file.wav')
     with open(os.path.join(dir_file, "engine", f'audio_{uuid}.wav'), 'rb') as audio_file:
@@ -70,3 +79,13 @@ async def transcribe_audio(uuid):
         )
     return response
 
+async def transcribe_cc_audio(uuid):
+    # await convert_to_wav('audio.wav', 'output_file.wav')
+    with open(os.path.join(dir_file, "engine", f'cc_audio_{uuid}.wav'), 'rb') as audio_file:
+        response = openai.Audio.transcribe(
+            model="whisper-1",
+            file=audio_file,
+            response_format="text",
+            language="en"
+        )
+    return response

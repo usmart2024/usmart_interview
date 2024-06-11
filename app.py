@@ -5,13 +5,13 @@ from flask import Flask, render_template, request, jsonify, send_from_directory,
 from werkzeug.utils import secure_filename
 from flask_cors import CORS
 import speech_recognition as sr
-from engine.voice_recognize import start_listening, return_phrase_audio
+from engine.voice_recognize import start_listening, return_phrase_audio, return_phrase_cc_audio
 import asyncio
 import logging
 import time
 from flask_caching import Cache
 from dotenv import load_dotenv, find_dotenv
-from engine.eleven_labs import generate_audio_eleven_labs
+from engine.eleven_labs import generate_audio_eleven_labs, cc_generate_audio_eleven_labs
 from flask_session import Session
 from flask_talisman import Talisman
 import openai
@@ -265,10 +265,9 @@ def calculate_total_tokens(messages):
     return sum(len(message['content'].split()) for message in messages)
 
 
-@app.route('/chat', methods=['POST'])
-def chat():
+@app.route('/chat/<uuid>', methods=['POST'])
+def chat(uuid):
     user_input = request.json.get('message')
-    code = request.json.get('code')  # Obtém o parâmetro 'code' da requisição
 
     # Recupera o histórico da conversa da sessão do usuário
     if 'chat_history' not in session:
@@ -323,7 +322,7 @@ def chat():
         )
         response_text += " " + continuation_response['choices'][0]['message']['content'].strip()
 
-    # generate_audio_eleven_labs(response_text)
+    # cc_generate_audio_eleven_labs(response_text, uuid)
 
     # Adiciona a nova mensagem ao histórico da sessão
     chat_history.append(f"user: {user_input}")
@@ -341,24 +340,24 @@ def chat():
     logging.info(response_text)
     return jsonify({'response': response_text, 'question': user_input})
 
-@app.route('/process_answer_cracking_code', methods=['POST'])
-async def process_answer_cracking_code():
+@app.route('/process_answer_cracking_code/<uuid>', methods=['POST'])
+async def process_answer_cracking_code(uuid):
     try:
         # Verificar se um arquivo de áudio foi enviado no corpo da requisição
         if 'audio' in request.files  :
             audio_file = request.files['audio']
             code = request.form.get('code')
-            audio_file_path = os.path.join(str(dir_file), "engine", "audio.wav")
+            audio_file_path = os.path.join(str(dir_file), "engine", f'cc_audio_{uuid}.wav')
             audio_file.save(audio_file_path)
             logging.info("Salvou o arquivo !")
-            frase_retorno = await return_phrase_audio()
+            frase_retorno = await return_phrase_cc_audio(uuid)
             logging.info('Gerando frase de retorno no metodo save_audio.')
             logging.info(frase_retorno)
             response_dict = await process_student_answer(frase_retorno, code)
             response_json = response_dict.get_json()
             response_value = response_json.get('response')
 
-            # generate_audio_eleven_labs(response_value)
+            # cc_generate_audio_eleven_labs(response_value, uuid)
 
             return response_dict  # jsonify({'frase': "How to break a Monolith web service into Microservices?"}), 200
         else:
