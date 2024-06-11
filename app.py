@@ -104,6 +104,34 @@ def get_questions():
         return jsonify({'error': str(e)}), 500
 
 
+@app.route('/student/<email>')
+@cache.cached(timeout=3600)  # Cache por 1 hora (3600 segundos)
+def get_student(email):
+    cache_key = 'get_student'
+    cached_data = cache.get(cache_key)
+
+    if cached_data:
+        logging.info("Serving data from the cache.")
+        return jsonify(cached_data), 200
+
+    logging.info("Fetching data from the API...")
+    try:
+        response = requests.get(f'http://127.0.0.1:8000/student/{email}')
+        response.raise_for_status()
+        data = response.json()
+
+        # Transformar o JSON em um dicionário com índice e question
+        student_dict = data
+
+        # Armazenar o resultado transformado no cache
+        cache.set(cache_key, student_dict, timeout=3600)
+
+        return jsonify(student_dict), 200
+    except requests.exceptions.RequestException as e:
+        logging.error(f"Error fetching data: {e}")
+        return jsonify({'error': str(e)}), 500
+
+
 
 @app.route('/audio/<filename>')
 def get_audio(filename):
@@ -181,9 +209,9 @@ def cadastro_pergunta():
 def cadastro_entrevista():
     return render_template("cadastro_entrevista.html")
 
-@app.route('/generate_question/<question>', methods=['GET'])
-def generate_question(question):
-    # generate_audio_eleven_labs(question)
+@app.route('/generate_question/<question>/<uuid>', methods=['GET'])
+def generate_question(question, uuid):
+    # generate_audio_eleven_labs(question, uuid)
     return jsonify({"message": f"Question '{question}' processed successfully."})
 
 
@@ -199,8 +227,8 @@ def cache_info():
     # caches mais robustos como Redis, você pode usar ferramentas específicas.
     return "Cache info not available for simple cache type."
 
-@app.route('/process_answer', methods=['POST'])
-def process_answer():
+@app.route('/process_answer/<uuid>', methods=['POST'])
+async def process_answer(uuid):
     try:
         # Verificar se um arquivo de áudio foi enviado no corpo da requisição
         if 'audio' in request.files and 'currentQuestion' in request.form:
@@ -209,12 +237,12 @@ def process_answer():
             previousQuestion = request.form['previousQuestion']
 
 
-            audio_file_path = os.path.join(str(dir_file), "engine", "audio.wav")
+            audio_file_path = os.path.join(str(dir_file), "engine", f'audio_{uuid}.wav')
             audio_file.save(audio_file_path)
             logging.info("Salvou o arquivo !")
             logging.info(f'Pergunta anterior: {previousQuestion}')
             logging.info(f'Pergunta corrente: {currentQuestion}')
-            frase_retorno = return_phrase_audio()
+            frase_retorno = await return_phrase_audio(uuid)
             logging.info('Gerando frase de retorno no metodo save_audio.')
             logging.info(frase_retorno)
             # generate_audio_eleven_labs(currentQuestion)
@@ -250,14 +278,16 @@ def chat():
 
     # Template de prompt para o sistema
     prompt_template = """
-        You are a programming expert helping the user improve to solve the following algorithm in Java (
+        You are a polite interviewer you must using a maximum of 20 words, ask how he can solve the following algorithm(
         Given an interval newInterval and an array of intervals, create a function that inserts that newInterval in the array,
         and to merge if necessary. Note that the intervals in the array are non-overlapping, and are
         sorted according to their starting point.
         Example 1:
         Input: intervals = [[1, 3], [4, 7], [8, 10], [12, 15], [16, 17], [18, 20], [21, 25], [28, 29]], newInterval = [9, 18]
         Output: [[1, 3], [4, 7], [8, 20], [21, 25], [28, 29]] )
-       You must give a brief introduction about the problem and ask the user how he can solve this problem.
+        Observation:
+        Remember to use few words when asking.
+        .
     """
     messages = [{"role": "system", "content": prompt_template}]
 
@@ -276,7 +306,6 @@ def chat():
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=messages,
-        max_tokens=100,  # Define o limite de tokens para a resposta
         temperature=0.7
     )
     response_text = response['choices'][0]['message']['content'].strip()
@@ -313,7 +342,7 @@ def chat():
     return jsonify({'response': response_text, 'question': user_input})
 
 @app.route('/process_answer_cracking_code', methods=['POST'])
-def process_answer_cracking_code():
+async def process_answer_cracking_code():
     try:
         # Verificar se um arquivo de áudio foi enviado no corpo da requisição
         if 'audio' in request.files  :
@@ -322,10 +351,10 @@ def process_answer_cracking_code():
             audio_file_path = os.path.join(str(dir_file), "engine", "audio.wav")
             audio_file.save(audio_file_path)
             logging.info("Salvou o arquivo !")
-            frase_retorno = return_phrase_audio()
+            frase_retorno = await return_phrase_audio()
             logging.info('Gerando frase de retorno no metodo save_audio.')
             logging.info(frase_retorno)
-            response_dict = process_student_answer(frase_retorno, code)
+            response_dict = await process_student_answer(frase_retorno, code)
             response_json = response_dict.get_json()
             response_value = response_json.get('response')
 
@@ -339,7 +368,7 @@ def process_answer_cracking_code():
         logging.error(f'Erro {str(e)}')
         return f'Erro ao salvar o arquivo de áudio: {str(e)}', 500
 
-def process_student_answer(user_input, code):
+async def process_student_answer(user_input, code):
     prompt_template = """
         You are an interviewer who assesses the user who must solve in Java the following algorithm:        
         Given an interval newInterval and an array of intervals, create a function that inserts that newInterval in the array,

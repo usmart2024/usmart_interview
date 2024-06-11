@@ -156,8 +156,6 @@
           });
    }
 
-
-
     function findDifferences(text1, text2) {
         const lines1 = text1.split('\n');
         const lines2 = text2.split('\n');
@@ -195,12 +193,11 @@
 
   function getEditorContent() {
       var editor = document.getElementById("editor");
-      var htmlContent = editor.innerHTML; // Pega o conteúdo HTML dentro da div
-      var textContent = editor.textContent; // Pega apenas o texto, sem qualquer marcação HTML
+      var htmlContent = editor.innerHTML;
+      var textContent = editor.textContent;
 
       console.log("Text Content:", textContent);
 
-      // Caso você precise retornar esses valores
       return {
           html: htmlContent,
           text: textContent
@@ -229,14 +226,5 @@
     $('.close, #cancelButton').on('click', function() {
         $('#newModal').modal('hide');
     });
-
-
   });
 
-
-
-// Chame esta função para ver os resultados no console
-
-
-//const differences = findDifferences(text1, text2);
-//console.log("Diferenças encontradas:\n", differences);
