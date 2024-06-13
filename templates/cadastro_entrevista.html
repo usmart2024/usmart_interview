@@ -130,12 +130,12 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form method="POST" action="{{ url_for('create_interview') }}" >
                     <div class="form-group">
                         <label for="stack">Stack</label>
-                        <textarea class="form-control" id="stack" rows="3"></textarea>
+                        <textarea class="form-control" id="stack" name="stack" rows="3"></textarea>
                     </div>
-                    <button type="button" class="btn btn-primary" id="startButton">Start Simulation</button>
+                    <button type="submit" class="btn btn-primary" id="startButton">Start Simulation</button>
                 </form>
             </div>
         </div>

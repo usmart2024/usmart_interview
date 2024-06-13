@@ -20,7 +20,7 @@ $(document).ready(function () {
 
     async function loadQuestions() {
         try {
-            const response = await fetch('/questoes');
+            const response = await fetch(`/questoes/${stack}`);
             if (!response.ok) {
                 throw new Error('Erro ao obter questões');
             }
@@ -77,11 +77,8 @@ $(document).ready(function () {
 
     function playAudio(uuid) {
         const timestamp = new Date().getTime();
-        alert(uuid)
         const audioUrl = `http://127.0.0.1:8000/audio/response_open_ai_${uuid}.mp3?timestamp=${timestamp}`;
-        alert(audioUrl)
         const audio = new Audio(audioUrl);
-        alert(audioUrl)
         audio.play();
         audio.addEventListener('ended', function() {
             $("#volume-bars_2").attr("hidden", true);
@@ -274,7 +271,6 @@ $(document).ready(function () {
         // Substituir espaços por %20 para a URL ser válida
         let encodedQuestion = encodeURIComponent(question);
         let uuid = student.uuid
-        alert(uuid)
         fetch(`/generate_question/${encodedQuestion}/${uuid}`, {
             method: 'GET'
         }).then(function(response) {
@@ -469,3 +465,9 @@ $(document).ready(function () {
     });
 
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Agora você pode usar a variável stack que foi definida no HTML
+    console.log("Stack from session:", stack);
+    });

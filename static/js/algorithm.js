@@ -47,6 +47,15 @@
          }, 1000);  // Define o intervalo para 1 segundo (1000 milissegundos)
      }
 
+    function playAudioStream(text) {
+        const audioUrl = `http://127.0.0.1:5000/stream/${text}`;
+        const audio = new Audio(audioUrl);
+        audio.play().catch(error => console.log('Error playing audio:', error));
+        audio.addEventListener('ended', function() {
+            $("#volume-bars_2").attr("hidden", true);
+        });
+    }
+
    function finishInterview() {
        $("#play").attr("hidden", false);
        $("#finish_interview").attr("hidden", true);
@@ -122,7 +131,7 @@
                           chatBox.scrollTop = chatBox.scrollHeight;
 
                        $("#volume-bars").attr("hidden", false);
-                        playAudio(uuid);
+                        playAudioStream(data.response);
 
                     console.log('Arquivo de áudio salvo com sucesso.');
                 })
@@ -169,7 +178,7 @@
               chatBox.innerHTML += `<p><strong>AI:</strong> ${data.response}</p>`;
               chatBox.scrollTop = chatBox.scrollHeight;
               $("#volume-bars").attr("hidden", false);
-              playAudio(uuid);
+              playAudioStream(data.response);
           })
           .catch(function(error) {
               console.error('Erro:', error);

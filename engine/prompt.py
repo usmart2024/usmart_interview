@@ -5,6 +5,8 @@ from langchain.prompts import PromptTemplate
 from dotenv import load_dotenv, find_dotenv
 from langchain.output_parsers import CommaSeparatedListOutputParser, ResponseSchema, StructuredOutputParser
 load_dotenv(find_dotenv())
+from flask import jsonify
+import asyncio
 openai.api_key = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 llm = OpenAI(temperature=0.1 )
@@ -38,40 +40,71 @@ def prompt_ask_candidate(query):
     output = llm(prompt)
     print(output)
 
+async def prompt_english_evaluate(phrase):
 
-def evaluate_question(query, expected_answer, provided_answer ):
+    prompt = PromptTemplate(
+        template=" You are an english teacher and you need analize the english error of the following phrase {phrase}, Give a brief feedback",
+        input_variables=["phrase"]
+    )
 
+    prompt =  prompt.format(phrase= phrase)
+    output = llm(prompt)
+    print(output)
+    return output
+
+import json
+
+import json
+from langchain.prompts import PromptTemplate
+from langchain.output_parsers import ResponseSchema, StructuredOutputParser
+
+import json
+from langchain.prompts import PromptTemplate
+from langchain.output_parsers import ResponseSchema, StructuredOutputParser
+
+
+async def evaluate_question(question, ideal_answer, answer):
     response_schemas = [
         ResponseSchema(name="question", description="question for the candidate"),
-        ResponseSchema(name="expected_answer", description="Candidate`s expected answer"),
-        ResponseSchema(name="provided_answer", description="Candidate`s provided answer"),
-        ResponseSchema(name="feedback", description="Feedback for the provided_answer against expected_answer"),
-        ResponseSchema(name="grade", description="Evalute provided_answer against expected_answer with score from 0 to 10")
+        ResponseSchema(name="ideal_answer", description="Candidate's expected answer"),
+        ResponseSchema(name="answer", description="Candidate's provided answer"),
+        ResponseSchema(name="technical_feedback", description="Feedback for the provided_answer against expected_answer"),
+        ResponseSchema(name="score", description="Evaluate provided_answer against expected_answer with score from 0 to 10"),
+        ResponseSchema(name="english_feedback", description="English Feedback for the answer")
     ]
 
     output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
-    print(output_parser)
-
     format_instructions = output_parser.get_format_instructions()
-    print(format_instructions)
 
     prompt = PromptTemplate(
-        template=" You are a tech lead knowledgeable in various technologies. Your role is to analyze "
-                 " the provided_answer against expected_answer "
-                 " expected_answer: Java is an object-oriented language, provided_answer: Java is a markup language. "
-                 " Compare the provided_answer and expected_answer and respond in the JSON format "
-                 " Respond in the format \n{format_instructions}. Now here you go the question {query} , expected_answer {expected_answer},"
-                 " and provided_answer {provided_answer} ",
-        input_variables=["query", "expected_answer", "provided_answer"],
+        template="You are a software engineer knowledgeable in various technologies. Your role is to analyze "
+                 "the answer against ideal_answer : {ideal_answer}. "
+                 "Compare the answer and ideal_answer and respond in the JSON format "
+                 "Respond in the format \n{format_instructions}. Now here you go the question {question}, ideal_answer {ideal_answer}, "
+                 "and answer {answer}.you also need analize the english error of the following phrase {answer}, giving a brief english feedback ",
+        input_variables=["question", "ideal_answer", "answer"],
         partial_variables={"format_instructions": format_instructions}
     )
 
+    formatted_prompt = prompt.format(question=question, ideal_answer=ideal_answer, answer=answer)
+    output = llm(formatted_prompt)  # Assuming llm is an async function
 
-    prompt = prompt.format(query = query, expected_answer= expected_answer, provided_answer = provided_answer )
-    output = llm(prompt)
-    print(output)
+    # Log the output received from the LLM
+    print(f"Output from LLM: {output}")
+
+    # Clean up the output to remove ```json and ```
+    cleaned_output = clean_json_string(output)
+
+    return json.dumps(cleaned_output)
 
 
-# evaluate_question("Immutability – how to create immutable custom class with list",
-#                   "An object is immutable when its state doesn’t change after it has been initialized. For example, String is an immutable class and, once instantiated, the value of a String object never changes.",
-#                   "String is an immutable class and, once instantiated, the value of a String object never changes")
+def clean_json_string(json_string):
+    json_string = json_string.strip()
+    # Remove ```json do início, se existir
+    if json_string.startswith("```json"):
+        json_string = json_string[7:].strip()
+
+    if json_string.endswith("```"):
+        json_string = json_string[:-3].strip()
+
+    return json.loads(json_string)

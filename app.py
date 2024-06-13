@@ -1,7 +1,7 @@
 import os
 import platform
 import requests
-from flask import Flask, render_template, request, jsonify, send_from_directory, abort, make_response, session
+from flask import Flask, render_template, request, jsonify, send_from_directory, abort, make_response, session, redirect, Response
 from werkzeug.utils import secure_filename
 from flask_cors import CORS
 import speech_recognition as sr
@@ -9,12 +9,17 @@ from engine.voice_recognize import start_listening, return_phrase_audio, return_
 import asyncio
 import logging
 import time
+import json
 from flask_caching import Cache
 from dotenv import load_dotenv, find_dotenv
 from engine.eleven_labs import generate_audio_eleven_labs, cc_generate_audio_eleven_labs
 from flask_session import Session
 from flask_talisman import Talisman
 import openai
+from elevenlabs import generate, play, voices, set_api_key, save, User, Voice, VoiceSettings
+import elevenlabs
+from engine.prompt import  evaluate_question, prompt_english_evaluate
+from datetime import datetime
 
 load_dotenv(find_dotenv())
 dir_file = os.getenv("FILE_DIR")
@@ -76,33 +81,45 @@ Talisman(app, content_security_policy=None)
 MP3_DIR = "/home/ubuntu22/PycharmProjects/usmart_interview/engine"
 data = ["string1", "string2", "string3"]
 
-@app.route('/questoes')
-@cache.cached(timeout=3600)  # Cache por 1 hora (3600 segundos)
-def get_questions():
-    cache_key = 'get_questions'
-    cached_data = cache.get(cache_key)
-
-    if cached_data:
-        logging.info("Serving data from the cache.")
-        return jsonify(cached_data), 200
+@app.route('/questoes/<topics>')
+def get_questions(topics):
 
     logging.info("Fetching data from the API...")
     try:
-        response = requests.get('http://127.0.0.1:8000/questions/Micr')
+        response = requests.get(f'http://127.0.0.1:8000/questions/{topics}')
         response.raise_for_status()
         data = response.json()
 
-        # Transformar o JSON em um dicionário com índice e question
-        questions_dict = {index: item['question'] for index, item in enumerate(data)}
+        # questions_dict = {index: item['question'] for index, item in enumerate(data)}
 
-        # Armazenar o resultado transformado no cache
-        cache.set(cache_key, questions_dict, timeout=3600)
-
-        return jsonify(questions_dict), 200
+        return jsonify(data), 200
     except requests.exceptions.RequestException as e:
         logging.error(f"Error fetching data: {e}")
         return jsonify({'error': str(e)}), 500
 
+
+@app.route('/fetch_student_interviews/<int:id_student>', methods=['GET'])
+def fetch_student_interviews(id_student):
+    url = f'http://127.0.0.1:8000/student_interviews/{id_student}'
+
+    try:
+        response = requests.get(url)
+        response.raise_for_status()  # Levanta uma exceção para status de erro HTTP
+        interviews = response.json()
+        return jsonify(interviews)
+    except requests.exceptions.RequestException as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/fetch_questions_interviews/<int:id_interview>', methods=['GET'])
+def fetch_questions_interviews(id_interview):
+    url = f'http://127.0.0.1:8000/interview_questions/{id_interview}'
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        questions = response.json()
+        return jsonify(questions)
+    except requests.exceptions.RequestException as e:
+        return jsonify({"error": str(e)}), 500
 
 @app.route('/student/<email>')
 @cache.cached(timeout=3600)  # Cache por 1 hora (3600 segundos)
@@ -209,11 +226,13 @@ def cadastro_pergunta():
 def cadastro_entrevista():
     return render_template("cadastro_entrevista.html")
 
-@app.route('/generate_question/<question>/<uuid>', methods=['GET'])
-def generate_question(question, uuid):
+@app.route('/generate_question/<uuid>', methods=['POST'])
+def generate_question(uuid):
     # generate_audio_eleven_labs(question, uuid)
-    return jsonify({"message": f"Question '{question}' processed successfully."})
+    data = request.get_json()
+    question = data.get('question')
 
+    return jsonify({"message": f"Question '{question.get('question')}' processed successfully."})
 
 @app.route('/clear_cache')
 def clear_cache():
@@ -233,27 +252,61 @@ async def process_answer(uuid):
         # Verificar se um arquivo de áudio foi enviado no corpo da requisição
         if 'audio' in request.files and 'currentQuestion' in request.form:
             audio_file = request.files['audio']
-            currentQuestion = request.form['currentQuestion']
-            previousQuestion = request.form['previousQuestion']
-
+            currentQuestion = json.loads(request.form['currentQuestion'])
+            previousQuestion = json.loads(request.form['previousQuestion'])
 
             audio_file_path = os.path.join(str(dir_file), "engine", f'audio_{uuid}.wav')
             audio_file.save(audio_file_path)
             logging.info("Salvou o arquivo !")
             logging.info(f'Pergunta anterior: {previousQuestion}')
+            current_question = currentQuestion.get('question')
             logging.info(f'Pergunta corrente: {currentQuestion}')
             frase_retorno = await return_phrase_audio(uuid)
             logging.info('Gerando frase de retorno no metodo save_audio.')
             logging.info(frase_retorno)
-            # generate_audio_eleven_labs(currentQuestion)
+            feedback = await evaluate_question(previousQuestion.get('question'), previousQuestion.get('ideal_answer'), frase_retorno )
+            # english =  await prompt_english_evaluate(frase_retorno)
+            # feedback_dict = json.loads(feedback)
+            # feedback_dict['english'] = english  # Adicione o atributo 'english'
 
-            return jsonify({'frase': "How to break a Monolith web service into Microservices?"}), 200
+            # Retorne o JSON atualizado com o novo atributo 'english'
+            return jsonify({'frase': f'{current_question}'}), 200
         else:
             logging.error('Nenhum arquivo de áudio ou pergunta anterior foi enviado.')
             return 'Nenhum arquivo de áudio ou pergunta anterior foi enviado.', 400
     except Exception as e:
         logging.error(f'Erro {str(e)}')
         return f'Erro ao salvar o arquivo de áudio: {str(e)}', 500
+
+@app.route('/create_interview', methods=['POST'])
+def create_interview():
+
+    stack = request.form['stack']
+    session['stack'] = stack
+
+    current_datetime = datetime.now().strftime('%Y-%m-%dT%H:%M:%S')
+
+    dados = {
+        "id_student": 34,
+        "interview_date": current_datetime,
+        "stack": stack,
+        "data_atualizacao": current_datetime,
+        "score": 0
+    }
+
+    url = 'http://127.0.0.1:8000/interview'
+
+    try:
+        response = requests.post(url, json=dados)
+        response.raise_for_status()  # Isso irá levantar um erro para códigos de status HTTP 4xx/5xx
+
+        if request.method == 'POST':
+            interview = json.loads(response.content)
+            session['id_interview'] = interview.get('id_interview')
+        return render_template('index.html', stack=stack, id_interview = id_interview )
+
+    except requests.exceptions.RequestException as e:
+        return jsonify({"error": str(e)}), 500
 
 
 @app.route('/crackingcode')
@@ -397,6 +450,65 @@ async def process_student_answer(user_input, code):
 
     logging.info(response_text)
     return jsonify({'response': response_text, 'question': user_input})
+
+API_KEY = '79a25f2750027c8bb669ea213e4164c2'
+VOICE_ID = 'ErXwobaYiN019PkySvjV'
+API_URL = f'https://api.elevenlabs.io/v1/text-to-speech/{VOICE_ID}/stream'
+
+def generate_stream(text):
+    payload = {
+        "text": text,
+        "model_id": "eleven_monolingual_v1",
+        "voice_settings": {
+            "stability": 0.75,
+            "similarity_boost": 0.75,
+            "style": 0,
+            "use_speaker_boost": True
+        }
+    }
+
+    headers = {
+        "Content-Type": "application/json",
+        "xi-api-key": f"{API_KEY}"
+    }
+
+    response = requests.post(API_URL, json=payload, headers=headers, stream=True)
+    print("Response Status:", response.status_code)
+    print("Response Text:", response.text)
+
+    if response.status_code == 200:
+        return response.iter_content(chunk_size=1024)
+    else:
+        return None
+
+def split_text(text, max_length=500):
+    words = text.split()
+    chunks = []
+    chunk = []
+
+    for word in words:
+        if len(' '.join(chunk + [word])) > max_length:
+            chunks.append(' '.join(chunk))
+            chunk = [word]
+        else:
+            chunk.append(word)
+
+    if chunk:
+        chunks.append(' '.join(chunk))
+
+    return chunks
+
+
+@app.route('/stream/<text>')
+def stream_audio(text):
+    text_to_speak = text
+    def generate():
+        audio_stream = generate_stream(text_to_speak)
+        if audio_stream:
+            for chunk_data in audio_stream:
+                yield chunk_data
+
+    return Response(generate(), content_type='audio/mpeg')
 
 
 if __name__ == "__main__":
