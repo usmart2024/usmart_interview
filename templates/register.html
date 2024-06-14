@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #000000, #00004B);
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: linear-gradient(to bottom, #000000, #00004B);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #5cb85c;
+            border: none;
+            border-radius: 3px;
+            color: #fff;
+            font-size: 16px;
+        }
+        .message {
+            margin-top: 15px;
+            text-align: center;
+        }
+        .message a {
+            color: #5cb85c;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="{{ url_for('register') }}" method="POST">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" required>
+            </div>
+            <button type="submit">Register</button>
+            <div class="message">
+                <p>Already registered? <a href="{{ url_for('login') }}">Login</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

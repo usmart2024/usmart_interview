@@ -84,8 +84,7 @@
     <thead>
       <tr>
         <th>Stack</th>
-        <th>Description</th>
-        <th>Date</th>
+        <th>Interview date</th>
         <th>Score</th>
         <th>Action</th>
       </tr>
@@ -120,34 +119,34 @@
   <script src="{{ url_for('static', filename='js/cadastro_entrevista.js') }}"></script>
 
 <!-- Modal para nova entrevista -->
-<div class="modal fade" id="interviewModal" tabindex="-1" aria-labelledby="newModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="newModalLabel">Start New Simulation</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form method="POST" action="{{ url_for('create_interview') }}" >
-                    <div class="form-group">
-                        <label for="stack">Stack</label>
-                        <textarea class="form-control" id="stack" name="stack" rows="3"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" id="startButton">Start Simulation</button>
-                </form>
-            </div>
+  <div class="modal fade" id="interviewModal" tabindex="-1" aria-labelledby="newModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-custom">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="newModalLabel">Start New Simulation</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
+        <div class="modal-body">
+          <form method="POST" action="{{ url_for('create_interview') }}">
+            <div class="form-group">
+              <label for="stack">Stack</label>
+              <textarea class="form-control" id="stack" name="stack" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" id="startButton">Start Simulation</button>
+          </form>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
 
 
 <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="detailModalLabel">Detail View</h5>
+                <h5 class="modal-title" id="detailModalLabel">Analysis of the questions</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -397,6 +396,12 @@
     height: 20px;
     width: 30px;
 }
+.modal-dialog-custom {
+    max-width: 500px; /* Defina a largura máxima desejada */
+    margin: 30px auto; /* Centraliza a modal na tela */
+    /* Adicione outros estilos personalizados conforme necessário */
+}
+
 #volume-bars_2 {
     display: flex;
     justify-content: space-around;
@@ -668,7 +673,14 @@ tr:hover {
         background: #555;
     }
 
+.modal-dialog.modal-dialog-custom {
+    max-width: 500px; /* Defina a largura máxima desejada */
+    margin: 30px auto; /* Centraliza a modal na tela */
+    /* Adicione outros estilos personalizados conforme necessário */
+}
+
     .modal-dialog {
+        max-width: 1400px; /* Largura máxima da modal */
         max-width: 1400px; /* Largura máxima da modal */
         margin: 30px auto; /* Centraliza a modal na tela */
     }
@@ -741,6 +753,7 @@ tr:hover {
     height: 800px;
     margin: auto; /* Centraliza verticalmente */
 }
+
 
 </style>
 

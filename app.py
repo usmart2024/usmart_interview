@@ -1,7 +1,7 @@
 import os
 import platform
 import requests
-from flask import Flask, render_template, request, jsonify, send_from_directory, abort, make_response, session, redirect, Response
+from flask import Flask, render_template, request, jsonify, send_from_directory, abort, make_response, session, redirect, Response, flash, url_for
 from werkzeug.utils import secure_filename
 from flask_cors import CORS
 import speech_recognition as sr
@@ -10,6 +10,9 @@ import asyncio
 import logging
 import time
 import json
+from flask_sqlalchemy import SQLAlchemy
+from flask_bcrypt import Bcrypt
+from flask_login import LoginManager
 from flask_caching import Cache
 from dotenv import load_dotenv, find_dotenv
 from engine.eleven_labs import generate_audio_eleven_labs, cc_generate_audio_eleven_labs
@@ -20,6 +23,11 @@ from elevenlabs import generate, play, voices, set_api_key, save, User, Voice, V
 import elevenlabs
 from engine.prompt import  evaluate_question, prompt_english_evaluate
 from datetime import datetime
+from flask_login import UserMixin
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, SubmitField, BooleanField
+from wtforms.validators import DataRequired, Length, Email
+from flask_login import login_user, current_user, logout_user, login_required
 
 load_dotenv(find_dotenv())
 dir_file = os.getenv("FILE_DIR")
@@ -39,6 +47,12 @@ app.config['SESSION_PERMANENT'] = False
 app.config['SESSION_USE_SIGNER'] = True
 app.config['CACHE_TYPE'] = 'simple'  # Pode usar diferentes tipos de cache como 'redis', 'memcached', etc.
 app.config['CACHE_TYPE'] = 'simple'  # Pode usar diferentes tipos de cache como 'redis', 'memcached', etc.
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:gui2809!@localhost:5432/postgres'
+db = SQLAlchemy(app)
+bcrypt = Bcrypt(app)
+login_manager = LoginManager(app)
+login_manager.login_view = 'login'
+
 CORS(app, resources={r"/*": {"origins": "*"}})
 
 cache = Cache(app)
@@ -81,6 +95,21 @@ Talisman(app, content_security_policy=None)
 MP3_DIR = "/home/ubuntu22/PycharmProjects/usmart_interview/engine"
 data = ["string1", "string2", "string3"]
 
+class User(db.Model, UserMixin):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(150), unique=True, nullable=False)
+    email = db.Column(db.String(150), unique=True, nullable=False)
+    password = db.Column(db.String(60), nullable=False)
+
+    def __repr__(self):
+        return f"User('{self.username}', '{self.email}')"
+
+class LoginForm(FlaskForm):
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    password = PasswordField('Password', validators=[DataRequired(), Length(min=6, max=20)])
+    remember = BooleanField('Remember Me')
+    submit = SubmitField('Login')
+
 @app.route('/questoes/<topics>')
 def get_questions(topics):
 
@@ -97,6 +126,17 @@ def get_questions(topics):
         logging.error(f"Error fetching data: {e}")
         return jsonify({'error': str(e)}), 500
 
+@app.route('/add_user')
+def add_user():
+    hashed_password = bcrypt.generate_password_hash('password').decode('utf-8')
+    user = User(username='admin', email='admin@example.com', password=hashed_password)
+    db.session.add(user)
+    db.session.commit()
+    return 'User added!'
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
 
 @app.route('/fetch_student_interviews/<int:id_student>', methods=['GET'])
 def fetch_student_interviews(id_student):
@@ -122,14 +162,7 @@ def fetch_questions_interviews(id_interview):
         return jsonify({"error": str(e)}), 500
 
 @app.route('/student/<email>')
-@cache.cached(timeout=3600)  # Cache por 1 hora (3600 segundos)
 def get_student(email):
-    cache_key = 'get_student'
-    cached_data = cache.get(cache_key)
-
-    if cached_data:
-        logging.info("Serving data from the cache.")
-        return jsonify(cached_data), 200
 
     logging.info("Fetching data from the API...")
     try:
@@ -141,7 +174,6 @@ def get_student(email):
         student_dict = data
 
         # Armazenar o resultado transformado no cache
-        cache.set(cache_key, student_dict, timeout=3600)
 
         return jsonify(student_dict), 200
     except requests.exceptions.RequestException as e:
@@ -264,10 +296,10 @@ async def process_answer(uuid):
             frase_retorno = await return_phrase_audio(uuid)
             logging.info('Gerando frase de retorno no metodo save_audio.')
             logging.info(frase_retorno)
-            feedback = await evaluate_question(previousQuestion.get('question'), previousQuestion.get('ideal_answer'), frase_retorno )
-            # english =  await prompt_english_evaluate(frase_retorno)
-            # feedback_dict = json.loads(feedback)
-            # feedback_dict['english'] = english  # Adicione o atributo 'english'
+            ideal_answer = previousQuestion.get('ideal_answer')
+            idquestion = previousQuestion.get('idquestion')
+            feedback = await evaluate_question(previousQuestion.get('question'),ideal_answer, frase_retorno )
+            create_question_interview(feedback,ideal_answer,frase_retorno, idquestion)
 
             # Retorne o JSON atualizado com o novo atributo 'english'
             return jsonify({'frase': f'{current_question}'}), 200
@@ -278,6 +310,45 @@ async def process_answer(uuid):
         logging.error(f'Erro {str(e)}')
         return f'Erro ao salvar o arquivo de áudio: {str(e)}', 500
 
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if current_user.is_authenticated:
+        return redirect(url_for('dashboard'))
+    if request.method == 'POST':
+        email = request.form.get('email')
+        password = request.form.get('password')
+        user = User.query.filter_by(email=email).first()
+        if user and bcrypt.check_password_hash(user.password, password):
+            login_user(user, remember=True)
+            next_page = request.args.get('next')
+            return redirect(next_page) if next_page else redirect(url_for('dashboard'))
+        else:
+            flash('Login Unsuccessful. Please check email and password', 'danger')
+    return render_template('login.html')
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if current_user.is_authenticated:
+        return redirect(url_for('home'))
+    if request.method == 'POST':
+        username = request.form.get('username')
+        email = request.form.get('email')
+        password = request.form.get('password')
+        hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
+        user = User(username=username, email=email, password=hashed_password)
+        db.session.add(user)
+        db.session.commit()
+        flash('Your account has been created! You are now able to log in', 'success')
+        return redirect(url_for('login'))
+    return render_template('register.html')
+
+
+@app.route('/logout')
+def logout():
+    logout_user()
+    return redirect(url_for('home'))
+
 @app.route('/create_interview', methods=['POST'])
 def create_interview():
 
@@ -287,7 +358,7 @@ def create_interview():
     current_datetime = datetime.now().strftime('%Y-%m-%dT%H:%M:%S')
 
     dados = {
-        "id_student": 34,
+        "id_student": 35,
         "interview_date": current_datetime,
         "stack": stack,
         "data_atualizacao": current_datetime,
@@ -303,7 +374,32 @@ def create_interview():
         if request.method == 'POST':
             interview = json.loads(response.content)
             session['id_interview'] = interview.get('id_interview')
+            id_interview = session['id_interview']
         return render_template('index.html', stack=stack, id_interview = id_interview )
+
+    except requests.exceptions.RequestException as e:
+        return jsonify({"error": str(e)}), 500
+
+def create_question_interview(feedback, ideal_answer,frase_retorno,idquestion):
+
+    id_interview = session['id_interview']
+
+    dados = {
+        "id_interview": id_interview,
+        "idquestion": idquestion,
+        "student_answer": frase_retorno,
+        "observation": feedback['technical_feedback'],
+        "answer": ideal_answer,
+        "technical_feedback": feedback['technical_feedback'],
+        "english_feedback": feedback['english_feedback'],
+        "score": feedback['score']
+    }
+
+    url = 'http://127.0.0.1:8000/interview_question'
+
+    try:
+        response = requests.post(url, json=dados)
+        response.raise_for_status()  # Isso irá levantar um erro para códigos de status HTTP 4xx/5xx
 
     except requests.exceptions.RequestException as e:
         return jsonify({"error": str(e)}), 500

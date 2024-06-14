@@ -43,6 +43,7 @@
              if (countdownTime < 0) {
                  clearInterval(intervalId);  // Para o intervalo quando o tempo chegar a zero
                  display.textContent = "00:00:00";  // Define o display para zero
+                 $('#modalStopInt').modal('show');
              }
          }, 1000);  // Define o intervalo para 1 segundo (1000 milissegundos)
      }
@@ -61,6 +62,10 @@
        $("#finish_interview").attr("hidden", true);
        resetCountdown();
    }
+
+   $('#finish1').on('click', function() {
+      window.location.href = 'http://localhost:5000/cadastro_entrevista';
+   });
 
     function resetCountdown() {
         clearInterval(intervalId);  // Limpa o intervalo atual
@@ -243,6 +248,17 @@
   }
 
   $(document).ready(function () {
+
+            $('#modalStopInt').modal({
+                backdrop: 'static',
+                keyboard: false
+            });
+
+            $('#modalStopInt').on('hide.bs.modal', function (e) {
+                if (!confirm('Do you really want to close?')) {
+                    e.preventDefault();
+                }
+            });
 
   $('#finish').on('click', function() {
         $("#play").attr("hidden", false);

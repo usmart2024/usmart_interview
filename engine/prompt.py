@@ -10,6 +10,7 @@ import asyncio
 openai.api_key = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 llm = OpenAI(temperature=0.1 )
+from langchain.chains import LLMChain
 
 def prompt_question(question):
 
@@ -62,41 +63,48 @@ import json
 from langchain.prompts import PromptTemplate
 from langchain.output_parsers import ResponseSchema, StructuredOutputParser
 
+async def evaluate_question(question, question_answer, student_answer):
+    prompt_template = """
+    You are a tech lead knowledgeable in various technologies. Your role is to analyze 
+    the student_answer against question_answer
+    Now here you go the question {question} , question_answer : {question_answer}
+    and student_answer {student_answer} 
+    Compare the student_answer and question_answer and put the result in technical_feedback.
+    Now you need set a score from 0 to 10 of the analisys and put result inside variable score.
+    Now Evaluate only the English  in the phrase : {student_answer}  and provide suggestions for improvement. 
+    This feedback will be assigned to the variable english_feedback.
+ 
+    *** Output ***
+    The result of this prompt must always be the JSON, as I am parsing the return as a JSON. If you return phrases, I will encounter errors during parsing,
+    so only return the JSON.    
+    
+    Format example :
+    "technical_feedback": "",
+    "score": "",
+    "english_feedback": ""
+         
+    """
 
-async def evaluate_question(question, ideal_answer, answer):
-    response_schemas = [
-        ResponseSchema(name="question", description="question for the candidate"),
-        ResponseSchema(name="ideal_answer", description="Candidate's expected answer"),
-        ResponseSchema(name="answer", description="Candidate's provided answer"),
-        ResponseSchema(name="technical_feedback", description="Feedback for the provided_answer against expected_answer"),
-        ResponseSchema(name="score", description="Evaluate provided_answer against expected_answer with score from 0 to 10"),
-        ResponseSchema(name="english_feedback", description="English Feedback for the answer")
+    # Formatar o prompt com os valores das variáveis
+    prompt = prompt_template.format(question=question, question_answer=question_answer, student_answer=student_answer)
+
+    # Criar a mensagem para o modelo GPT-4
+    messages = [
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": prompt}
     ]
 
-    output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
-    format_instructions = output_parser.get_format_instructions()
-
-    prompt = PromptTemplate(
-        template="You are a software engineer knowledgeable in various technologies. Your role is to analyze "
-                 "the answer against ideal_answer : {ideal_answer}. "
-                 "Compare the answer and ideal_answer and respond in the JSON format "
-                 "Respond in the format \n{format_instructions}. Now here you go the question {question}, ideal_answer {ideal_answer}, "
-                 "and answer {answer}.you also need analize the english error of the following phrase {answer}, giving a brief english feedback ",
-        input_variables=["question", "ideal_answer", "answer"],
-        partial_variables={"format_instructions": format_instructions}
+    # Chamada à API do OpenAI para completar o chat
+    res = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=messages,
+        temperature=0.7
     )
 
-    formatted_prompt = prompt.format(question=question, ideal_answer=ideal_answer, answer=answer)
-    output = llm(formatted_prompt)  # Assuming llm is an async function
+    json_string = res.choices[0].message['content']
+    cleaned_output = clean_json_string(json_string)
 
-    # Log the output received from the LLM
-    print(f"Output from LLM: {output}")
-
-    # Clean up the output to remove ```json and ```
-    cleaned_output = clean_json_string(output)
-
-    return json.dumps(cleaned_output)
-
+    return cleaned_output
 
 def clean_json_string(json_string):
     json_string = json_string.strip()
@@ -108,3 +116,7 @@ def clean_json_string(json_string):
         json_string = json_string[:-3].strip()
 
     return json.loads(json_string)
+
+# for _ in range(100):
+#     result = evaluate_question(question, question_answer, student_answer)
+#     print(result)

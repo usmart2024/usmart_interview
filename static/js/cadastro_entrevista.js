@@ -89,7 +89,6 @@ $(document).ready(function() {
         paginatedData.forEach(function(row) {
             var $tr = $("<tr>");
             $tr.append($("<td>").text(row.topic));
-            $tr.append($("<td>").text(row.subtopic));
             $tr.append($("<td>").text(truncateText(row.data_atualizacao, 30)).addClass("ellipsis"));
             $tr.append($("<td>").text(truncateText(row.average_question_score, 30)).addClass("ellipsis"));
             $tr.append($("<td hidden>").text(row.id_interview));
@@ -135,7 +134,7 @@ $(document).ready(function() {
         var question = $row.find("td:nth-child(3)").text();
         var answer = $row.find("td:nth-child(4)").text();
 
-        var data = await loadInterviewQuestions($row.find("td:nth-child(5)").text());
+        var data = await loadInterviewQuestions($row.find("td:nth-child(4)").text());
 
         var modalContent = '';
         data.forEach(function(item) {
@@ -167,8 +166,14 @@ $(document).ready(function() {
         $('#detailModal').modal('hide');
     });
 
-    $('#cancelButton').on('click', function() {
-        $('.modal-backdrop').remove();
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    $('#closeInterview').on('click', function () {
         $('#interviewModal').modal('hide');
+    });
+
+    $('#interviewModal').on('hidden.bs.modal', function () {
+        $(this).find('form').trigger('reset');
     });
 });

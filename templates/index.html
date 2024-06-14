@@ -433,6 +433,29 @@
     </div>
  </div>
 
+ <div class="modal fade" id="modalStopInt" tabindex="-1" aria-labelledby="newModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="newModalLabel_">No more questions</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <h5 class="modal-title" id="newModalLabel_2">What do you want to do?</h5>
+            </div>
+            <button type="button" class="btn btn-primary" id="finish1">Go to cracking code</button>
+            <button type="button" class="btn btn-primary" id="cancelButton2">Quit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+ </div>
+
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -712,6 +735,7 @@ $(document).ready(function () {
             if (countdownTime < 0) {
                 clearInterval(intervalId);  // Para o intervalo quando o tempo chegar a zero
                 display.textContent = "00:00:00";  // Define o display para zero
+                $('#modalStopInt').modal('show');
             }
         }, 1000);  // Define o intervalo para 1 segundo (1000 milissegundos)
     }
@@ -855,7 +879,7 @@ $(document).ready(function () {
                         }, 1000);
                     });
                     $("#volume-bars_2").attr("hidden", false);
-                    playAudioStream(currentQuestion);
+                    playAudioStream(currentQuestion.question);
 
                     console.log('Arquivo de áudio salvo com sucesso.');
                 }).catch(function(error) {
@@ -887,6 +911,19 @@ $(document).ready(function () {
     $('#startCrackingCodeButton').on('click', function() {
       window.location.href = 'http://localhost:5000/crackingcode';
     });
+
+    $('#finish1').on('click', function() {
+      window.location.href = 'http://localhost:5000/crackingcode';
+    });
+
+    $('#cancelButton2').on('click', function() {
+      window.location.href = 'http://localhost:5000/cadastro_entrevista';
+    });
+
+    $('.close').on('click', function() {
+        $('#modalStopInt').modal('hide');
+    });
+
 
     $('#finish').on('click', function() {
         $("#play").attr("hidden", false);
