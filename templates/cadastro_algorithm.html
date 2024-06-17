@@ -47,61 +47,73 @@
           <div class="linha-separadora"></div>
           <div class="filho-coluna2">
             <div class="row" style="height:50px; width:100%; margin-left:20px;">
-                <span class="dashboard-header"> Your Simulated Interviews  </span>
+                <span class="dashboard-header"> Leetcode questions  </span>
             </div>
-<div class="linha">
+  <div class="linha">  </div>
 
-            </div>
-
-<!--               <div class="container">-->
-<!--        <form>-->
-<!--            <div class="form-group">-->
-<!--                <label for="dropdown1">Topic</label>-->
-<!--                <input type="text" id="dropdown1" class="autocomplete">-->
-<!--            </div>-->
-
-<!--            <div class="form-group">-->
-<!--                <label for="dropdown2">Sub-Topic</label>-->
-<!--                <input type="text" id="dropdown2" class="autocomplete">-->
-<!--            </div>-->
-
-<!--            <div class="form-group">-->
-<!--                <label for="pergunta">Question</label>-->
-<!--                <textarea id="pergunta" rows="4"></textarea>-->
-<!--            </div>-->
-
-<!--            <div class="form-group">-->
-<!--                <label for="resposta">Answer</label>-->
-<!--                <textarea id="resposta" rows="4"></textarea>-->
-<!--            </div>-->
-
-<!--            <button type="submit">Enviar</button>-->
-<!--        </form>-->
-<!--    </div>-->
-
-   <div class="container_2">
-  <div style=" padding-bottom:5px ">
-    <button id="search-button" class="btn btn-primary ml-2" data-toggle="modal" data-target="#interviewModal" >New</button>
+  <div class="container_2">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="tab1-tab" data-bs-toggle="tab" href="#tab1"
+           role="tab" aria-controls="tab1" aria-selected="true">Available Questions</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="tab2-tab" data-bs-toggle="tab" href="#tab2" role="tab"
+           aria-controls="tab2" aria-selected="false">Your questions </a>
+      </li>
+         <div class="linha">  </div>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+        <div style=" padding-bottom:5px ">
+<!--          <button id="search-button" class="btn btn-primary ml-2" data-toggle="modal" data-target="#interviewModal" >New</button>-->
+        </div>
+        </p>
+        <h3>Available questions</h3>
+        <p>Questions to practice.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Topic</th>
+              <th>Algorithm Question</th>
+              <th>     </th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+            <!-- Conteúdo da tabela será gerado pelo JavaScript -->
+          </tbody>
+        </table>
+        <div id="pagination" class="pagination-container">
+          <button id="prev-page" class="btn btn-primary">Previous</button>
+          <span id="page-info"></span>
+          <button id="next-page" class="btn btn-primary">Next</button>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+          </p>
+        <h3>Your made questions</h3>
+        <p>The questions made by you.</p>
+        <!-- Adicione o conteúdo da sua nova tabela aqui -->
+        <table>
+          <thead>
+            <tr>
+              <th>Topic</th>
+              <th>Algorithm Question</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="table-body2">
+            <!-- Conteúdo da tabela será gerado pelo JavaScript -->
+          </tbody>
+        </table>
+        <div id="pagination2" class="pagination-container2">
+          <button id="prev-page2" class="btn btn-primary">Previous</button>
+          <span id="page-info2"></span>
+          <button id="next-page2" class="btn btn-primary">Next</button>
+        </div>
+      </div>
+    </div>
   </div>
-  <table>
-    <thead>
-      <tr>
-        <th>Stack</th>
-        <th>Interview date</th>
-        <th>Score</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody id="table-body">
-      <!-- Conteúdo da tabela será gerado pelo JavaScript -->
-    </tbody>
-  </table>
-</div>
-              <div id="pagination" class="pagination-container">
-                <button id="prev-page" class="btn btn-primary">Previous</button>
-                <span id="page-info"></span>
-                <button id="next-page" class="btn btn-primary">Next</button>
-              </div>
 
           </div>
         </div>
@@ -119,7 +131,7 @@
   <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.fittext.js') }}" defer></script>
   <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.lettering.js') }}" defer></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
-  <script src="{{ url_for('static', filename='js/cadastro_entrevista.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/cadastro_algorithm.js') }}"></script>
 
 <!-- Modal para nova entrevista -->
   <div class="modal fade" id="interviewModal" tabindex="-1" aria-labelledby="newModalLabel" aria-hidden="true">
@@ -132,39 +144,64 @@
           </button>
         </div>
         <div class="modal-body">
-          <form method="POST" action="{{ url_for('create_interview') }}">
+
             <div class="form-group">
               <label for="stack">Stack</label>
-              <textarea class="form-control" id="stack" name="stack" rows="3"></textarea>
+              <textarea class="form-control" id="stack" name="stack" cols="2" rows="3"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary" id="startButton">Start Simulation</button>
-          </form>
+            <button type="submit" class="btn btn-primary" id="startButton1">Start Simulation</button>
+
         </div>
       </div>
     </div>
   </div>
 
 
-<div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+ <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-custom2">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="detailModalLabel">Analysis of the questions</h5>
+                <h5 class="modal-title" id="detailModalLabel">Leetcode question</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <!-- Conteúdo será preenchido pelo JavaScript -->
+        <div class="modal-body2">
+          <form   method="POST" action="{{ url_for('simulate_algorithm') }}">
+            <div class="form-group">
+              <label for="stack" style="margin-left: 10px; margin-top: 30px;">Question:</label>
+              <textarea class="form-control narrow-textarea" readonly id="stack1" name="stack" rows="15"></textarea>
+                <input type="hidden" id="algorithmJson" name="algorithm_json">
             </div>
+              <button type="submit" class="btn btn-primary" id="startButton">Start Simulation</button>
+          </form>
+        </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancelButton">Close</button>
             </div>
         </div>
     </div>
+ </div>
+
+<div class="modal fade" id="detailModal3" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="detailModalLabel3">Analysis of the algorithms</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body2">
+                <!-- Conteúdo será preenchido pelo JavaScript -->
+            </div>
+            <div id="editor" style="height: 740px; width: 1220px; margin-left:80px;"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancelButton3">Close</button>
+            </div>
+        </div>
+    </div>
 </div>
-
-
 
 
 
@@ -405,6 +442,11 @@
     /* Adicione outros estilos personalizados conforme necessário */
 }
 
+    .modal-dialog-custom2 {
+      width: 930px;
+      max-width: 500px;
+    }
+
 #volume-bars_2 {
     display: flex;
     justify-content: space-around;
@@ -444,6 +486,16 @@
     width: 30px;
     height: 100px;
 }
+   .fixed-width {
+        width: 920px; /* Define a largura específica para a coluna */
+        white-space: normal; /* Permite a quebra de linha automática */
+        word-wrap: break-word; /* Garante que palavras longas sejam quebradas */
+    }
+    .ellipsis {
+        white-space: normal; /* Permite quebra de linha */
+        word-wrap: break-word; /* Quebra palavras longas */
+    }
+
 .global-cases {
     border: solid 1px rgba(54, 162, 235, 1);
     background-color: #1a2b4c;
@@ -536,6 +588,19 @@ margin-left :8px;
     border-collapse: collapse;
 }
 
+.nav-tabs {
+  border-bottom: 1000px; /* Remove a borda inferior das abas */
+}
+
+.nav-tabs .nav-link {
+  border: none; /* Remove as bordas das abas individuais */
+  border-bottom: none; /* Remove qualquer borda inferior das abas */
+}
+
+.nav-tabs .nav-link.active {
+  border: none; /* Remove as bordas da aba ativa */
+  border-bottom: width 300px; /* Remove qualquer borda inferior da aba ativa */
+}
 thead {
     background-color: #007BFF;
     color: white;
@@ -592,6 +657,11 @@ tr:hover {
     background: #555; /* Cor do indicador de rolagem ao passar o mouse */
 }
 
+.tab-content {
+  border-top: none; /* Remove qualquer borda superior do conteúdo das abas */
+}
+
+
 
 .action-btn {
     background-color: #007BFF;
@@ -614,6 +684,17 @@ tr:hover {
     }
 
     .pagination-container button {
+      margin: 0 5px;
+    }
+
+.pagination-container2 {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+      margin-left:450px;
+    }
+
+    .pagination-container2 button {
       margin: 0 5px;
     }
 
@@ -660,6 +741,14 @@ tr:hover {
   justify-content: center;
   margin-top: 1rem;
 }
+
+
+.pagination2 {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
 
     .modal-content::-webkit-scrollbar {
         width: 2px;
@@ -711,7 +800,7 @@ tr:hover {
 }
 
 .linha {
-  border-bottom: 2px solid #4caf50; /* Borda inferior da cabeça da modal */
+  border-bottom: 2px solid white; /* Borda inferior da cabeça da modal */
   width:1220px;
   margin-bottom : 50px;
 }
@@ -763,6 +852,10 @@ tr:hover {
     margin: auto; /* Centraliza verticalmente */
 }
 
+.narrow-textarea {
+  width: 900px; /* Ajuste a largura conforme necessário */
+   margin-left: 10px;
+}
 
 </style>
 

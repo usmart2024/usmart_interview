@@ -125,8 +125,6 @@ $(document).ready(function() {
         return result.trim();
     }
 
-
-
     $(document).on("click", ".view-details", async function() { // Transforme a função em async
         var $row = $(this).closest("tr");
         var topic = $row.find("td:nth-child(1)").text();
@@ -162,7 +160,7 @@ $(document).ready(function() {
         $('.modal-backdrop').remove();
     });
 
-    $('.close, #closeButton').on('click', function() {
+    $('.close, #cancelButton').on('click', function() {
         $('#detailModal').modal('hide');
     });
 

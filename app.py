@@ -126,6 +126,38 @@ def get_questions(topics):
         logging.error(f"Error fetching data: {e}")
         return jsonify({'error': str(e)}), 500
 
+@app.route('/algorithms')
+def get_algorithms():
+
+    logging.info("Fetching data from the API...")
+    try:
+        response = requests.get(f'http://127.0.0.1:8000/algorithms')
+        response.raise_for_status()
+        data = response.json()
+
+        return jsonify(data), 200
+    except requests.exceptions.RequestException as e:
+        logging.error(f"Error fetching data: {e}")
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/student_algorithms_with_details')
+def get_student_algorithms_with_details():
+
+    logging.info("Fetching data from the API...")
+    try:
+        response = requests.get(f'http://127.0.0.1:8000/student_algorithms_with_details')
+        response.raise_for_status()
+        data = response.json()
+
+        return jsonify(data), 200
+    except requests.exceptions.RequestException as e:
+        logging.error(f"Error fetching data: {e}")
+        return jsonify({'error': str(e)}), 500
+
+
+
+
+
 @app.route('/add_user')
 def add_user():
     hashed_password = bcrypt.generate_password_hash('password').decode('utf-8')
@@ -181,6 +213,29 @@ def get_student(email):
         return jsonify({'error': str(e)}), 500
 
 
+@app.route('/simulateAlgorithm', methods=['POST'])
+def simulate_algorithm():
+    try:
+        id_algorithm = request.form.get('algorithm_json')
+
+        response = requests.get(f'http://127.0.0.1:8000/algorithm/{id_algorithm}')
+        response.raise_for_status()
+        data = response.json()
+        code = data.get('code');
+        question =  data.get('question');
+        id_algorithm =   data.get('id_algorithm')
+
+        return redirect(url_for('algorithm_page', code = code, question = question, id_algorithm = id_algorithm))
+    except Exception as e:
+        logging.error(f"Error fetching data: {e}")
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/algorithm')
+def algorithm_page():
+    code =  request.args.get('code')
+    question = request.args.get('question')
+    id_algorithm = request.args.get('id_algorithm')
+    return render_template('algorithm.html', code = code, question = question, id_algorithm = id_algorithm)
 
 @app.route('/audio/<filename>')
 def get_audio(filename):
@@ -258,6 +313,10 @@ def cadastro_pergunta():
 def cadastro_entrevista():
     return render_template("cadastro_entrevista.html")
 
+@app.route("/cadastro_algorithm")
+def cadastro_algorithm():
+    return render_template("cadastro_algorithm.html")
+
 @app.route('/generate_question/<uuid>', methods=['POST'])
 def generate_question(uuid):
     # generate_audio_eleven_labs(question, uuid)
@@ -265,6 +324,33 @@ def generate_question(uuid):
     question = data.get('question')
 
     return jsonify({"message": f"Question '{question.get('question')}' processed successfully."})
+
+@app.route('/student_algorithm', methods=['POST'])
+def save_cracking_code():
+
+    chat_history = request.form.get('chat_history')
+    code = request.form.get('code')
+    create_cracking_code( 35, 35,chat_history,code)
+
+    return redirect(url_for('cadastro_entrevista'))
+def create_cracking_code(id_student, id_algorithm,chat_history,code):
+
+    dados = {
+        "id_student": 35,
+        "id_algorithm": 1,
+        "chat_history": chat_history,
+        "feedback_code": """ code """
+    }
+
+    url = 'http://127.0.0.1:8000/student_algorithm'
+
+    try:
+        response = requests.post(url, json=dados)
+        response.raise_for_status()  # Isso irá levantar um erro para códigos de status HTTP 4xx/5xx
+
+    except requests.exceptions.RequestException as e:
+        return jsonify({"error": str(e)}), 500
+
 
 @app.route('/clear_cache')
 def clear_cache():
