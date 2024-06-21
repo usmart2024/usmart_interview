@@ -115,7 +115,7 @@ def get_questions(topics):
 
     logging.info("Fetching data from the API...")
     try:
-        response = requests.get(f'http://127.0.0.1:8000/questions/{topics}')
+        response = requests.get(f'http://54.233.219.151:8000/questions/{topics}')
         response.raise_for_status()
         data = response.json()
 
@@ -131,7 +131,7 @@ def get_algorithms():
 
     logging.info("Fetching data from the API...")
     try:
-        response = requests.get(f'http://127.0.0.1:8000/algorithms')
+        response = requests.get(f'http://54.233.219.151:8000/algorithms')
         response.raise_for_status()
         data = response.json()
 
@@ -145,7 +145,7 @@ def get_student_algorithms_with_details():
 
     logging.info("Fetching data from the API...")
     try:
-        response = requests.get(f'http://127.0.0.1:8000/student_algorithms_with_details')
+        response = requests.get(f'http://54.233.219.151:8000/student_algorithms_with_details')
         response.raise_for_status()
         data = response.json()
 
@@ -172,7 +172,7 @@ def load_user(user_id):
 
 @app.route('/fetch_student_interviews/<int:id_student>', methods=['GET'])
 def fetch_student_interviews(id_student):
-    url = f'http://127.0.0.1:8000/student_interviews/{id_student}'
+    url = f'http://54.233.219.151:8000/student_interviews/{id_student}'
 
     try:
         response = requests.get(url)
@@ -184,7 +184,7 @@ def fetch_student_interviews(id_student):
 
 @app.route('/fetch_questions_interviews/<int:id_interview>', methods=['GET'])
 def fetch_questions_interviews(id_interview):
-    url = f'http://127.0.0.1:8000/interview_questions/{id_interview}'
+    url = f'http://54.233.219.151:8000/interview_questions/{id_interview}'
     try:
         response = requests.get(url)
         response.raise_for_status()
@@ -200,7 +200,7 @@ def get_student():
     email = session['email']
 
     try:
-        response = requests.get(f'http://127.0.0.1:8000/student/{email}')
+        response = requests.get(f'http://54.233.219.151:8000/student/{email}')
         response.raise_for_status()
         data = response.json()
         session['id_student'] = data.get('id_student')
@@ -221,7 +221,7 @@ def simulate_algorithm():
     try:
         id_algorithm = request.form.get('algorithm_json')
 
-        response = requests.get(f'http://127.0.0.1:8000/algorithm/{id_algorithm}')
+        response = requests.get(f'http://54.233.219.151:8000/algorithm/{id_algorithm}')
         response.raise_for_status()
         data = response.json()
         code = data.get('code');
@@ -350,7 +350,7 @@ def create_cracking_code(id_student, id_algorithm, chat_history, code, student_c
         "student_code" : student_code
     }
 
-    url = 'http://127.0.0.1:8000/student_algorithm'
+    url = 'http://54.233.219.151:8000/student_algorithm'
 
     try:
         response = requests.post(url, json=dados)
@@ -463,7 +463,7 @@ def create_interview():
         "score": 0
     }
 
-    url = 'http://127.0.0.1:8000/interview'
+    url = 'http://54.233.219.151:8000/interview'
 
     try:
         response = requests.post(url, json=dados)
@@ -493,7 +493,7 @@ def create_question_interview(feedback, ideal_answer,frase_retorno,idquestion):
         "score": feedback['score']
     }
 
-    url = 'http://127.0.0.1:8000/interview_question'
+    url = 'http://54.233.219.151:8000/interview_question'
 
     try:
         response = requests.post(url, json=dados)
