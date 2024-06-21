@@ -10,10 +10,11 @@ from engine.prompt import prompt_question
 from engine.eleven_labs import generate_audio_eleven_labs
 from dotenv import load_dotenv, find_dotenv
 import speech_recognition as sr
+import openai
 
 load_dotenv(find_dotenv())
 dir_file = os.getenv("FILE_DIR")
-
+openai.api_key = os.getenv("OPENAI_API_KEY")
 if dir_file is not None:
     filename = os.path.join(dir_file, "data", "app.log")
 else:
@@ -28,7 +29,7 @@ def start_listening():
     logging.info("Terminou a chamada do transcribe_audio_file dentro do metodo start_listening")
     return response_final
 
-def convert_to_wav(input_file, output_file):
+async def convert_to_wav(input_file, output_file):
     logging.info(" input  file ")
     logging.info(os.path.join(dir_file, "engine", input_file))
     logging.info(" output file ")
@@ -45,33 +46,46 @@ def convert_to_wav(input_file, output_file):
 
     logging.info("Converteu o arquivo .wav com supressão de ruído!")
 
-
 def ask_open_ai(phrases):
     logging.info("Metodo ask_open_ai.")
     response = prompt_question(" ".join(phrases))
     logging.info(f'response {str(response)}')
     return response
 
-
-def return_phrase_audio():
+async def return_phrase_audio(uuid):
     logging.info("Chamou start_listening ")
     logging.info('Metodo start_listening vai chamar transcribe_audio_file.')
-    response_final = transcribe_audio()
+    response_final = await transcribe_audio(uuid)
     logging.info("Terminou a chamada do transcribe_audio dentro do metodo return_phrase_audio")
     return response_final
 
-def transcribe_audio():
-    # Use the speech_recognition library to transcribe the audio
-    convert_to_wav('audio.wav', 'output_file.wav')
-    recognizer = sr.Recognizer()
-    with sr.AudioFile(os.path.join(dir_file, "engine", "output_file.wav")) as source:
-        audio = recognizer.record(source)  # read the entire audio file
-        try:
-            # recognize speech using Google Web Speech API, with language set to English
-            text = recognizer.recognize_google(audio, language="en-US")
-            print("Transcription: " + text)
-            return text
-        except sr.UnknownValueError:
-            print("Google Web Speech could not understand the audio")
-        except sr.RequestError as e:
-            print("Could not request results from Google Web Speech; {0}".format(e))
+async def return_phrase_cc_audio(uuid):
+    logging.info("Chamou start_listening ")
+    logging.info('Metodo start_listening vai chamar transcribe_audio_file.')
+    response_final = await transcribe_cc_audio(uuid)
+    logging.info("Terminou a chamada do transcribe_audio dentro do metodo return_phrase_audio")
+    return response_final
+
+
+
+async def transcribe_audio(uuid):
+    # await convert_to_wav('audio.wav', 'output_file.wav')
+    with open(os.path.join(dir_file, "engine", f'audio_{uuid}.wav'), 'rb') as audio_file:
+        response = openai.Audio.transcribe(
+            model="whisper-1",
+            file=audio_file,
+            response_format="text",
+            language="en"
+        )
+    return response
+
+async def transcribe_cc_audio(uuid):
+    # await convert_to_wav('audio.wav', 'output_file.wav')
+    with open(os.path.join(dir_file, "engine", f'cc_audio_{uuid}.wav'), 'rb') as audio_file:
+        response = openai.Audio.transcribe(
+            model="whisper-1",
+            file=audio_file,
+            response_format="text",
+            language="en"
+        )
+    return response

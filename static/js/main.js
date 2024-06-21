@@ -2,10 +2,25 @@ $(document).ready(function () {
 
     let counter = 0;
     let questionsDict = {};
+    let student = {};  // Variável para armazenar os dados do estudante
+
+    // Função para buscar o estudante pelo e-mail
+    async function fetchStudentByEmail(email) {
+        try {
+            const response = await fetch(`/student/${email}`);
+            if (!response.ok) {
+                throw new Error('Erro ao obter dados do estudante');
+            }
+            student = await response.json();
+            console.log('Dados do estudante carregados:', student);
+        } catch (error) {
+            console.error('Erro:', error);
+        }
+    }
 
     async function loadQuestions() {
         try {
-            const response = await fetch('/questoes');
+            const response = await fetch(`/questoes/${stack}`);
             if (!response.ok) {
                 throw new Error('Erro ao obter questões');
             }
@@ -32,7 +47,9 @@ $(document).ready(function () {
         });
     }
 
-    // Chamar a função para carregar as questões quando a página carregar
+    // Chamar a função para carregar os dados do estudante e as questões quando a página carregar
+    const studentEmail = 'eurodolfosantos@gmail.com'; // Substitua pelo email do estudante conforme necessário
+    fetchStudentByEmail(studentEmail);
     loadQuestions();
 
     document.getElementById('muteButton').addEventListener('click', startRecording );
@@ -58,10 +75,9 @@ $(document).ready(function () {
         }, 1000);
     });
 
-    function playAudio() {
+    function playAudio(uuid) {
         const timestamp = new Date().getTime();
-        const audioUrl = 'http://127.0.0.1:8000/audio/response_open_ai.mp3?timestamp=${timestamp}';
-
+        const audioUrl = `http://127.0.0.1:8000/audio/response_open_ai_${uuid}.mp3?timestamp=${timestamp}`;
         const audio = new Audio(audioUrl);
         audio.play();
         audio.addEventListener('ended', function() {
@@ -85,7 +101,7 @@ $(document).ready(function () {
                 if (!response.ok) {
                     throw new Error('Erro ao iniciar gravação');
                 }
-                const data = response.json();
+                const data = await response.json();
                 console.log('Gravação iniciada: ', data.message);
                 alterarTextoDoParagrafo(data.message);
             } catch (error) {
@@ -141,7 +157,7 @@ $(document).ready(function () {
     }
     document.addEventListener('keyup', doc_keyUp, false);
 
-    // to play assisatnt
+    // to play assistant
     function PlayAssistant(message) {
 
         if (message != "") {
@@ -254,8 +270,8 @@ $(document).ready(function () {
 
         // Substituir espaços por %20 para a URL ser válida
         let encodedQuestion = encodeURIComponent(question);
-
-        fetch(`/generate_question/${encodedQuestion}`, {
+        let uuid = student.uuid
+        fetch(`/generate_question/${encodedQuestion}/${uuid}`, {
             method: 'GET'
         }).then(function(response) {
             if (!response.ok) {
@@ -286,7 +302,7 @@ $(document).ready(function () {
             });
             $("#volume-bars_2").attr("hidden", false);
 
-            playAudio();
+            playAudio(uuid);
         }).catch(function(error) {
             console.error('Erro:', error);
         });
@@ -329,9 +345,13 @@ $(document).ready(function () {
                     var audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
                     $("#volume-bars").attr("hidden", true);
 
+                    let uuid = student.uuid
+
                     // Criar um objeto FormData e anexar o arquivo de áudio
                     var formData = new FormData();
-                    formData.append('audio', audioBlob, 'audio.wav');
+                    formData.append('audio', audioBlob, `audio_${uuid}.wav`);
+
+
 
                     let previousQuestion = questionsDict[counter -1];
                     formData.append('previousQuestion', previousQuestion);
@@ -341,7 +361,7 @@ $(document).ready(function () {
 
 
                     // Enviar o arquivo de áudio para o servidor
-                    fetch('/process_answer', {
+                    fetch(`/process_answer/${uuid}`, {
                         method: 'POST',
                         body: formData
                     })
@@ -375,7 +395,7 @@ $(document).ready(function () {
                             }, 1000);
                         });
                         $("#volume-bars_2").attr("hidden", false);
-                        playAudio();
+                        playAudio(uuid);
 
                         console.log('Arquivo de áudio salvo com sucesso.');
                     })
@@ -445,3 +465,9 @@ $(document).ready(function () {
     });
 
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Agora você pode usar a variável stack que foi definida no HTML
+    console.log("Stack from session:", stack);
+    });

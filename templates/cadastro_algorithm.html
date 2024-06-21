@@ -38,69 +38,87 @@
                         <div class="menu-item">
                             <i class="fas fa-envelope"></i>
                         </div>
+
                     </div>
                 </div>
             </div>
           </div>
         <div class="coluna2 col-lg-11">
-          <div class="linha-separadora">
-            <div class="input-group2" style="height:50px; width:100%; margin-left:10px;">
-                <span class="dashboard-header"> Technical questions  </span>
-                <div class="linha"></div>
-            </div>
-           <div class="input-group mb-3">
-                 <input type="text" placeholder="Topic" id="search-input" style="width: 260px; height:35px">
-                 <div class="input-group-append">
-                     <button class="btn btn-outline-secondary" type="submit" id="search-button">Search</button>
-                 </div>
-           </div>
-          </div>
+          <div class="linha-separadora"></div>
           <div class="filho-coluna2">
-            <div class="container_2">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Topic</th>
-                            <th>Subtopic</th>
-                            <th>Question</th>
-                            <th>Answer</th>
-                        </tr>
-                    </thead>
-                    <tbody id="table-body">
-                        <!-- Conteúdo da tabela será gerado pelo JavaScript -->
-                    </tbody>
-                </table>
+            <div class="row" style="height:50px; width:100%; margin-left:20px;">
+                <span class="dashboard-header"> Leetcode questions  </span>
             </div>
-            <div id="pagination" class="pagination-container">
-                <button id="prev-page" class="btn btn-primary">Previous</button>
-                <span id="page-info"></span>
-                <button id="next-page" class="btn btn-primary">Next</button>
-            </div>
+  <div class="linha">  </div>
+
+  <div class="container_2">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="tab1-tab" data-bs-toggle="tab" href="#tab1"
+           role="tab" aria-controls="tab1" aria-selected="true">Available Questions</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="tab2-tab" data-bs-toggle="tab" href="#tab2" role="tab"
+           aria-controls="tab2" aria-selected="false">Your questions </a>
+      </li>
+
+    </ul>
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+        <div style=" padding-bottom:5px ">
+<!--          <button id="search-button" class="btn btn-primary ml-2" data-toggle="modal" data-target="#interviewModal" >New</button>-->
+        </div>
+        </p>
+        <h3>Available questions</h3>
+        <p>Questions to practice.</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Topic</th>
+              <th>Algorithm Question</th>
+              <th>     </th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+            <!-- Conteúdo da tabela será gerado pelo JavaScript -->
+          </tbody>
+        </table>
+        <div id="pagination" class="pagination-container">
+          <button id="prev-page" class="btn btn-primary">Previous</button>
+          <span id="page-info"></span>
+          <button id="next-page" class="btn btn-primary">Next</button>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+          </p>
+        <h3>Your made questions</h3>
+        <p>The questions made by you.</p>
+        <!-- Adicione o conteúdo da sua nova tabela aqui -->
+        <table>
+          <thead>
+            <tr>
+              <th>Topic</th>
+              <th>Algorithm Question</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="table-body2">
+            <!-- Conteúdo da tabela será gerado pelo JavaScript -->
+          </tbody>
+        </table>
+        <div id="pagination2" class="pagination-container2">
+          <button id="prev-page2" class="btn btn-primary">Previous</button>
+          <span id="page-info2"></span>
+          <button id="next-page2" class="btn btn-primary">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
           </div>
         </div>
       </div>
     </div>
-
-    <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="detailModalLabel">Analysis of the questions</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <!-- Conteúdo será preenchido pelo JavaScript -->
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancelButton">Close</button>
-            </div>
-        </div>
-    </div>
-    </div>
-</div>
-
   </div>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -113,7 +131,80 @@
   <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.fittext.js') }}" defer></script>
   <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.lettering.js') }}" defer></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.umd.min.js"></script>
-  <script src="{{ url_for('static', filename='js/cadastro_pergunta.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/cadastro_algorithm.js') }}"></script>
+
+<!-- Modal para nova entrevista -->
+  <div class="modal fade" id="interviewModal" tabindex="-1" aria-labelledby="newModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-custom">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="newModalLabel">Start New Simulation</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+            <div class="form-group">
+              <label for="stack">Stack</label>
+              <textarea class="form-control" id="stack" name="stack" cols="2" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" id="startButton1">Start Simulation</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+ <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-custom2">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="detailModalLabel">Leetcode question</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        <div class="modal-body2">
+          <form   method="POST" action="{{ url_for('simulate_algorithm') }}">
+            <div class="form-group">
+              <label for="stack" style="margin-left: 10px; margin-top: 30px;">Question:</label>
+              <textarea class="form-control narrow-textarea" readonly id="stack1" name="stack" rows="15"></textarea>
+                <input type="hidden" id="algorithmJson" name="algorithm_json">
+            </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" id="startButton">Start Simulation</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancelButton">Close</button>
+            </div>
+          </form>
+        </div>
+
+        </div>
+    </div>
+ </div>
+
+<div class="modal fade" id="detailModal3" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="detailModalLabel3">Analysis of the algorithms</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body2">
+                <!-- Conteúdo será preenchido pelo JavaScript -->
+            </div>
+            <div id="editor" style="height: 740px; width: 1220px; margin-left:80px;"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancelButton3">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 </body>
 </html>
@@ -123,42 +214,18 @@
     background: linear-gradient(to bottom, #000000, #00004B);
     color: #ffffff;
 }
-
-.fixed-width {
-     width: 920px; /* Define a largura específica para a coluna */
-     white-space: normal; /* Permite a quebra de linha automática */
-     word-wrap: break-word; /* Garante que palavras longas sejam quebradas */
-}
-.ellipsis {
-     white-space: normal; /* Permite quebra de linha */
-     word-wrap: break-word; /* Quebra palavras longas */
-}
-
 .linha-separadora {
-    height: 260px;
+    height: 80px;
     background: linear-top(to bottom, #000000, #00004B);
     color: #ffffff;
-    position: relative; /* Adicionado para posicionamento absoluto do input */
 }
-.input-group {
-    position: absolute;
-    bottom: -10px; /* Distância do fundo da div */
-    left: 10px; /* Distância da borda esquerda da div */
-}
-.input-group2 {
-    position: absolute;
-    bottom: 130px; /* Distância do fundo da div */
-    left: 10px; /* Distância da borda esquerda da div */
-
-}
-
 .coluna2 {
     overflow: hidden;
     height: 900px;
 }
 .filho-coluna2 {
     overflow-y: auto;
-    height: calc(100% - 260px); /* Ajuste a altura para considerar a linha-separadora */
+    height: calc(100% - 70px); /* Ajuste a altura para considerar a linha-separadora */
     margin-left: 12px;
 }
 .filho-coluna2::-webkit-scrollbar {
@@ -268,13 +335,6 @@
     font-size: 20px;
     color: gray;
 }
-.linha {
-  border-bottom: 2px solid white; /* Borda inferior da cabeça da modal */
-  width:1220px;
-  margin-bottom : 80px;
-  padding-top: 10px;
-}
-
 .menu-item:hover i {
     color: blue;
     cursor: pointer;
@@ -378,6 +438,17 @@
     height: 20px;
     width: 30px;
 }
+.modal-dialog-custom {
+    max-width: 500px; /* Defina a largura máxima desejada */
+    margin: 30px auto; /* Centraliza a modal na tela */
+    /* Adicione outros estilos personalizados conforme necessário */
+}
+
+    .modal-dialog-custom2 {
+      width: 930px;
+      max-width: 500px;
+    }
+
 #volume-bars_2 {
     display: flex;
     justify-content: space-around;
@@ -417,6 +488,16 @@
     width: 30px;
     height: 100px;
 }
+   .fixed-width {
+        width: 920px; /* Define a largura específica para a coluna */
+        white-space: normal; /* Permite a quebra de linha automática */
+        word-wrap: break-word; /* Garante que palavras longas sejam quebradas */
+    }
+    .ellipsis {
+        white-space: normal; /* Permite quebra de linha */
+        word-wrap: break-word; /* Quebra palavras longas */
+    }
+
 .global-cases {
     border: solid 1px rgba(54, 162, 235, 1);
     background-color: #1a2b4c;
@@ -454,7 +535,7 @@
     background: black;
 }
 .dashboard-header {
-     font-family: monospace;
+    font-family: monospace;
     font-weight: bold;
     font-size: 28px;
 }
@@ -499,15 +580,30 @@ button:hover {
 }
 
 .table-container {
+margin-left :2px;
     max-height: 900px;  /* Defina a altura máxima da tabela */
     overflow-y: auto;   /* Habilite a rolagem vertical */
 }
 
 table {
-    width: 90%;
+margin-left :8px;
+    width: 85%;
     border-collapse: collapse;
 }
 
+.nav-tabs {
+  border-bottom: none; /* Remove a borda inferior das abas */
+}
+
+.nav-tabs .nav-link {
+  border: none; /* Remove as bordas das abas individuais */
+  border-bottom: none; /* Remove qualquer borda inferior das abas */
+}
+
+.nav-tabs .nav-link.active {
+  border: none; /* Remove as bordas da aba ativa */
+  border-bottom: width 100px; /* Remove qualquer borda inferior da aba ativa */
+}
 thead {
     background-color: #007BFF;
     color: white;
@@ -564,6 +660,12 @@ tr:hover {
     background: #555; /* Cor do indicador de rolagem ao passar o mouse */
 }
 
+.tab-content {
+  border-top: none; /* Remove qualquer borda superior do conteúdo das abas */
+}
+
+
+
 .action-btn {
     background-color: #007BFF;
     color: white;
@@ -588,6 +690,17 @@ tr:hover {
       margin: 0 5px;
     }
 
+.pagination-container2 {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+      margin-left:450px;
+    }
+
+    .pagination-container2 button {
+      margin: 0 5px;
+    }
+
     .table-container {
       max-height: 400px;
       overflow-y: auto;
@@ -608,5 +721,147 @@ tr:hover {
     .input-group-append button {
       margin-left: 5px;
     }
+.container_2 {
+  width: 100%;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mb-2 {
+  margin-bottom: 1rem;
+}
+
+.ml-2 {
+  margin-left: 10rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+
+.pagination2 {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+
+    .modal-content::-webkit-scrollbar {
+        width: 2px;
+        height: 5px;
+    }
+    .modal-content::-webkit-scrollbar-track {
+        background: #0000FF;
+    }
+    .modal-content::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 5px;
+    }
+    .modal-content::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+
+.modal-dialog.modal-dialog-custom {
+    max-width: 500px; /* Defina a largura máxima desejada */
+    margin: 30px auto; /* Centraliza a modal na tela */
+    /* Adicione outros estilos personalizados conforme necessário */
+}
+
+    .modal-dialog {
+        max-width: 1400px; /* Largura máxima da modal */
+        max-width: 1400px; /* Largura máxima da modal */
+        margin: 30px auto; /* Centraliza a modal na tela */
+    }
+    .modal-content {
+        max-height: 92vh; /* Altura máxima da modal */
+        overflow-y: auto; /* Adiciona rolagem vertical se necessário */
+    }
+    .modal-body {
+        padding: 20px;
+    }
+    .modal-body div {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    .modal-content {
+  background-color: #1a2b4c; /* Cor de fundo da modal */
+  color: #ffffff; /* Cor do texto */
+  border-radius: 10px; /* Bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar destaque */
+}
+
+.modal-header {
+  border-bottom: 1px solid #4caf50; /* Borda inferior da cabeça da modal */
+}
+
+.linha {
+  border-bottom: 2px solid white; /* Borda inferior da cabeça da modal */
+  width:1220px;
+  margin-bottom : 80px;
+  margin-left: 18px;
+}
+
+.modal-title {
+  font-weight: bold;
+  font-size: 1.5rem; /* Tamanho da fonte do título */
+}
+
+.modal-body {
+  padding: 20px; /* Padding interno para espaçamento */
+}
+
+.modal-footer {
+  border-top: 1px solid #4caf50; /* Borda superior do rodapé da modal */
+}
+
+.modal-footer .btn {
+  border-radius: 5px; /* Bordas arredondadas dos botões */
+  transition: background-color 0.3s; /* Transição suave para o hover */
+}
+
+.modal-footer .btn-secondary {
+  background-color: #6c757d; /* Cor de fundo do botão secundário */
+  color: white; /* Cor do texto do botão secundário */
+}
+
+.modal-footer .btn-secondary:hover {
+  background-color: #5a6268; /* Cor de fundo do botão secundário ao passar o mouse */
+}
+
+.modal-footer .btn-primary {
+  background-color: #007bff; /* Cor de fundo do botão primário */
+  color: white; /* Cor do texto do botão primário */
+}
+
+.modal-footer .btn-primary:hover {
+  background-color: #0056b3; /* Cor de fundo do botão primário ao passar o mouse */
+}
+
+
+.custom-modal-dialog {
+    max-width: 1200px;
+    margin: 30px auto; /* Centraliza horizontalmente */
+}
+
+#detailModal .modal-content {
+    height: 600px;
+    margin: auto; /* Centraliza verticalmente */
+}
+
+.narrow-textarea {
+  width: 900px; /* Ajuste a largura conforme necessário */
+   margin-left: 10px;
+}
 
 </style>
+
+
+</html>

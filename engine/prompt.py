@@ -5,9 +5,12 @@ from langchain.prompts import PromptTemplate
 from dotenv import load_dotenv, find_dotenv
 from langchain.output_parsers import CommaSeparatedListOutputParser, ResponseSchema, StructuredOutputParser
 load_dotenv(find_dotenv())
+from flask import jsonify
+import asyncio
 openai.api_key = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 llm = OpenAI(temperature=0.1 )
+from langchain.chains import LLMChain
 
 def prompt_question(question):
 
@@ -38,40 +41,83 @@ def prompt_ask_candidate(query):
     output = llm(prompt)
     print(output)
 
-
-def evaluate_question(query, expected_answer, provided_answer ):
-
-    response_schemas = [
-        ResponseSchema(name="question", description="question for the candidate"),
-        ResponseSchema(name="expected_answer", description="Candidate`s expected answer"),
-        ResponseSchema(name="provided_answer", description="Candidate`s provided answer"),
-        ResponseSchema(name="feedback", description="Feedback for the provided_answer against expected_answer"),
-        ResponseSchema(name="grade", description="Evalute provided_answer against expected_answer with score from 0 to 10")
-    ]
-
-    output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
-    print(output_parser)
-
-    format_instructions = output_parser.get_format_instructions()
-    print(format_instructions)
+async def prompt_english_evaluate(phrase):
 
     prompt = PromptTemplate(
-        template=" You are a tech lead knowledgeable in various technologies. Your role is to analyze "
-                 " the provided_answer against expected_answer "
-                 " expected_answer: Java is an object-oriented language, provided_answer: Java is a markup language. "
-                 " Compare the provided_answer and expected_answer and respond in the JSON format "
-                 " Respond in the format \n{format_instructions}. Now here you go the question {query} , expected_answer {expected_answer},"
-                 " and provided_answer {provided_answer} ",
-        input_variables=["query", "expected_answer", "provided_answer"],
-        partial_variables={"format_instructions": format_instructions}
+        template=" You are an english teacher and you need analize the english error of the following phrase {phrase}, Give a brief feedback",
+        input_variables=["phrase"]
     )
 
-
-    prompt = prompt.format(query = query, expected_answer= expected_answer, provided_answer = provided_answer )
+    prompt =  prompt.format(phrase= phrase)
     output = llm(prompt)
     print(output)
+    return output
 
+import json
 
-# evaluate_question("Immutability – how to create immutable custom class with list",
-#                   "An object is immutable when its state doesn’t change after it has been initialized. For example, String is an immutable class and, once instantiated, the value of a String object never changes.",
-#                   "String is an immutable class and, once instantiated, the value of a String object never changes")
+import json
+from langchain.prompts import PromptTemplate
+from langchain.output_parsers import ResponseSchema, StructuredOutputParser
+
+import json
+from langchain.prompts import PromptTemplate
+from langchain.output_parsers import ResponseSchema, StructuredOutputParser
+
+def evaluate_question(question, question_answer, student_answer):
+    prompt_template = """
+    You are a tech lead knowledgeable in various technologies. Your role is to analyze 
+    the student answer against question answer
+    Now here you go the question {question} , question answer : {question_answer}
+    and student answer {student_answer} 
+    Compare the student_answer and question_answer and put the result in technical_feedback.
+    Now you need set a score from 0 to 10 of the analisys and put result inside variable score, if student 
+    doesn`t know the question the score is 0.
+    Now Evaluate only the grammar english  in the phrase : {student_answer}  and provide suggestions for improvement. 
+    This feedback about english will be assigned to the variable english_feedback.
+ 
+    *** Output ***
+    The result of this prompt must always be the JSON, as I am parsing the return as a JSON. If you return phrases, I will encounter errors during parsing,
+    so only return the JSON.    
+    
+    Format example :
+    "technical_feedback": "",
+    "score": "",
+    "english_feedback": ""
+         
+    """
+
+    # Formatar o prompt com os valores das variáveis
+    prompt = prompt_template.format(question=question, question_answer=question_answer, student_answer=student_answer)
+
+    # Criar a mensagem para o modelo GPT-4
+    messages = [
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": prompt}
+    ]
+
+    # Chamada à API do OpenAI para completar o chat
+    res = openai.ChatCompletion.create(
+        model="gpt-3.5-turbo",
+        messages=messages,
+        temperature=0.7
+    )
+
+    json_string = res.choices[0].message['content']
+    cleaned_output = clean_json_string(json_string)
+
+    return cleaned_output
+
+def clean_json_string(json_string):
+    json_string = json_string.strip()
+    # Remove ```json do início, se existir
+    if json_string.startswith("```json"):
+        json_string = json_string[7:].strip()
+
+    if json_string.endswith("```"):
+        json_string = json_string[:-3].strip()
+
+    return json.loads(json_string)
+
+# for _ in range(100):
+#     result = evaluate_question(question, question_answer, student_answer)
+#     print(result)

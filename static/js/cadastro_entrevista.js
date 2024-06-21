@@ -11,18 +11,63 @@ $(document).ready(function() {
         appendTo: ".container"  // Adiciona a lista dentro do container
     });
 
-    // Dados para a tabela
-    var data = [
-        { topic: "Java", subtopic: "OOP", question: "What is polymorphism in object-oriented programming?", answer: "Polymorphism is the ability of an object to take on many forms. It is one of the core concepts of object-oriented programming..." },
-        { topic: "JavaScript", subtopic: "ES6", question: "What is a promise in JavaScript and how do you use it?", answer: "A promise is an object that represents the eventual completion (or failure) of an asynchronous operation, and its resulting value." },
-        { topic: "Python", subtopic: "Data Types", question: "What are Python dictionaries and how do you use them?", answer: "Dictionaries are a type of collection in Python that are unordered, changeable, and indexed. They are written with curly brackets, and they have keys and values." },
-        { topic: "Java", subtopic: "OOP", question: "What is polymorphism in object-oriented programming?", answer: "Polymorphism is the ability of an object to take on many forms. It is one of the core concepts of object-oriented programming..." },
-        { topic: "JavaScript", subtopic: "ES6", question: "What is a promise in JavaScript and how do you use it?", answer: "A promise is an object that represents the eventual completion (or failure) of an asynchronous operation, and its resulting value." },
-        { topic: "Python", subtopic: "Data Types", question: "What are Python dictionaries and how do you use them?", answer: "Dictionaries are a type of collection in Python that are unordered, changeable, and indexed. They are written with curly brackets, and they have keys and values." }
-    ];
+    let student = {};
 
+      // Substitua pelo email do estudante conforme necessário
+    fetchStudentByEmail().then(() => {
+        // Certifique-se de que a propriedade existe
+        displayTable(currentPage); // Chame displayTable após carregar os dados do estudante
+    });
+
+    async function fetchStudentByEmail() {
+        try {
+            const response = await fetch(`/student`);
+            if (!response.ok) {
+                throw new Error('Erro ao obter dados do estudante');
+            }
+            student = await response.json();
+            console.log('Dados do estudante carregados:', student);
+        } catch (error) {
+            console.error('Erro:', error);
+        }
+    }
+
+    async function fetchData(id_student) {
+        const url = `http://127.0.0.1:5000/fetch_student_interviews/${id_student}`;
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            console.log('Dados obtidos:', data);
+            return data;
+        } catch (error) {
+            console.error('Erro ao buscar dados:', error);
+            return [];
+        }
+    }
+
+    async function loadInterviewQuestions(id_interview) {
+        const url = `http://127.0.0.1:5000/fetch_questions_interviews/${id_interview}`;
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const data = await response.json();
+            console.log('Dados obtidos:', data);
+            return data;
+        } catch (error) {
+            console.error('Erro ao buscar dados:', error);
+            return [];
+        }
+    }
+
+    // Dados para a tabela
     var currentPage = 1;
     var rowsPerPage = 10;
+    var data = [];
 
     function truncateText(text, maxLength) {
         if (text.length > maxLength) {
@@ -31,7 +76,9 @@ $(document).ready(function() {
         return text;
     }
 
-    function displayTable(page) {
+    async function displayTable(page) {
+        data = await fetchData(student.id_student);
+
         var start = (page - 1) * rowsPerPage;
         var end = start + rowsPerPage;
         var paginatedData = data.slice(start, end);
@@ -41,13 +88,20 @@ $(document).ready(function() {
 
         paginatedData.forEach(function(row) {
             var $tr = $("<tr>");
-            $tr.append($("<td>").text(row.topic));
-            $tr.append($("<td>").text(row.subtopic));
-            $tr.append($("<td>").text(truncateText(row.question, 30)).addClass("ellipsis"));
-            $tr.append($("<td>").text(truncateText(row.answer, 30)).addClass("ellipsis"));
+            $tr.append($("<td font-family: 'Roboto',sans-serif;>").text(row.topic));
+            $tr.append($("<td font-family: 'Roboto',sans-serif;>").html(formatDate(row.data_atualizacao)).addClass("ellipsis"));
+            $tr.append($("<td font-family: 'Roboto',sans-serif;>").text(truncateText(row.average_question_score, 30)).addClass("ellipsis"));
+            $tr.append($("<td hidden>").text(row.id_interview));
             $tr.append($("<td>").html('<i class="fas fa-search view-details" data-toggle="modal" data-target="#detailModal"></i>'));
             $tableBody.append($tr);
         });
+
+        function formatDate(dateString) {
+            var date = moment(dateString);
+            var formattedDate = date.format('DD MMM, YYYY [at] hh:mm A');
+            var daysAgo = moment().diff(date, 'days');
+            return `${formattedDate}<br/>${daysAgo} days ago`;
+        }
 
         $("#page-info").text("Page " + page + " of " + Math.ceil(data.length / rowsPerPage));
     }
@@ -66,44 +120,42 @@ $(document).ready(function() {
         }
     });
 
-   $(document).on("click", ".view-details", function() {
-      var $row = $(this).closest("tr");
-      var topic = $row.find("td:nth-child(1)").text();
-      var subtopic = $row.find("td:nth-child(2)").text();
-      var question = $row.find("td:nth-child(3)").text();
-      var answer = $row.find("td:nth-child(4)").text();
+    function addLineBreaks(text, wordsPerLine) {
+        let words = text.split(' ');
+        let result = '';
+        for (let i = 0; i < words.length; i++) {
+            if (i > 0 && i % wordsPerLine === 0) {
+                result += '<br>';
+            }
+            result += words[i] + ' ';
+        }
+        return result.trim();
+    }
 
-      var data = [
-          { topic: "Java", subtopic: "OOP", question: "What is polymorphism in object-oriented programming?", answer: "Polymorphism is the ability of an object to take on many forms. It is one of the core concepts of object-oriented programming..." },
-          { topic: "JavaScript", subtopic: "ES6", question: "What is a promise in JavaScript and how do you use it?", answer: "A promise is an object that represents the eventual completion (or failure) of an asynchronous operation, and its resulting value." },
-          { topic: "Python", subtopic: "Data Types", question: "What are Python dictionaries and how do you use them?", answer: "Dictionaries are a type of collection in Python that are unordered, changeable, and indexed. They are written with curly brackets, and they have keys and values." },
-          { topic: "Java", subtopic: "OOP", question: "What is polymorphism in object-oriented programming?", answer: "Polymorphism is the ability of an object to take on many forms. It is one of the core concepts of object-oriented programming..." },
-          { topic: "JavaScript", subtopic: "ES6", question: "What is a promise in JavaScript and how do you use it?", answer: "A promise is an object that represents the eventual completion (or failure) of an asynchronous operation, and its resulting value." },
-          { topic: "Python", subtopic: "Data Types", question: "What are Python dictionaries and how do you use them?", answer: "Dictionaries are a type of collection in Python that are unordered, changeable, and indexed. They are written with curly brackets, and they have keys and values." },
-          { topic: "Java", subtopic: "OOP", question: "What is polymorphism in object-oriented programming?", answer: "Polymorphism is the ability of an object to take on many forms. It is one of the core concepts of object-oriented programming..." },
-          { topic: "JavaScript", subtopic: "ES6", question: "What is a promise in JavaScript and how do you use it?", answer: "A promise is an object that represents the eventual completion (or failure) of an asynchronous operation, and its resulting value." },
-          { topic: "Python", subtopic: "Data Types", question: "What are Python dictionaries and how do you use them?", answer: "Dictionaries are a type of collection in Python that are unordered, changeable, and indexed. They are written with curly brackets, and they have keys and values." },
-          { topic: "Java", subtopic: "OOP", question: "What is polymorphism in object-oriented programming?", answer: "Polymorphism is the ability of an object to take on many forms. It is one of the core concepts of object-oriented programming..." },
-          { topic: "JavaScript", subtopic: "ES6", question: "What is a promise in JavaScript and how do you use it?", answer: "A promise is an object that represents the eventual completion (or failure) of an asynchronous operation, and its resulting value." },
-          { topic: "Python", subtopic: "Data Types", question: "What are Python dictionaries and how do you use them?", answer: "Dictionaries are a type of collection in Python that are unordered, changeable, and indexed. They are written with curly brackets, and they have keys and values." },
-          { topic: "Java", subtopic: "OOP", question: "What is polymorphism in object-oriented programming?", answer: "Polymorphism is the ability of an object to take on many forms. It is one of the core concepts of object-oriented programming..." }
-      ];
+    $(document).on("click", ".view-details", async function() { // Transforme a função em async
+        var $row = $(this).closest("tr");
+        var topic = $row.find("td:nth-child(1)").text();
+        var subtopic = $row.find("td:nth-child(2)").text();
+        var question = $row.find("td:nth-child(3)").text();
+        var answer = $row.find("td:nth-child(4)").text();
 
-    var modalContent = '';
-    data.forEach(function(item) {
-        modalContent += "<div style='border: 1px solid #ddd; padding: 10px; margin-bottom: 10px;'>";
-        modalContent += "<p><strong>Stack:</strong> " + item.topic + "</p>";
-        modalContent += "<p><strong>Description:</strong> " + item.subtopic + "</p>";
-        modalContent += "<p><strong>Score:</strong> " + item.question + "</p>";
-        modalContent += "<p><strong>Answer:</strong> " + item.answer + "</p>";
-        modalContent += "</div>";
+        var data = await loadInterviewQuestions($row.find("td:nth-child(4)").text());
+
+        var modalContent = '';
+        data.forEach(function(item) {
+            modalContent += "<div style='border: 1px solid #ddd; padding: 10px; margin-bottom: 10px;'>";
+            modalContent += "<a><strong>Question:</strong> <i>" +  addLineBreaks(item.question, 14) + "</i></a></br>";
+            modalContent += "<a><strong>Ideal answer:</strong> " + item.answer + "</a></br>";
+            modalContent += "<a><strong>Your answer:</strong> " + item.student_answer + "</a></br>";
+            modalContent += "<a><strong>Technical feedback:</strong> " + item.technical_feedback + "</a></br>";
+            modalContent += "<a><strong>English feedback:</strong> " + item.english_feedback + "</a></br>";
+            modalContent += "<a><strong>Score:</strong> " + item.score + "</a>";
+            modalContent += "</div>";
+        });
+
+        $("#detailModal .modal-body").html(modalContent);
+        $("#detailModal").modal("show");
     });
-
-    $("#detailModal .modal-body").html(modalContent);
-    $("#detailModal").modal("show");
-});
-
-    displayTable(currentPage);
 
     // Redirecionar ao clicar no botão Start
     $('#startButton').on('click', function() {
@@ -115,14 +167,18 @@ $(document).ready(function() {
         $('.modal-backdrop').remove();
     });
 
-    $('.close, #closeButton').on('click', function() {
+    $('.close, #cancelButton').on('click', function() {
         $('#detailModal').modal('hide');
     });
 
-    $('#cancelButton').on('click', function() {
-        $('.modal-backdrop').remove();
-         $('#interviewModal').modal('hide');
+});
 
+document.addEventListener('DOMContentLoaded', function () {
+    $('#closeInterview').on('click', function () {
+        $('#interviewModal').modal('hide');
     });
 
+    $('#interviewModal').on('hidden.bs.modal', function () {
+        $(this).find('form').trigger('reset');
+    });
 });
