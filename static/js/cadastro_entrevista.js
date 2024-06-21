@@ -13,15 +13,15 @@ $(document).ready(function() {
 
     let student = {};
 
-    const studentEmail = 'eurodolfosantos@gmail.com'; // Substitua pelo email do estudante conforme necessário
-    fetchStudentByEmail(studentEmail).then(() => {
+      // Substitua pelo email do estudante conforme necessário
+    fetchStudentByEmail().then(() => {
         // Certifique-se de que a propriedade existe
         displayTable(currentPage); // Chame displayTable após carregar os dados do estudante
     });
 
-    async function fetchStudentByEmail(email) {
+    async function fetchStudentByEmail() {
         try {
-            const response = await fetch(`/student/${email}`);
+            const response = await fetch(`/student`);
             if (!response.ok) {
                 throw new Error('Erro ao obter dados do estudante');
             }
@@ -88,13 +88,20 @@ $(document).ready(function() {
 
         paginatedData.forEach(function(row) {
             var $tr = $("<tr>");
-            $tr.append($("<td>").text(row.topic));
-            $tr.append($("<td>").text(truncateText(row.data_atualizacao, 30)).addClass("ellipsis"));
-            $tr.append($("<td>").text(truncateText(row.average_question_score, 30)).addClass("ellipsis"));
+            $tr.append($("<td font-family: 'Roboto',sans-serif;>").text(row.topic));
+            $tr.append($("<td font-family: 'Roboto',sans-serif;>").html(formatDate(row.data_atualizacao)).addClass("ellipsis"));
+            $tr.append($("<td font-family: 'Roboto',sans-serif;>").text(truncateText(row.average_question_score, 30)).addClass("ellipsis"));
             $tr.append($("<td hidden>").text(row.id_interview));
             $tr.append($("<td>").html('<i class="fas fa-search view-details" data-toggle="modal" data-target="#detailModal"></i>'));
             $tableBody.append($tr);
         });
+
+        function formatDate(dateString) {
+            var date = moment(dateString);
+            var formattedDate = date.format('DD MMM, YYYY [at] hh:mm A');
+            var daysAgo = moment().diff(date, 'days');
+            return `${formattedDate}<br/>${daysAgo} days ago`;
+        }
 
         $("#page-info").text("Page " + page + " of " + Math.ceil(data.length / rowsPerPage));
     }

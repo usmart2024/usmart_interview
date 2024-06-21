@@ -251,7 +251,7 @@
         align-items: flex-end;
         height: 20px;
         margin-top: 30px;
-        margin-left: 610px;
+        margin-left: 550px;
         width: 30px;
         background-color: black;
     }
@@ -322,6 +322,23 @@
     .bar:nth-child(3) { animation-delay: 0.6s; }
     .bar:nth-child(4) { animation-delay: 0.9s; }
     .bar:nth-child(5) { animation-delay: 0.12s; }
+
+      #page_loader {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: white;
+      z-index: 99;
+      display: none;
+      text-align: center;
+      width: 100%;
+      padding-top: 25px;
+    }
+    #page_loader img {
+      width: 50px; /* Ajuste o tamanho conforme necessário */
+    }
   </style>
 </head>
 <body>
@@ -404,7 +421,6 @@
                  <ul id="question-list"></ul>
              </div>
           </div>
-          <button type="button" class="btn btn-primary" id="startCrackingCodeButton"  style="margin-left: 20px;" >Go to cracking code</button>
         </div>
        <div>
     </div>
@@ -480,9 +496,9 @@ $(document).ready(function () {
     let student = {};  // Variável para armazenar os dados do estudante
 
     // Função para buscar o estudante pelo e-mail
-    async function fetchStudentByEmail(email) {
+    async function fetchStudentByEmail() {
         try {
-            const response = await fetch(`/student/${email}`);
+            const response = await fetch(`/student`);
             if (!response.ok) {
                 throw new Error('Erro ao obter dados do estudante');
             }
@@ -525,7 +541,7 @@ $(document).ready(function () {
 
     // Chamar a função para carregar os dados do estudante e as questões quando a página carregar
     const studentEmail = 'eurodolfosantos@gmail.com';
-    fetchStudentByEmail(studentEmail);
+    fetchStudentByEmail();
     loadQuestions();
 
     document.getElementById('muteButton').addEventListener('click', startRecording );

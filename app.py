@@ -47,7 +47,7 @@ app.config['SESSION_PERMANENT'] = False
 app.config['SESSION_USE_SIGNER'] = True
 app.config['CACHE_TYPE'] = 'simple'  # Pode usar diferentes tipos de cache como 'redis', 'memcached', etc.
 app.config['CACHE_TYPE'] = 'simple'  # Pode usar diferentes tipos de cache como 'redis', 'memcached', etc.
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:gui2809!@localhost:5432/postgres'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:gui2809!@demo-postgresql-rds.cjgpqtkjc4zx.sa-east-1.rds.amazonaws.com:5432/postgres'
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 login_manager = LoginManager(app)
@@ -193,14 +193,17 @@ def fetch_questions_interviews(id_interview):
     except requests.exceptions.RequestException as e:
         return jsonify({"error": str(e)}), 500
 
-@app.route('/student/<email>')
-def get_student(email):
+@app.route('/student')
+def get_student():
 
     logging.info("Fetching data from the API...")
+    email = session['email']
+
     try:
         response = requests.get(f'http://127.0.0.1:8000/student/{email}')
         response.raise_for_status()
         data = response.json()
+        session['id_student'] = data.get('id_student')
 
         # Transformar o JSON em um dicionário com índice e question
         student_dict = data
@@ -330,16 +333,21 @@ def save_cracking_code():
 
     chat_history = request.form.get('chat_history')
     code = request.form.get('code')
-    create_cracking_code( 35, 35,chat_history,code)
+    id_algorithm = request.form.get('id_algorithm')
+    id_student = request.form.get('id_student')
+    student_code = request.form.get('student_code')
+
+    create_cracking_code( id_student, id_algorithm,chat_history,code, student_code)
 
     return redirect(url_for('cadastro_entrevista'))
-def create_cracking_code(id_student, id_algorithm,chat_history,code):
+def create_cracking_code(id_student, id_algorithm, chat_history, code, student_code):
 
     dados = {
-        "id_student": 35,
-        "id_algorithm": 1,
+        "id_student": id_student,
+        "id_algorithm": int(id_algorithm),
         "chat_history": chat_history,
-        "feedback_code": """ code """
+        "feedback_code": code,
+        "student_code" : student_code
     }
 
     url = 'http://127.0.0.1:8000/student_algorithm'
@@ -384,7 +392,7 @@ async def process_answer(uuid):
             logging.info(frase_retorno)
             ideal_answer = previousQuestion.get('ideal_answer')
             idquestion = previousQuestion.get('idquestion')
-            feedback = await evaluate_question(previousQuestion.get('question'),ideal_answer, frase_retorno )
+            feedback =  evaluate_question(previousQuestion.get('question'),ideal_answer, frase_retorno )
             create_question_interview(feedback,ideal_answer,frase_retorno, idquestion)
 
             # Retorne o JSON atualizado com o novo atributo 'english'
@@ -402,12 +410,15 @@ def login():
     if current_user.is_authenticated:
         return redirect(url_for('dashboard'))
     if request.method == 'POST':
+
         email = request.form.get('email')
         password = request.form.get('password')
         user = User.query.filter_by(email=email).first()
         if user and bcrypt.check_password_hash(user.password, password):
             login_user(user, remember=True)
             next_page = request.args.get('next')
+            session['email'] = email
+
             return redirect(next_page) if next_page else redirect(url_for('dashboard'))
         else:
             flash('Login Unsuccessful. Please check email and password', 'danger')
@@ -442,9 +453,10 @@ def create_interview():
     session['stack'] = stack
 
     current_datetime = datetime.now().strftime('%Y-%m-%dT%H:%M:%S')
+    id_student =  session['id_student']
 
     dados = {
-        "id_student": 35,
+        "id_student": id_student,
         "interview_date": current_datetime,
         "stack": stack,
         "data_atualizacao": current_datetime,
@@ -499,10 +511,10 @@ def crackingcode():
 def calculate_total_tokens(messages):
     return sum(len(message['content'].split()) for message in messages)
 
-
 @app.route('/chat/<uuid>', methods=['POST'])
 def chat(uuid):
-    user_input = request.json.get('message')
+    question = request.form.get('question')
+    user_input = request.form.get('message')
 
     # Recupera o histórico da conversa da sessão do usuário
     if 'chat_history' not in session:
@@ -511,17 +523,11 @@ def chat(uuid):
     chat_history = session['chat_history']
 
     # Template de prompt para o sistema
-    prompt_template = """
-        You are a polite interviewer you must using a maximum of 20 words, ask how he can solve the following algorithm(
-        Given an interval newInterval and an array of intervals, create a function that inserts that newInterval in the array,
-        and to merge if necessary. Note that the intervals in the array are non-overlapping, and are
-        sorted according to their starting point.
-        Example 1:
-        Input: intervals = [[1, 3], [4, 7], [8, 10], [12, 15], [16, 17], [18, 20], [21, 25], [28, 29]], newInterval = [9, 18]
-        Output: [[1, 3], [4, 7], [8, 20], [21, 25], [28, 29]] )
+    prompt_template = f"""
+        You are a polite interviewer you must using a maximum of 20 words, 
+        ask how he can solve the following algorithm( {question} )
         Observation:
-        Remember to use few words when asking.
-        .
+        Remember to use few words when asking.        
     """
     messages = [{"role": "system", "content": prompt_template}]
 
@@ -582,13 +588,14 @@ async def process_answer_cracking_code(uuid):
         if 'audio' in request.files  :
             audio_file = request.files['audio']
             code = request.form.get('code')
+            question = request.form.get('question')
             audio_file_path = os.path.join(str(dir_file), "engine", f'cc_audio_{uuid}.wav')
             audio_file.save(audio_file_path)
             logging.info("Salvou o arquivo !")
             frase_retorno = await return_phrase_cc_audio(uuid)
             logging.info('Gerando frase de retorno no metodo save_audio.')
             logging.info(frase_retorno)
-            response_dict = await process_student_answer(frase_retorno, code)
+            response_dict = await process_student_answer(frase_retorno, code, question)
             response_json = response_dict.get_json()
             response_value = response_json.get('response')
 
@@ -602,26 +609,21 @@ async def process_answer_cracking_code(uuid):
         logging.error(f'Erro {str(e)}')
         return f'Erro ao salvar o arquivo de áudio: {str(e)}', 500
 
-async def process_student_answer(user_input, code):
-    prompt_template = """
-        You are an interviewer who assesses the user who must solve in Java the following algorithm:        
-        Given an interval newInterval and an array of intervals, create a function that inserts that newInterval in the array,
-        and to merge if necessary. Note that the intervals in the array are non-overlapping, and are
-        sorted according to their starting point.
-        Example 1:
-        Input: intervals = [[1, 3], [4, 7], [8, 10], [12, 15], [16, 17], [18, 20], [21, 25], [28, 29]], newInterval = [9, 18]
-        Output: [[1, 3], [4, 7], [8, 20], [21, 25], [28, 29]] """
+async def process_student_answer(user_input, code, question):
+    prompt_template = f"""
+        You are an interviewer who assesses the user who must solve the following algorithm:        
+        {question} """
 
     if code:
         prompt_template += f"""
         Important:
         Respond with up to 25 words and short phrase. 
         Don`t tell how to solve the problem, just evaluate the user code
-        You must interact with the user input {user_input} and check errors and best practices over updated Java code {code}
+        You must interact with the user input {user_input} and check errors and best practices over updated 
+        code {code}
         """
 
     messages = [{"role": "system", "content": prompt_template}]
-
     messages.append({"role": "user", "content": user_input})
 
     response = openai.ChatCompletion.create(

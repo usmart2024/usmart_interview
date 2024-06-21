@@ -1,6 +1,6 @@
-async function fetchStudentByEmail(email) {
+async function fetchStudentByEmail() {
     try {
-        const response = await fetch(`/student/${email}`);
+        const response = await fetch(`/student`);
         if (!response.ok) {
             throw new Error('Erro ao obter dados do estudante');
         }
@@ -78,11 +78,11 @@ async function loadInterviewQuestions(id_interview) {
 }
 
 var currentPage = 1;
-var rowsPerPage = 10;
+var rowsPerPage = 5;
 var data = [];
 
 var currentPage2 = 1;
-var rowsPerPage2 = 10;
+var rowsPerPage2 = 5;
 var data2 = [];
 
 function truncateText(text, maxLength) {
@@ -127,10 +127,10 @@ async function displayTable2(page) {
     paginatedData.forEach(function(row) {
         var $tr = $("<tr>");
         $tr.append($("<td>").text(row.topic));
-        $tr.append($("<td>").text(truncateText(row.question, 60)).addClass("ellipsis"));
+        $tr.append($("<td>").text(row.question).addClass("fixed-width"));
         $tr.append($("<td hidden>").text(row.id_algorithm));
         $tr.append($("<td hidden>").text(row.feedback_code));
-        $tr.append($("<td>").html('<i class="fas fa-search view-details2" id="loopa2" data-toggle="modal" data-target="#detailModal3"></i>'));
+        $tr.append($("<td class='text-center'>").html('<div class="d-flex justify-content-center"><i class="fas fa-search view-details2" data-toggle="modal" data-target="#detailModal3"></i></div>'));
         $tableBody.append($tr);
     });
 
@@ -269,6 +269,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     console.log('fetchStudentByEmail')
     // Chame fetchStudentByEmail uma vez quando a página for carregada
-    const studentEmail = 'eurodolfosantos@gmail.com'; // Substitua pelo email do estudante conforme necessário
-    fetchStudentByEmail(studentEmail);
+   // Substitua pelo email do estudante conforme necessário
+    fetchStudentByEmail();
 });

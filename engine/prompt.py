@@ -63,16 +63,17 @@ import json
 from langchain.prompts import PromptTemplate
 from langchain.output_parsers import ResponseSchema, StructuredOutputParser
 
-async def evaluate_question(question, question_answer, student_answer):
+def evaluate_question(question, question_answer, student_answer):
     prompt_template = """
     You are a tech lead knowledgeable in various technologies. Your role is to analyze 
-    the student_answer against question_answer
-    Now here you go the question {question} , question_answer : {question_answer}
-    and student_answer {student_answer} 
+    the student answer against question answer
+    Now here you go the question {question} , question answer : {question_answer}
+    and student answer {student_answer} 
     Compare the student_answer and question_answer and put the result in technical_feedback.
-    Now you need set a score from 0 to 10 of the analisys and put result inside variable score.
-    Now Evaluate only the English  in the phrase : {student_answer}  and provide suggestions for improvement. 
-    This feedback will be assigned to the variable english_feedback.
+    Now you need set a score from 0 to 10 of the analisys and put result inside variable score, if student 
+    doesn`t know the question the score is 0.
+    Now Evaluate only the grammar english  in the phrase : {student_answer}  and provide suggestions for improvement. 
+    This feedback about english will be assigned to the variable english_feedback.
  
     *** Output ***
     The result of this prompt must always be the JSON, as I am parsing the return as a JSON. If you return phrases, I will encounter errors during parsing,

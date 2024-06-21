@@ -22,7 +22,7 @@
   <div class="container-mother">
     <div class="container-fluid h-100">
       <div class="row h-100">
-          <div class="coluna1 col-lg-2">
+          <div class="coluna1 col-lg-1">
             <div class="container">
                 <div class="row">
                     <div class="sidebar-menu">
@@ -43,7 +43,7 @@
                 </div>
             </div>
           </div>
-        <div class="coluna2 col-lg-10">
+        <div class="coluna2 col-lg-11">
           <div class="linha-separadora"></div>
           <div class="filho-coluna2">
             <div class="row" style="height:50px; width:100%; margin-left:20px;">
@@ -61,7 +61,7 @@
         <a class="nav-link" id="tab2-tab" data-bs-toggle="tab" href="#tab2" role="tab"
            aria-controls="tab2" aria-selected="false">Your questions </a>
       </li>
-         <div class="linha">  </div>
+
     </ul>
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
@@ -173,12 +173,13 @@
               <textarea class="form-control narrow-textarea" readonly id="stack1" name="stack" rows="15"></textarea>
                 <input type="hidden" id="algorithmJson" name="algorithm_json">
             </div>
-              <button type="submit" class="btn btn-primary" id="startButton">Start Simulation</button>
-          </form>
-        </div>
-            <div class="modal-footer">
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" id="startButton">Start Simulation</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal" id="cancelButton">Close</button>
             </div>
+          </form>
+        </div>
+
         </div>
     </div>
  </div>
@@ -223,8 +224,9 @@
     height: 900px;
 }
 .filho-coluna2 {
-    overflow-y: scroll;
-    height: 100%;
+    overflow-y: auto;
+    height: calc(100% - 70px); /* Ajuste a altura para considerar a linha-separadora */
+    margin-left: 12px;
 }
 .filho-coluna2::-webkit-scrollbar {
     width: 2px;
@@ -533,6 +535,7 @@
     background: black;
 }
 .dashboard-header {
+    font-family: monospace;
     font-weight: bold;
     font-size: 28px;
 }
@@ -589,7 +592,7 @@ margin-left :8px;
 }
 
 .nav-tabs {
-  border-bottom: 1000px; /* Remove a borda inferior das abas */
+  border-bottom: none; /* Remove a borda inferior das abas */
 }
 
 .nav-tabs .nav-link {
@@ -599,7 +602,7 @@ margin-left :8px;
 
 .nav-tabs .nav-link.active {
   border: none; /* Remove as bordas da aba ativa */
-  border-bottom: width 300px; /* Remove qualquer borda inferior da aba ativa */
+  border-bottom: width 100px; /* Remove qualquer borda inferior da aba ativa */
 }
 thead {
     background-color: #007BFF;
@@ -802,7 +805,8 @@ tr:hover {
 .linha {
   border-bottom: 2px solid white; /* Borda inferior da cabeça da modal */
   width:1220px;
-  margin-bottom : 50px;
+  margin-bottom : 80px;
+  margin-left: 18px;
 }
 
 .modal-title {
@@ -848,7 +852,7 @@ tr:hover {
 }
 
 #detailModal .modal-content {
-    height: 800px;
+    height: 600px;
     margin: auto; /* Centraliza verticalmente */
 }
 

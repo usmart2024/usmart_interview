@@ -16,13 +16,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/FitText.js/1.2.0/jquery.fittext.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js" type="text/javascript" charset="utf-8"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone-with-data.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <div class="container-mother">
     <div class="container-fluid h-100">
       <div class="row h-100">
-          <div class="coluna1 col-lg-2">
+          <div class="coluna1 col-lg-1">
             <div class="container">
                 <div class="row">
                     <div class="sidebar-menu">
@@ -43,15 +45,13 @@
                 </div>
             </div>
           </div>
-        <div class="coluna2 col-lg-10">
+        <div class="coluna2 col-lg-11">
           <div class="linha-separadora"></div>
           <div class="filho-coluna2">
             <div class="row" style="height:50px; width:100%; margin-left:20px;">
                 <span class="dashboard-header"> Your Simulated Interviews  </span>
             </div>
-<div class="linha">
-
-            </div>
+           <div class="linha"> </div>
 
 <!--               <div class="container">-->
 <!--        <form>-->
@@ -80,7 +80,7 @@
 <!--    </div>-->
 
    <div class="container_2">
-  <div style=" padding-bottom:5px ">
+  <div style=" padding-bottom:8px ">
     <button id="search-button" class="btn btn-primary ml-2" data-toggle="modal" data-target="#interviewModal" >New</button>
   </div>
   <table>
@@ -481,6 +481,7 @@
     background: black;
 }
 .dashboard-header {
+font-family: monospace;
     font-weight: bold;
     font-size: 28px;
 }
@@ -711,9 +712,10 @@ tr:hover {
 }
 
 .linha {
-  border-bottom: 2px solid #4caf50; /* Borda inferior da cabeça da modal */
+  border-bottom: 2px solid white; /* Borda inferior da cabeça da modal */
   width:1220px;
-  margin-bottom : 50px;
+  margin-bottom : 80px;
+  margin-left: 18px;
 }
 
 .modal-title {

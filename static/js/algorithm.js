@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('play').addEventListener('click', startInterview);
     document.getElementById('finish').addEventListener('click', finishInterview);
     document.getElementById('openMicButton').addEventListener('click', stopRecording);
-    document.getElementById('saveAlgorithm').addEventListener('click', saveAlgorithm);
+//    document.getElementById('saveAlgorithm').addEventListener('click', saveAlgorithm);
 
     var intervalId;
     let counter = 0;
@@ -31,17 +31,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function saveAlgorithm() {
-        var htmlContent = editor.getValue();
+        var htmlContent = getContent();
         var formData = new FormData();
         var chat_history = document.getElementById('chat-box').innerHTML;
+        var idAlgorithm = document.getElementById('idAlgorithm').innerText;
+            idAlgorithm = idAlgorithm.replace(/"/g, '');
+
         formData.append('code', htmlContent);
         formData.append('chat_history', chat_history);
+        formData.append('id_algorithm', idAlgorithm);
+        formData.append('id_student', student.id_student);
+        formData.append('student_code', htmlContent);
+
         fetch(`/student_algorithm`, {
             method: 'POST',
             body: formData
         }).then(function(response) {
             if (!response.ok) {
-                throw new Error('Erro ao salvar o arquivo de áudio.');
+                throw new Error('Erro na funcao saveAlgorithm');
             }
             window.location.href = '/cadastro_entrevista';
         });
@@ -90,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const audio = new Audio(audioUrl);
         audio.play().catch(error => console.log('Error playing audio:', error));
         audio.addEventListener('ended', function() {
-            $("#volume-bars_2").attr("hidden", true);
+            $("#volume-bars").attr("hidden", true);
         });
     }
 
@@ -99,6 +106,13 @@ document.addEventListener('DOMContentLoaded', function() {
         $("#finish_interview").attr("hidden", true);
         resetCountdown();
     }
+
+    $(document).ready(function() {
+    $('#finish_interview').on('click', function() {
+        $('#newModal').modal('show');
+    });
+});
+
 
     $('#finish1').on('click', function() {
         window.location.href = 'http://localhost:5000/cadastro_entrevista';
@@ -145,7 +159,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     // Criar um objeto FormData e anexar o arquivo de áudio
                     var formData = new FormData();
                     let uuid = student.uuid;
+                    question_ = document.getElementById('question').innerText;
                     formData.append('audio', audioBlob, `cc_audio_${uuid}.wav`);
+                    formData.append('question', question_);
                     formData.append('code', getContent());
 
                     // Enviar o arquivo de áudio para o servidor
@@ -198,10 +214,14 @@ document.addEventListener('DOMContentLoaded', function() {
         leetCode = getContent();
         let uuid = student.uuid;
 
+        var formData = new FormData();
+        question_ = document.getElementById('question').innerText;
+        formData.append('question', question_);
+        formData.append('message', 'Hello I`m a candidate, start the test, please');
+
         fetch(`/chat/${uuid}`, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ message: 'Hello I`m Rodolfo, start the test, please' })
+            body: formData
         })
         .then(response => {
             if (!response.ok) {
@@ -212,8 +232,8 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             console.log('Resposta:', data);
             const chatBox = document.getElementById('chat-box');
-            chatBox.innerHTML += `<p><strong>You:</strong> Hello</p>`;
-            chatBox.innerHTML += `<p><strong>AI:</strong> ${data.response}</p>`;
+            chatBox.innerHTML += `<p><strong>YOU:</strong> Start interview ...</p>`;
+            chatBox.innerHTML += `<p font-family: monospace;><strong>AI:</strong> ${data.response}</p>`;
             chatBox.scrollTop = chatBox.scrollHeight;
             $("#volume-bars").attr("hidden", false);
             playAudioStream(data.response);
@@ -279,6 +299,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     $(document).ready(function () {
         $('#finish').on('click', function() {
+            saveAlgorithm()
             $("#play").attr("hidden", false);
             $("#finish_interview").attr("hidden", true);
             $("#muteButton").attr("hidden", true);
