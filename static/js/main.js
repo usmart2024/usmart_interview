@@ -77,13 +77,24 @@ $(document).ready(function () {
 
     function playAudio(uuid) {
         const timestamp = new Date().getTime();
-        const audioUrl = `http://127.0.0.1:8000/audio/response_open_ai_${uuid}.mp3?timestamp=${timestamp}`;
+        const audioUrl = `https://intercode.usmartdigital.com.br:8000/audio/response_open_ai_${uuid}.mp3?timestamp=${timestamp}`;
         const audio = new Audio(audioUrl);
         audio.play();
         audio.addEventListener('ended', function() {
             $("#volume-bars_2").attr("hidden", true);
         });
     }
+
+
+    function playAudioStream(text) {
+        const audioUrl = `https://intercode.usmartdigital.com.br:5000/stream/${text}`;
+        const audio = new Audio(audioUrl);
+        audio.play().catch(error => console.log('Error playing audio:', error));
+        audio.addEventListener('ended', function() {
+            $("#volume-bars").attr("hidden", true);
+        });
+    }
+
 
     document.addEventListener('keydown', async function(event) {
         if (event.key === "Control") {
@@ -395,7 +406,7 @@ $(document).ready(function () {
                             }, 1000);
                         });
                         $("#volume-bars_2").attr("hidden", false);
-                        playAudio(uuid);
+                        playAudioStream(currentQuestion);
 
                         console.log('Arquivo de áudio salvo com sucesso.');
                     })

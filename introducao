@@ -58,9 +58,9 @@ sudo apt-get install certbot
 
 mkdir -p /home/ubuntu/PycharmProjects/usmart_interview/certs
 
-sudo cp /etc/letsencrypt/live/intercode.usmartdigital.com.br/fullchain.pem /home/ubuntu/PycharmProjects/usmart_interview/certs/
-sudo cp /etc/letsencrypt/live/intercode.usmartdigital.com.br/privkey.pem /home/ubuntu/PycharmProjects/usmart_interview/certs/
-sudo chown ubuntu:ubuntu /home/ubuntu/PycharmProjects/usmart_interview/certs/*.pem
+sudo cp /home/ubuntu22/PycharmProjects/usmart_interview/fullchain.pem /home/ubuntu22/PycharmProjects/usmart_interview/certs/
+sudo cp /home/ubuntu22/PycharmProjects/usmart_interview/privkey.pem /home/ubuntu22/PycharmProjects/usmart_interview/certs/
+sudo chown ubuntu22:ubuntu22 /home/ubuntu/PycharmProjects/usmart_interview/certs/*.pem
 
 #!/bin/bash
 
